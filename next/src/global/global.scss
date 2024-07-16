@@ -10,6 +10,7 @@
   --primary-900: #000000;
 
   --secondary-100: #c3d5e2;
+  --secondary-300: #69a5c6;
   --secondary-500: #1e87c1;
 
   --accent-100: #9ea9b0;
@@ -173,4 +174,46 @@ h2,
 
   letter-spacing: clamp(calc(0.28rem / 16), calc(0.42vw / 7.68), calc(0.42rem / 16));
   font-size: clamp(calc(28rem / 16), calc(42vw / 7.68), calc(42rem / 16));
+}
+
+.link {
+  text-decoration: underline;
+  transition: color 0.3s;
+  display: inline-flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 10px 8px;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+
+  &:hover {
+    color: var(--secondary-300, #69a5c6);
+  }
+
+  &:focus {
+    color: var(--secondary-500, #1e87c1);
+  }
+
+  &:focus-visible {
+    border: 1px solid var(--secondary-500, #1e87c1);
+    background: var(--primary-800, #101010);
+  }
+
+  &[target='_blank'],
+  &:visited {
+    &::after {
+      content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDE3IDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGlkPSJWZWN0b3IiIGQ9Ik0xLjI1NDg5IDMuOTk5OTdMMTYuNzU0OSAzLjk5OTk3TTMuNzU0ODggN0wwLjc1NDg4MyA0TDMuNzU0ODggMC45OTk5OTkiIHN0cm9rZT0iI0MzRDVFMiIgc3Ryb2tlLXdpZHRoPSIxLjAwMDg4IiBzdHJva2UtbGluZWpvaW49ImJldmVsIi8+Cjwvc3ZnPgo=');
+    }
+  }
+
+  &[target='_blank'] {
+    &::after {
+      transform: rotate(135deg);
+    }
+  }
+
+  &:visited {
+    color: var(--secondary-300, #69a5c6);
+  }
 }
