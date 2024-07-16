@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { RedHatDisplay } from '@/global/fonts';
+import '@/global/global.scss';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -13,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={RedHatDisplay.className}>{children}</body>
+      <body className={RedHatDisplay.className}>
+        <main>{children}</main>
+      </body>
     </html>
   );
 }

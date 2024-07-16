@@ -1,3 +1,26 @@
+// ------------- Global Variables -------------------
+
+:root {
+  --primary-200: #c9d1d7;
+  --primary-300: #a7b4bc;
+  --primary-400: #707b87;
+  --primary-600: #434e5b;
+  --primary-700: #262c33;
+  --primary-800: #101010;
+  --primary-900: #000000;
+
+  --secondary-100: #c3d5e2;
+  --secondary-500: #1e87c1;
+
+  --accent-100: #9ea9b0;
+  --accent-200: #3c454f;
+
+  --pageMargin: clamp(18px, calc(40vw / 7.68), 40px);
+  @media (max-width: 899px) and (min-width: 600px) {
+    --pageMargin: clamp(40px, calc(80vw / 7.68), 80px);
+  }
+}
+
 // ------------- Global Reset -----------------------
 
 *,
@@ -101,9 +124,53 @@ html {
   scroll-behavior: smooth;
 }
 
+main,
+.max-width {
+  max-width: 1206px;
+  width: calc(100% - var(--pageMargin) * 2);
+  height: 100%;
+}
+
+main {
+  margin: clamp(32px, calc(42vw / 7.68), 42px) auto 0;
+}
+
 body {
   overflow: clip;
   min-width: 320px;
   -webkit-tap-highlight-color: transparent;
-  // Setup: Background, Color, Font-size, Line-height
+  font-size: clamp(calc(14rem / 16), calc(16vw / 7.68), calc(16rem / 16));
+  color: var(--secondary-100, #c3d5e2);
+  line-height: 148%;
+  letter-spacing: clamp(calc(0.28rem / 16), calc(0.32vw / 7.68), calc(0.32rem / 16));
+  background-color: var(--primary-900, #000000);
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  overflow-wrap: anywhere;
+  color: var(--primary-300, #a7b4bc);
+  text-transform: uppercase;
+  letter-spacing: clamp(calc(0.14rem / 16), calc(0.16vw / 7.68), calc(0.16rem / 16));
+}
+
+h1,
+.h1,
+h2,
+.h2 {
+  line-height: 120%;
+  font-weight: 348;
+
+  letter-spacing: clamp(calc(0.28rem / 16), calc(0.42vw / 7.68), calc(0.42rem / 16));
+  font-size: clamp(calc(28rem / 16), calc(42vw / 7.68), calc(42rem / 16));
 }
