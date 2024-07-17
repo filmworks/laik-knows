@@ -22,18 +22,17 @@
   &::after {
     background: var(--secondary-100);
     opacity: 1;
+    z-index: -2;
   }
 
   &::before {
-    background: radial-gradient(circle at bottom center, rgba(195, 230, 255, 1) 5%, rgba(0, 135, 227, 1));
+    background: radial-gradient(circle at bottom center, rgba(195, 230, 255, 1) 5%, rgba(0, 135, 227, 0))
+      var(--secondary-500);
     opacity: 0;
+    z-index: -1;
   }
 
   &:hover {
-    &::after {
-      opacity: 0;
-    }
-
     &::before {
       opacity: 1;
     }
@@ -46,7 +45,8 @@
 
     &::before {
       opacity: 1;
-      background: radial-gradient(circle at bottom center, rgba(195, 230, 255, 1) 25%, rgba(0, 135, 227, 1));
+      background: radial-gradient(circle at bottom center, rgba(195, 230, 255, 1) 25%, rgba(0, 135, 227, 0))
+        var(--secondary-500);
     }
   }
 
@@ -60,11 +60,7 @@
     }
   }
 
-  .external {
-    justify-content: space-between;
-  }
-
-  span {
+  & > span:first-child {
     position: relative;
     z-index: 1;
     width: 100%;
@@ -77,5 +73,188 @@
     letter-spacing: calc(0.16rem / 16);
     font-size: calc(16rem / 16);
     justify-content: center;
+  }
+}
+.external {
+  & > span:first-child {
+    justify-content: space-between;
+
+    svg {
+      stroke: var(--secondary-100);
+      transition: stroke 0.2s;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transition: opacity 0.2s;
+    }
+
+    &::after {
+      opacity: 0;
+      z-index: -1;
+      background: radial-gradient(circle at bottom center, rgba(47, 129, 219, 0.2) 1%, rgba(0, 0, 0, 0.2));
+      background-color: var(--primary-900);
+    }
+
+    &::before {
+      z-index: -3;
+      background: radial-gradient(circle at bottom center, rgba(167, 180, 188, 0.1) 1%, rgba(10, 51, 79, 0));
+      background-color: var(--primary-900);
+    }
+  }
+
+  &::after {
+    background: radial-gradient(circle at bottom center, rgba(26, 159, 255, 1) 5%, rgba(93, 187, 255, 0));
+    background-color: var(--secondary-500);
+    opacity: 1;
+  }
+
+  &::before {
+    background: radial-gradient(rgba(115, 196, 255, 1), 25%, rgba(0, 98, 165, 0)), var(--secondary-300);
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+    & > span:first-child {
+      &::after {
+        opacity: 1;
+      }
+
+      svg {
+        stroke: var(--secondary-300);
+      }
+    }
+
+    .bulletIcon {
+      &__1 {
+        opacity: 0.88;
+      }
+      &__2 {
+        opacity: 0.5;
+      }
+      &__3 {
+        opacity: 0.45;
+      }
+      &__4 {
+        opacity: 0.5;
+      }
+      &__5 {
+        opacity: 0.45;
+      }
+      &__6 {
+        opacity: 0.45;
+      }
+      &__7 {
+        opacity: 0.5;
+      }
+      &__8 {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &:focus {
+    & > span:first-child {
+      svg {
+        stroke: var(--secondary-500);
+      }
+    }
+
+    &::before {
+      background: radial-gradient(rgba(115, 196, 255, 1), rgba(0, 98, 165, 0)), var(--secondary-500);
+    }
+  }
+
+  &:focus-visible {
+    & > span:first-child {
+      svg {
+        stroke: var(--secondary-100);
+      }
+    }
+  }
+}
+
+.glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 1px -1px -1px -1px;
+  z-index: 10;
+  border: 2px solid var(--primary-700, #262c33);
+  filter: blur(5px);
+}
+
+.bullets {
+  position: absolute;
+  width: 92px;
+  height: 43px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.bulletIcon {
+  position: absolute;
+  fill: rgb(255, 255, 255);
+  opacity: 1;
+  opacity: 0.88;
+  transition: opacity 0.2s;
+  &__1 {
+    left: 35.46px;
+    bottom: 6px;
+    opacity: 0.68;
+  }
+
+  &__2 {
+    right: 38.54px;
+    bottom: 13px;
+    opacity: 0.3;
+  }
+
+  &__3 {
+    left: 11.46px;
+    bottom: 7px;
+    opacity: 0.25;
+  }
+
+  &__4 {
+    right: 21.392px;
+    bottom: -4.223px;
+    opacity: 0.3;
+  }
+
+  &__5 {
+    right: 36.54px;
+    bottom: -15px;
+    opacity: 0.25;
+  }
+
+  &__6 {
+    right: 13.54px;
+    bottom: 7px;
+    opacity: 0.25;
+  }
+
+  &__7 {
+    left: 21.585px;
+    bottom: -6.554px;
+    opacity: 0.3;
+  }
+
+  &__8 {
+    left: 45px;
+    bottom: -7.042px;
+    opacity: 0.5;
   }
 }
