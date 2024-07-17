@@ -1,7 +1,6 @@
 import styles from './Footer.module.scss';
-import type { FooterTypes } from './Footer.types';
 
-export default function Footer({}: FooterTypes) {
+export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={`${styles.container} max-width`}>

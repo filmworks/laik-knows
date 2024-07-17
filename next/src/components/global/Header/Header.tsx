@@ -1,9 +1,8 @@
 import Image from 'next/image';
 import styles from './Header.module.scss';
-import type { HeaderTypes } from './Header.types';
 import logo from '@/public/laik-knows-logo.webp';
 
-export default function Header({}: HeaderTypes) {
+export default function Header() {
   return (
     <>
       <a href='#main' className={styles.skipToMainContent}>
