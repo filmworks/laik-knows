@@ -1,0 +1,21 @@
+.footer {
+  border-top: var(--sectionBorder);
+  padding: clamp(32px, calc(48vw / 7.68), 80px) 0 clamp(48px, calc(64vw / 7.68), 64px);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+  gap: 16px;
+  //   @media (max-width: 479px) {
+  //     flex-direction: row;
+  //   }
+}
+
+.copyright {
+  //   @media (max-width: 479px) {
+  //     order: 1;
+  //   }
+}
