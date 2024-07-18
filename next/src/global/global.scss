@@ -170,9 +170,10 @@ h5,
 h6,
 .h6 {
   overflow-wrap: anywhere;
-  color: var(--primary-300, #a7b4bc);
   text-transform: uppercase;
-  letter-spacing: clamp(calc(0.14rem / 16), calc(0.16vw / 7.68), calc(0.16rem / 16));
+  letter-spacing: calc(0.16rem / 16);
+  font-weight: 400;
+  font-size: calc(16rem / 16);
 }
 
 h1,
@@ -181,7 +182,7 @@ h2,
 .h2 {
   line-height: 120%;
   font-weight: 348;
-
+  color: var(--primary-300, #a7b4bc);
   letter-spacing: clamp(calc(0.28rem / 16), calc(0.42vw / 7.68), calc(0.42rem / 16));
   font-size: clamp(calc(28rem / 16), calc(42vw / 7.68), calc(42rem / 16));
 }
