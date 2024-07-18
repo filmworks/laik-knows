@@ -18,7 +18,7 @@
 
   --sectionBorder: 1px solid var(--primary-700);
 
-  --pageMargin: clamp(18px, calc(40vw / 7.68), 40px);
+  --pageMargin: clamp(16px, calc(32vw / 7.68), 40px);
   @media (max-width: 899px) and (min-width: 600px) {
     --pageMargin: clamp(40px, calc(80vw / 7.68), 80px);
   }
@@ -131,7 +131,6 @@ body {
   min-height: 100vh; // Temporary
 }
 
-main,
 .max-width {
   max-width: 1206px;
   width: calc(100% - var(--pageMargin) * 2);
@@ -140,8 +139,9 @@ main,
 }
 
 main {
-  margin: clamp(32px, calc(42vw / 7.68), 42px) auto 0;
+  // margin: clamp(32px, calc(42vw / 7.68), 42px) auto 0;
   flex-grow: 1; // Temporary
+  width: 100%; // Temporary
 }
 
 body {

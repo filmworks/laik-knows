@@ -24,8 +24,8 @@
   top: 0;
   z-index: 5;
 
-  img {
+  svg {
     width: clamp(69px, calc(80vw / 7.68), 80px);
-    height: clamp(69.86px, calc(81vw / 7.68), 81px);
+    height: clamp(69px, calc(81vw / 7.68), 81px);
   }
 }

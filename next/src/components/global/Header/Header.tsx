@@ -14,14 +14,7 @@ export default function Header() {
 }
 
 const LaikKnowsLogo = () => (
-  <svg
-    width='80'
-    height='81'
-    viewBox='0 0 80 81'
-    fill='none'
-    xmlns='http://www.w3.org/2000/svg'
-    xmlnsXlink='http://www.w3.org/1999/xlink'
-  >
+  <svg viewBox='0 0 80 81' fill='none' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink'>
     <rect width='80' height='81' fill='url(#pattern0_5746_928)' />
     <defs>
       <pattern id='pattern0_5746_928' patternContentUnits='objectBoundingBox' width='1' height='1'>
