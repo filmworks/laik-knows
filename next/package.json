@@ -26,6 +26,7 @@
     "eslint-config-next": "14.2.5",
     "plop": "^4.0.1",
     "prettier": "^3.3.3",
-    "typescript": "^5"
+    "typescript": "^5",
+    "typescript-eslint": "^7.16.1"
   }
 }
