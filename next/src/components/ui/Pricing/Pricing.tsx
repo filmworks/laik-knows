@@ -11,7 +11,7 @@ export default function Pricing({ fullPrice, discountPrice, smallestPriceMonth }
         </span>
         <span>{discountPrice} zł</span>
       </div>
-      <p className={styles.paragraph}>Najniższa cena od 30 dni {smallestPriceMonth}</p>
+      <p className={styles.paragraph}>Najniższa cena od 30 dni {smallestPriceMonth} zł.</p>
     </div>
   );
 }

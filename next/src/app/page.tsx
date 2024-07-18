@@ -1,21 +1,22 @@
-import Hero from '@/components/global/Hero';
+import Components, { Components_Query, ComponentTypes } from '@/components/Components';
+import sanityFetch from '@/utils/sanity.fetch';
 
-const HeroObj = {
-  heading: 'Naucz się nagrywać doskonałe wideo marki makijażowej',
-  paragraph:
-    'Odkryj tajniki tworzenia wysokiej jakości wideo, które przyciągają klientów i zwiększają sprzedaż. Zdobądź niezbędne umiejętności, aby wyróżnić się w branży beauty.',
-  fullPrice: 150,
-  discountPrice: 50,
-  smallestPriceMonth: 79,
-  index: 0,
-  cta: { href: 'https://www.google.pl/', text: 'Kup teraz' },
-  ctaText: 'Zostaniesz przekierowany na stronę EasyCart',
+const query = async (): Promise<{ content: ComponentTypes[] }> => {
+  return await sanityFetch({
+    query: /* groq */ `
+      *[_type == "Index_Page"][0] {
+        ${Components_Query}
+      }
+    `,
+    tags: ['Index_Page'],
+  });
 };
 
-export default function Home() {
+export default async function Home() {
+  const { content } = await query();
   return (
     <>
-      <Hero {...HeroObj} />
+      <Components data={content} />
     </>
   );
 }
