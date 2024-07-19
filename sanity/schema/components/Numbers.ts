@@ -1,11 +1,12 @@
 import {defineField} from 'sanity'
 import {removeMarkdown} from '../../utils/remove-markdown'
 
-const title = 'Sekcja z opisem korzyści'
-const icon = () => '✅'
+const title = 'Sekcja ze statystykami'
+const icon = () => '📝'
+const listIcon = () => '%'
 
 export default defineField({
-  name: 'Benefits',
+  name: 'Numbers',
   type: 'document',
   title,
   icon,
@@ -17,42 +18,37 @@ export default defineField({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'paragraph',
-      type: 'markdown',
-      title: 'Paragraf',
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
       name: 'list',
       type: 'array',
       of: [
         {
           type: 'object',
+          icon: listIcon,
           fields: [
-            {name: 'img', type: 'image', title: 'Zdjęcie', validation: (Rule) => Rule.required()},
             {
-              name: 'heading',
-              type: 'markdown',
-              title: 'Nagłówek',
+              name: 'percent',
+              type: 'number',
+              title: 'Procent',
+              description: 'Tutaj wyznaczamy procent jaki chcemy ukazać na stronie (bez znaczka %)',
               validation: (Rule) => Rule.required(),
             },
             {
-              name: 'paragraph',
+              name: 'description',
               type: 'markdown',
-              title: 'Paragraf',
+              title: 'Opis',
               validation: (Rule) => Rule.required(),
             },
           ],
           preview: {
             select: {
-              media: 'img',
-              heading: 'heading',
-              paragraph: 'paragraph',
+              heading: 'percent',
+              paragraph: 'description',
+              icon: 'icon',
             },
-            prepare: ({media, heading, paragraph}) => ({
-              title: removeMarkdown(heading),
+            prepare: ({icon, heading, paragraph}) => ({
+              icon,
+              title: `${heading}%`,
               subtitle: removeMarkdown(paragraph),
-              media,
             }),
           },
         },
@@ -64,9 +60,10 @@ export default defineField({
   preview: {
     select: {
       heading: 'heading',
+      icon: 'icon',
     },
-    prepare: ({heading}) => ({
-      title: title,
+    prepare: ({heading, icon}) => ({
+      title,
       subtitle: removeMarkdown(heading),
       icon,
     }),

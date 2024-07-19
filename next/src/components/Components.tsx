@@ -3,10 +3,12 @@ import HeroHeaderAndImage, {
   HeroHeaderAndImage_Query,
 } from '@/components/global/HeroHeaderAndImage';
 import Benefits, { Benefits_Query, BenefitsTypes } from './global/Benefits';
+import Numbers, { Numbers_Query, NumbersTypes } from './global/Numbers';
 
 type componentsMapTypes = {
   HeroHeaderAndImage: HeroHeaderAndImageTypes;
   Benefits: BenefitsTypes;
+  Numbers: NumbersTypes;
 };
 
 export type ComponentTypes = componentsMapTypes[keyof componentsMapTypes] & { _type: string };
@@ -19,6 +21,7 @@ export default function Components({ data }: { data: ComponentTypes[] }) {
     const componentsMapTypes: Record<string, React.ReactNode> = {
       HeroHeaderAndImage: <HeroHeaderAndImage {...(item as HeroHeaderAndImageTypes)} />,
       Benefits: <Benefits {...(item as BenefitsTypes)} />,
+      Numbers: <Numbers {...(item as NumbersTypes)} />,
     };
     const DynamicComponent = componentsMapTypes[componentType];
     if (!DynamicComponent) return null;
@@ -31,6 +34,7 @@ export const Components_Query = /* groq */ `
       _type,
       ${HeroHeaderAndImage_Query}
       ${Benefits_Query}
+      ${Numbers_Query}
     
     },
   `;
