@@ -48,75 +48,63 @@
   display: flex;
   flex-direction: column;
 
+  border-left: var(--sectionBorder);
+  border-right: var(--sectionBorder);
+  column-gap: 24px;
+  row-gap: 16px;
+
   img {
-    width: 100%;
     height: auto;
+    width: calc(100% + 2px);
+    margin: 0 -1px;
+    max-width: none;
   }
 
   @media (max-width: 959px) {
-    display: grid;
-    grid-template-columns: 1fr clamp(280px, calc(371vw / 7.68), 371px) clamp(32px, calc(80vw / 7.68), 80px);
-    column-gap: 0;
+    flex-direction: row;
     width: 100%;
+    border-right: none;
+    border-left: none;
+    border-top: var(--sectionBorder);
+    border-bottom: var(--sectionBorder);
+    padding: 0 clamp(48px, calc(80vw / 7.68), 80px);
 
     img {
-      width: 100%;
-      height: auto;
-    }
-
-    &::after {
-      display: block;
-      content: '';
-      height: 100%;
-      border-bottom: var(--sectionBorder);
-      border-top: var(--sectionBorder);
+      height: calc(100% + 2px);
+      margin: -1px 0;
+      width: clamp(240px, calc(371vw / 7.68), 371px);
     }
   }
 
   @media (max-width: 699px) {
-    grid-template-columns: 1fr;
-    width: 100%;
+    flex-direction: column;
+    row-gap: 24px;
+    align-items: center;
 
-    &::after {
-      display: none;
-    }
-
+    padding: 0 16px;
     img {
+      width: 100%;
+      height: calc(100% + 1px);
+      margin: 0 0 -1px 0px;
       max-width: 328px;
-      margin: 0 auto;
     }
-
-    border-bottom: var(--sectionBorder);
-    border-top: var(--sectionBorder);
   }
 }
 
 .content {
-  padding: 20px clamp(12px, calc(12vw / 7.68), 28px);
-  padding-bottom: 36px;
-  border-left: var(--sectionBorder);
-  border-right: var(--sectionBorder);
+  padding: 20px 28px;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   row-gap: 55px;
-  @media (max-width: 959px) {
-    border-top: var(--sectionBorder);
-    border-bottom: var(--sectionBorder);
-    border-left: none;
-    border-right: none;
-    padding-left: clamp(44px, calc(92vw / 7.68), 92px);
-    padding-right: 36px;
-  }
 
-  @media (max-width: 699px) {
+  @media (max-width: 959px) {
     padding: 20px 12px;
-    gap: 80px;
-    border-bottom: none;
-    border-top: 0;
-    padding-bottom: 44px;
+  }
+  @media (max-width: 699px) {
     max-width: 328px;
-    margin: 0 auto;
+    width: 100%;
+    row-gap: 80px;
   }
 }
