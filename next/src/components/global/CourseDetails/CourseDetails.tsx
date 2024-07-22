@@ -7,11 +7,16 @@ import DetailsAccordion from './DetailsAccordion';
 import OpenVideoBox from '@/components/ui/OpenVideoBox';
 
 export default function CourseDetails({ heading, video, img, cta, list }: CourseDetailsTypes) {
+  const _list = list.map(props => ({
+    ...props,
+    heading: <Markdown.h3>{props.heading}</Markdown.h3>,
+    paragraph: <Markdown.p>{props.paragraph}</Markdown.p>,
+  }));
   return (
     <section className={`${styles.section} max-width`}>
       <Markdown.h2>{heading}</Markdown.h2>
       <div className={styles.container}>
-        <DetailsAccordion list={list} />
+        <DetailsAccordion list={_list} />
         <div className={styles.col}>
           <div>
             <OpenVideoBox img={img} video={video} />
