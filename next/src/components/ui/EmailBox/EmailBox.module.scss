@@ -1,0 +1,6 @@
+.box {
+  width: 100%;
+  padding: clamp(16px, calc(28vw / 7.68), 28px);
+  height: clamp(269px, calc(304vw / 7.68), 340px);
+  background-color: var(--primary-700);
+}
