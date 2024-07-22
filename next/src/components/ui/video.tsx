@@ -1,3 +1,5 @@
+import { DetailedHTMLProps, VideoHTMLAttributes } from 'react';
+
 export const VideoDataQuery = `
   asset -> {
     url,
@@ -17,7 +19,7 @@ type VideoTypes = (
     }
   | { data?: never; src: string }
 ) &
-  React.HTMLAttributes<HTMLVideoElement>;
+  DetailedHTMLProps<VideoHTMLAttributes<HTMLVideoElement>, HTMLVideoElement>;
 
 export default function Video({ data, src, ...props }: VideoTypes) {
   if (data) {

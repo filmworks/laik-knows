@@ -5,12 +5,12 @@ import type { ReviewsTypes, SingleReviewType } from './Reviews.types';
 import Link from 'next/link';
 import Img from '@/components/ui/image';
 import Button from '@/components/ui/Button';
-import OpenVideoButton from './OpenVideoButton/OpenVideoButton';
 import { useState } from 'react';
 import sanityFetch from '@/utils/sanity.fetch';
 import Loader from '@/components/ui/Loader';
 import { VISIBLE_REVIEWS } from '@/global/constants';
 import { SingleReview_Query } from '.';
+import OpenVideoBox from '@/components/ui/OpenVideoBox';
 
 export default function Reviews({ heading, list, reviewNum }: ReviewsTypes) {
   const [reviews, setReviews] = useState<SingleReviewType[]>(list);
@@ -44,7 +44,7 @@ export default function Reviews({ heading, list, reviewNum }: ReviewsTypes) {
               </div>
               <div className={styles.container}>
                 <div className={styles.box}>
-                  {video ? <OpenVideoButton image={image} /> : <Img data={image} sizes='' />}
+                  {video ? <OpenVideoBox img={image} video={video} /> : <Img data={image} sizes='' />}
                 </div>
               </div>
               <p>{content}</p>
