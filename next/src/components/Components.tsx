@@ -4,7 +4,6 @@ import HeroHeaderAndImage, {
 } from '@/components/global/HeroHeaderAndImage';
 import Benefits, { Benefits_Query, BenefitsTypes } from './global/Benefits';
 import Numbers, { Numbers_Query, NumbersTypes } from './global/Numbers';
-// import ReviewsWrapper from './global/Reviews/ReviewsWrapper';
 import Reviews, { Reviews_Query, ReviewsTypes } from './global/Reviews';
 
 type componentsMapTypes = {
