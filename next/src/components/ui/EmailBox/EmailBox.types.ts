@@ -1,1 +1,1 @@
-export type EmailBoxTypes = { }
+export type EmailBoxTypes = { heading?: string };

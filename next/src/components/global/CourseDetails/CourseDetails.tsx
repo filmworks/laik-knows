@@ -6,7 +6,7 @@ import Button from '@/components/ui/Button';
 import Markdown from '@/components/ui/markdown';
 import DetailsAccordion from './DetailsAccordion';
 
-export default function CourseDetails({ heading, video, img, cta, list }: CourseDetailsTypes) {
+export default function CourseDetails({ heading, img, cta, list }: CourseDetailsTypes) {
   return (
     <section className={`${styles.section} max-width`}>
       <Markdown.h2>{heading}</Markdown.h2>
