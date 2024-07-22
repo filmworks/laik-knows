@@ -4,20 +4,24 @@ import { VideoDataQuery } from '@/components/ui/video';
 export default Reviews;
 export type { ReviewsTypes } from './Reviews.types';
 
-export const Reviews_Query = `
- _type == "Reviews" => {
-    heading,
-   list[] -> {
-      name,
-      content,
-      instagram,
-      image {
-        ${ImgDataQuery}
-      },
-      video{
-        ${VideoDataQuery}
-      },
-    
+export const SingleReview_Query = `
+  {
+    name,
+    content,
+    instagram,
+    image {
+      ${ImgDataQuery}
     },
+    video{
+      ${VideoDataQuery}
+    },
+  }
+`;
+
+export const Reviews_Query = `
+ _type == "Reviews" =>  {
+    heading,
+    list[] [0 ... 6] -> ${SingleReview_Query},
+    "reviewNum": count(list)
   },
 `;

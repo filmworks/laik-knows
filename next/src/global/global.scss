@@ -26,6 +26,10 @@
 
 // ------------- Global Reset -----------------------
 
+canvas {
+  display: none;
+}
+
 *,
 *::before,
 *::after {

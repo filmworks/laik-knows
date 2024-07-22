@@ -10,10 +10,6 @@
   & > div {
     display: flex;
     flex-direction: column;
-
-    & > button:last-child {
-      align-self: center;
-    }
   }
 }
 
@@ -122,6 +118,20 @@
   @media (max-width: 759px) {
     img {
       height: clamp(237px, calc(502vw / 7.68), 362px);
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: clamp(16px, calc(18vw / 7.68), 24px);
+  flex-wrap: wrap;
+
+  @media (max-width: 539px) {
+    flex-wrap: wrap;
+    & button {
+      flex-grow: 1;
     }
   }
 }

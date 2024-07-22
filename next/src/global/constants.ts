@@ -9,3 +9,9 @@ export const DOMAIN: string = 'https://laik-knows.pl/';
  * @constant
  */
 export const LOCALE: string = 'pl';
+
+/**
+ * Maximum visible reviews for one fetch (Reviews Section)
+ * @constant
+ */
+export const VISIBLE_REVIEWS: number = 6;

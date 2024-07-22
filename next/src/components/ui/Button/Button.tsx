@@ -3,7 +3,7 @@ import styles from './Button.module.scss';
 import type { ButtonTypes } from './Button.types';
 import Link from 'next/link';
 
-export default function Button({ data, href, children }: ButtonTypes) {
+export default function Button({ data, href, children, ...props }: ButtonTypes) {
   if (data) {
     href = data.href;
     children = data.text;
@@ -18,6 +18,7 @@ export default function Button({ data, href, children }: ButtonTypes) {
         href: href,
         ...(isExternal && { target: '_blank', rel: 'noopener' }),
       })}
+      {...props}
       className={`${styles.btn} ${isExternal && styles.external}`}
     >
       <span>
