@@ -8,4 +8,8 @@ export const structure: StructureResolver = (S) =>
   S.list()
     .id('root')
     .title('Zawartość')
-    .items([createSingleton(S, 'global'), S.divider(), createSingleton(S, 'Index_Page')])
+    .items([
+      createSingleton(S, 'global'),
+      createSingleton(S, 'Index_Page'),
+      S.documentTypeListItem('Review_Collection'),
+    ])
