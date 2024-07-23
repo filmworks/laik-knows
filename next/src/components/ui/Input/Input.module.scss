@@ -3,6 +3,7 @@
   display: inline-block;
   padding: 8px 12px;
   transition: background-color 0.3s;
+  max-width: 381px;
 
   &:focus-within {
     background-color: var(--primary-800, #101010);
@@ -37,7 +38,6 @@
   input {
     font-size: calc(16rem / 16);
     border-bottom: 1px solid var(--primary-600, #434e5b);
-    max-width: 381px;
     width: 100%;
   }
   textarea {
@@ -56,10 +56,6 @@
     &:focus-visible {
       outline: none;
       border-color: var(--second-600, #434e5b);
-    }
-
-    &::placeholder {
-      transition: color 0.2s;
     }
   }
   &[aria-invalid='true'] {

@@ -3,13 +3,20 @@ import { CheckboxTypes } from './Checkbox.types';
 import styles from './Checkbox.module.scss';
 
 export default function Checkbox({ label, register, errors, ...props }: CheckboxTypes) {
+  const handleKeyDown = (event: any) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      event.target.checked = !event.target.checked;
+      event.target.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  };
   return (
     <label className={styles.checkbox} aria-invalid={!!errors[register.name]}>
       <Error error={errors[register.name]?.message?.toString()} />
       <div className={styles.row}>
         <div className={styles.icon}>
           <div>
-            <input {...props} {...register} name={register.name} type='checkbox' />
+            <input {...props} {...register} name={register.name} type='checkbox' onKeyDown={handleKeyDown} />
             <CheckmarkIcon />
           </div>
         </div>

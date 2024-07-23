@@ -3,7 +3,7 @@ import styles from './Button.module.scss';
 import type { ButtonTypes } from './Button.types';
 import Link from 'next/link';
 
-export default function Button({ data, href, children, ...props }: ButtonTypes) {
+export default function Button({ data, href, children, isLoading = false, ...props }: ButtonTypes) {
   if (data) {
     href = data.href;
     children = data.text;
@@ -13,6 +13,8 @@ export default function Button({ data, href, children, ...props }: ButtonTypes) 
   const Element = href ? (isExternal ? 'a' : Link) : 'button';
   return (
     <Element
+      data-loading={isLoading}
+      disabled={isLoading}
       href={href || ''}
       {...(href && {
         href: href,
@@ -22,9 +24,10 @@ export default function Button({ data, href, children, ...props }: ButtonTypes) 
       className={`${styles.btn} ${isExternal && styles.external}`}
     >
       <span>
-        {children}
+        {isLoading ? <span className={styles.loader}></span> : children}
         {isExternal && <ArrowIcon />}
       </span>
+
       {isExternal && (
         <>
           <span className={styles.glow} />

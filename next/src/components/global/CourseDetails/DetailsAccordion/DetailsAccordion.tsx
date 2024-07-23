@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { DetailsAccordionTypes } from '@/components/global/CourseDetails/CourseDetails.types';
 import styles from './DetailsAccordion.module.scss';
 import { motion } from 'framer-motion';
-import EmailBox from '@/components/ui/EmailBox';
+import Form from './_Form';
 
 export default function DetailsAccordion({ list }: DetailsAccordionTypes) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -14,7 +14,7 @@ export default function DetailsAccordion({ list }: DetailsAccordionTypes) {
   };
   return (
     <div className={styles.list}>
-      {list.map(({ heading, video, paragraph }, i) => (
+      {list.map(({ heading, video, paragraph, form }, i) => (
         <details key={i} open data-opened={openIndex === i}>
           <summary className={styles.summary} onClick={e => handleClick(e, i)} tabIndex={openIndex === i ? -1 : 0}>
             <header className={styles.header}>
@@ -36,7 +36,7 @@ export default function DetailsAccordion({ list }: DetailsAccordionTypes) {
             }}
           >
             {paragraph}
-            <EmailBox />
+            <Form {...form} />
           </motion.div>
         </details>
       ))}

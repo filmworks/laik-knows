@@ -19,7 +19,7 @@ export default function Input({
       className={styles.input}
       aria-disabled={disabled}
       aria-invalid={!!errors[register.name]}
-      data-filled={filled}
+      data-filled={Boolean(filled)}
     >
       <p className={styles.row}>
         <span className={styles.label} dangerouslySetInnerHTML={{ __html: label }} />

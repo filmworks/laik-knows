@@ -12,6 +12,11 @@ export default function CourseDetails({ heading, video, img, cta, list }: Course
     ...props,
     heading: <Markdown.h3>{props.heading}</Markdown.h3>,
     paragraph: <Markdown.p>{props.paragraph}</Markdown.p>,
+    form: {
+      ...props.form,
+      heading: <Markdown.h4>{props.form.heading}</Markdown.h4>,
+      paragraph: <Markdown.p>{props.form.paragraph}</Markdown.p>,
+    },
   }));
   return (
     <section className={`${styles.section} max-width`}>

@@ -9,8 +9,7 @@ export type ButtonTypes = (
       href?: ButtonDataTypes['href'];
       children: ButtonDataTypes['text'];
     }
-) &
-  React.AnchorHTMLAttributes<HTMLAnchorElement> &
+) & { isLoading?: boolean } & React.AnchorHTMLAttributes<HTMLAnchorElement> &
   React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export type ButtonDataTypes = {

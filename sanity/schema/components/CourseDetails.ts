@@ -46,6 +46,36 @@ export default defineField({
               },
               validation: (Rule) => Rule.required(),
             },
+            {
+              name: 'form',
+              type: 'object',
+              title: 'Formularz',
+              options: {collapsible: true, collapsed: false},
+              validation: (Rule) => Rule.required(),
+              fields: [
+                defineField({
+                  name: 'heading',
+                  type: 'markdown',
+                  title: 'Nagłówek formularza',
+                  validation: (Rule) => Rule.required(),
+                  initialValue: 'Pobierz próbkę, tego co Cię czeka',
+                }),
+                defineField({
+                  name: 'paragraph',
+                  type: 'markdown',
+                  title: 'Paragraf formularza',
+                  validation: (Rule) => Rule.required(),
+                  initialValue: 'Pobierz pierwszą lekcję kursową za darmo juz dziś!',
+                }),
+                defineField({
+                  name: 'cta',
+                  type: 'string',
+                  title: 'Wezwanie do działania - tekst',
+                  validation: (Rule) => Rule.required(),
+                  initialValue: 'Zapisz się',
+                }),
+              ],
+            },
           ],
           preview: {
             select: {

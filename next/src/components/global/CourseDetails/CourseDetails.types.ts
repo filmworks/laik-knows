@@ -8,9 +8,19 @@ export type CourseDetailsTypes = {
   video: VideoDataTypes;
   img: ImgDataTypes;
   cta: ButtonDataTypes;
-  list: { heading: string; paragraph: string; video: VideoDataTypes }[];
+  list: {
+    heading: string;
+    paragraph: string;
+    video: VideoDataTypes;
+    form: { heading: string; paragraph: string; cta: string };
+  }[];
 };
 
 export type DetailsAccordionTypes = {
-  list: { heading: JSX.Element; paragraph: JSX.Element; video: VideoDataTypes }[];
+  list: {
+    heading: JSX.Element;
+    paragraph: JSX.Element;
+    video: VideoDataTypes;
+    form: { heading: JSX.Element; paragraph: JSX.Element; cta: string };
+  }[];
 };

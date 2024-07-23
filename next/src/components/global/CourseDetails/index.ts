@@ -22,7 +22,12 @@ export const CourseDetails_Query = `
             paragraph,
             video {
             ${VideoDataQuery}
-            }
+            },
+            form {
+            heading,
+            paragraph,
+            cta
+            },
         },
     },
 `;
