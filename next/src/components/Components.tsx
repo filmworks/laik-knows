@@ -20,7 +20,6 @@ type componentsMapTypes = {
 export type ComponentTypes = componentsMapTypes[keyof componentsMapTypes] & { _type: string };
 
 export default function Components({ data }: { data: ComponentTypes[] }) {
-  console.log(data);
   return data?.map((item, index) => {
     item = { ...item, index };
     const componentType = item._type as keyof componentsMapTypes;

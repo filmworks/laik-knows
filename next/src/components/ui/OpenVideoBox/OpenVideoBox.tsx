@@ -10,7 +10,6 @@ import Video from '../video';
 
 export default function OpenVideoBox({ video, img }: OpenVideoBoxTypes) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  console.log(video.asset.url);
   return (
     <>
       <button onClick={() => setIsOpen(true)} className={styles.open}>

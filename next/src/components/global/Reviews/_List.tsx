@@ -1,24 +1,25 @@
 'use client';
 
-import styles from './Reviews.module.scss';
-import type { ListTypes, SingleReviewType } from './Reviews.types';
-import Link from 'next/link';
-import Img from '@/components/ui/image';
-import Button from '@/components/ui/Button';
 import { useState } from 'react';
+import { ListTypes, SingleReviewType } from './Reviews.types';
 import sanityFetch from '@/utils/sanity.fetch';
-import Loader from '@/components/ui/Loader';
+import { SingleReview_Query } from '@/components/global/Reviews';
 import { VISIBLE_REVIEWS } from '@/global/constants';
-import { SingleReview_Query } from '.';
+import Img from '@/components/ui/image';
 import OpenVideoBox from '@/components/ui/OpenVideoBox';
+import Link from 'next/link';
+import styles from './Reviews.module.scss';
+import Loader from '@/components/ui/Loader';
+import Button from '@/components/ui/Button';
+import { removeMarkdown } from '@/utils/remove-markdown';
 
-export default function _List({ list, reviewNum }: ListTypes) {
-  const [reviews, setReviews] = useState<(SingleReviewType & { content: JSX.Element })[]>(list);
+export default function List({ list, reviewNum }: ListTypes) {
+  const [reviews, setReviews] = useState<SingleReviewType[]>(list);
   const [isLoading, setIsLoading] = useState(false);
   const fetchMoreReviews = async () => {
     setIsLoading(true);
 
-    const additionalReviews: (SingleReviewType & { content: JSX.Element })[] = await sanityFetch({
+    const additionalReviews: (SingleReviewType & { content: string })[] = await sanityFetch({
       query: `
               *[_type == "Index_Page"][0].content[_type == "Reviews"].list[${reviews.length} ... ${reviews.length + VISIBLE_REVIEWS}] -> ${SingleReview_Query}
         `,
@@ -26,8 +27,6 @@ export default function _List({ list, reviewNum }: ListTypes) {
     setReviews(prev => [...prev, ...additionalReviews]);
     setIsLoading(false);
   };
-
-  console.log(reviews);
   return (
     <>
       <ul className={styles.list}>
@@ -44,7 +43,7 @@ export default function _List({ list, reviewNum }: ListTypes) {
                 {video ? <OpenVideoBox img={image} video={video} /> : <Img data={image} sizes='' />}
               </div>
             </div>
-            {content}
+            {removeMarkdown(content)}
           </li>
         ))}
       </ul>

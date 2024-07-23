@@ -3,12 +3,13 @@ import { VideoDataTypes } from '@/components/ui/video';
 
 export type ReviewsTypes = {
   heading: string;
-  list: (SingleReviewType & { content: string })[];
+  list: SingleReviewType[];
   reviewNum: number;
 };
 
 export type SingleReviewType = {
   name: string;
+  content: string;
   instagram: {
     url: string;
     username: string;
@@ -18,6 +19,6 @@ export type SingleReviewType = {
 };
 
 export type ListTypes = {
-  list: (SingleReviewType & { content: JSX.Element })[];
+  list: SingleReviewType[];
   reviewNum: number;
 };

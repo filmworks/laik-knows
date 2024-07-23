@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { DetailsAccordionTypes } from './DetailsAccordion.types';
+import { DetailsAccordionTypes } from '@/components/global/CourseDetails/CourseDetails.types';
 import styles from './DetailsAccordion.module.scss';
 import { motion } from 'framer-motion';
 import EmailBox from '@/components/ui/EmailBox';
@@ -22,7 +22,7 @@ export default function DetailsAccordion({ list }: DetailsAccordionTypes) {
                 <ArrowUp />
                 <ArrowUp />
               </div>
-              <h3>{heading}</h3>
+              {heading}
             </header>
             <video src={video.asset.url} autoPlay muted />
           </summary>
@@ -35,7 +35,7 @@ export default function DetailsAccordion({ list }: DetailsAccordionTypes) {
               duration: 0.3,
             }}
           >
-            <p>{paragraph}</p>
+            {paragraph}
             <EmailBox />
           </motion.div>
         </details>
