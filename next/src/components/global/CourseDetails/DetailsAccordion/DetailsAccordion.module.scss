@@ -5,7 +5,13 @@
 
   details {
     padding-bottom: 16px;
-    border-bottom: 1px solid var(--primary-600);
+    border: 1px solid transparent;
+    border-bottom-color: var(--primary-600);
+    transition: border-color 0.2s;
+
+    &:has(summary:hover) {
+      border-bottom-color: var(--secondary-500);
+    }
 
     &[data-opened='true'] {
       & header > div {

@@ -1,0 +1,23 @@
+.error {
+  font-size: calc(12rem / 16);
+  color: var(--error-100);
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  animation: reveal 0.5s both;
+  line-height: 142%;
+  font-weight: 450;
+  letter-spacing: calc(0.48rem / 16);
+  svg {
+    flex-shrink: 0;
+  }
+  @keyframes reveal {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

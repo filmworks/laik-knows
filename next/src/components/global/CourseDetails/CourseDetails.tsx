@@ -5,6 +5,7 @@ import Button from '@/components/ui/Button';
 import Markdown from '@/components/ui/markdown';
 import DetailsAccordion from './DetailsAccordion';
 import OpenVideoBox from '@/components/ui/OpenVideoBox';
+import Input from '@/components/ui/Input';
 
 export default function CourseDetails({ heading, video, img, cta, list }: CourseDetailsTypes) {
   const _list = list.map(props => ({
