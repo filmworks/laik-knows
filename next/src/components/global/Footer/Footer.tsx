@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={`${styles.container} max-width`}>
         <p className={styles.copyright}>
-          <span>Ⓒ Stworzone przez</span>
+          <span>Ⓒ Stworzone przez </span>
           <a href='https://kryptonum.eu/pl' className='link' target='_blank' rel='noreferrer'>
             Kryptonum
           </a>

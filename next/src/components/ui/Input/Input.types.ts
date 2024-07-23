@@ -1,8 +1,9 @@
 import { FieldErrors } from 'react-hook-form';
 
 export type InputTypes = {
-  label?: string;
+  label: string;
   disabled?: boolean;
+  filled?: boolean;
   register: {
     name: string;
   };

@@ -1,4 +1,5 @@
 .input {
+  width: 100%;
   display: inline-block;
   padding: 8px 12px;
   transition: background-color 0.3s;
@@ -6,8 +7,15 @@
   &:focus-within {
     background-color: var(--primary-800, #101010);
   }
+  &:focus-within,
+  &[data-filled='true'] {
+    .label {
+      transform: translate(0, 0);
+      font-size: calc(12rem / 16);
+    }
+  }
 
-  .label {
+  .row {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -16,10 +24,21 @@
     color: var(--primary-300, #a7b4bc);
   }
 
+  .label {
+    transform: translate(18px, calc(100% + 8px));
+    font-size: clamp(calc(14rem / 16), calc(16vw / 7.68), calc(16rem / 16));
+    letter-spacing: clamp(calc(0.28rem / 16), calc(0.32vw / 7.68), calc(0.32rem / 16));
+    transition:
+      transform 0.2s,
+      font-size 0.2s,
+      color 0.2s;
+  }
+
   input {
     font-size: calc(16rem / 16);
     border-bottom: 1px solid var(--primary-600, #434e5b);
-    width: 381px;
+    max-width: 381px;
+    width: 100%;
   }
   textarea {
     min-height: 96px;
@@ -44,14 +63,26 @@
     }
   }
   &[aria-invalid='true'] {
+    &:focus-within {
+      background-color: transparent;
+    }
+
+    .label {
+      color: var(--error-100, #ff8d83);
+    }
+
+    &:focus-within,
+    &[data-filled='true'] {
+      .label {
+        color: var(--second-200);
+      }
+    }
+
     input,
     textarea {
       border-color: var(--error-100, #ff8d83);
       background-color: var(--error-900, #1e100f);
-
-      &::placeholder {
-        color: var(--error-100, #ff8d83);
-      }
+      color: var(--error-100, #ff8d83);
     }
   }
 

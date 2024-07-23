@@ -1,6 +1,49 @@
-.box {
-  width: 100%;
+.form {
+  position: relative;
+  width: calc(100% - 2px);
   padding: clamp(16px, calc(28vw / 7.68), 28px);
-  height: clamp(269px, calc(304vw / 7.68), 340px);
-  background-color: var(--primary-700);
+  background: radial-gradient(38.84% 100% at 50% 100%, rgba(112, 123, 135, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
+    var(--primary-900, #000);
+  margin: 0 auto 1px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background-color: var(--primary-800, #101010);
+    background-image: radial-gradient(circle at bottom left, rgba(30, 114, 160, 0.8) 0%, rgba(30, 114, 160, 0) 20%),
+      radial-gradient(circle at top right, rgba(30, 114, 160, 0.8) 0%, rgba(30, 114, 160, 0) 20%);
+    z-index: -1;
+  }
+
+  h4 {
+    margin-bottom: 12px;
+  }
+
+  & > p {
+    margin-bottom: 12px;
+  }
+
+  label {
+    margin-bottom: clamp(28px, calc(32vw / 7.68), 32px);
+  }
+
+  & > div:last-child {
+    margin-bottom: clamp(28px, calc(32vw / 7.68), 32px);
+  }
+
+  @media (max-width: 539px) {
+    button {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 369px) {
+    h4 {
+      text-align: center;
+    }
+  }
 }
