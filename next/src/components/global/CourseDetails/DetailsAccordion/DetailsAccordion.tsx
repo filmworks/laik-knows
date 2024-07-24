@@ -36,7 +36,7 @@ export default function DetailsAccordion({ list }: DetailsAccordionTypes) {
             }}
           >
             {paragraph}
-            <Form {...form} />
+            <Form {...form} isOpen={openIndex === i} />
           </motion.div>
         </details>
       ))}

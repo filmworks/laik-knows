@@ -93,7 +93,7 @@
 .form {
   position: relative;
   width: calc(100% - 2px);
-  padding: clamp(16px, calc(28vw / 7.68), 28px);
+  padding: clamp(16px, calc(28vw / 7.68), 28px) clamp(8px, calc(16vw / 7.68), 16px);
   background: radial-gradient(38.84% 100% at 50% 100%, rgba(112, 123, 135, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
     var(--primary-900, #000);
   margin: 0 auto 1px;
@@ -111,6 +111,13 @@
     z-index: -1;
   }
 
+  & > h4,
+  p,
+  button,
+  label:last-of-type {
+    margin: 0 clamp(8px, calc(12vw / 7.68), 12px);
+  }
+
   h4 {
     margin-bottom: 12px;
     color: var(--primary-300, #a7b4bc);
@@ -120,11 +127,8 @@
     margin-bottom: 12px;
   }
 
-  label {
-    margin-bottom: clamp(28px, calc(32vw / 7.68), 32px);
-  }
-
-  & > div:last-child {
+  & > label,
+  label:last-of-type {
     margin-bottom: clamp(28px, calc(32vw / 7.68), 32px);
   }
 

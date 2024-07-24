@@ -6,9 +6,9 @@ import { FormStatusTypes } from '@/global/types';
 import { useState } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
 
-type FormTypes = { heading: JSX.Element; paragraph: JSX.Element; cta: string };
+type FormTypes = { heading: JSX.Element; paragraph: JSX.Element; cta: string; isOpen: boolean };
 
-export default function Form({ heading, paragraph, cta }: FormTypes) {
+export default function Form({ heading, paragraph, cta, isOpen }: FormTypes) {
   const [status, setStatus] = useState<FormStatusTypes>({ sending: false, success: undefined });
   const {
     register,
@@ -35,16 +35,19 @@ export default function Form({ heading, paragraph, cta }: FormTypes) {
     }
   };
 
+  const tabIndex = isOpen ? 0 : -1;
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
       {heading}
       {paragraph}
       <Input
+        tabIndex={tabIndex}
         label='E-mail'
         register={register('email', {
           required: { value: true, message: 'Adres e-mail jest wymagany' },
           pattern: {
-            value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
             message: 'Nieprawidłowy format',
           },
         })}
@@ -52,10 +55,12 @@ export default function Form({ heading, paragraph, cta }: FormTypes) {
         errors={errors}
       />
       <Checkbox
+        tabIndex={tabIndex}
+        className={styles.checkbox}
         label={
           <>
             Akceptuję{' '}
-            <a href='https://kryptonum.eu/pl' target='_blank' rel='noreferrer' className='link'>
+            <a tabIndex={tabIndex} href='https://kryptonum.eu/pl' target='_blank' rel='noreferrer' className='link'>
               politykę prywatności
             </a>
           </>
@@ -65,7 +70,9 @@ export default function Form({ heading, paragraph, cta }: FormTypes) {
         })}
         errors={errors}
       />
-      <Button isLoading={status.sending}>{cta}</Button>
+      <Button tabIndex={tabIndex} isLoading={status.sending}>
+        {cta}
+      </Button>
     </form>
   );
 }

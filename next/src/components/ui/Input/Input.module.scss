@@ -1,7 +1,7 @@
 .input {
   width: 100%;
   display: inline-block;
-  padding: 8px 12px;
+  padding: 8px clamp(8px, calc(12vw / 7.68), 12px);
   transition: background-color 0.3s;
   max-width: 381px;
 
@@ -11,7 +11,7 @@
   &:focus-within,
   &[data-filled='true'] {
     .label {
-      transform: translate(0, 0);
+      transform: translate(clamp(-8px, calc(-12vw / 7.68), -12px), 0);
       font-size: calc(12rem / 16);
     }
   }
@@ -26,7 +26,7 @@
   }
 
   .label {
-    transform: translate(18px, calc(100% + 8px));
+    transform: translate(8px, calc(100% + 8px));
     font-size: clamp(calc(14rem / 16), calc(16vw / 7.68), calc(16rem / 16));
     letter-spacing: clamp(calc(0.28rem / 16), calc(0.32vw / 7.68), calc(0.32rem / 16));
     transition:
