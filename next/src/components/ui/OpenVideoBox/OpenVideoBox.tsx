@@ -8,12 +8,12 @@ import Video from '../video';
 
 // Temporary solution with fullscreen ------------
 
-export default function OpenVideoBox({ video, img }: OpenVideoBoxTypes) {
+export default function OpenVideoBox({ video, img, sizes = '' }: OpenVideoBoxTypes) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <>
       <button onClick={() => setIsOpen(true)} className={styles.open}>
-        <Img data={img} sizes='' />
+        <Img data={img} sizes={sizes} />
         <div>
           <VideoIcon />
         </div>

@@ -20,7 +20,10 @@ export default function Benefits({ heading, paragraph, list }: BenefitsTypes) {
                 <Markdown.p>{paragraph}</Markdown.p>
                 <Markdown.h3>{heading}</Markdown.h3>
               </div>
-              <Img data={img} sizes='' />
+              <Img
+                data={img}
+                sizes='(max-width: 359px) 92vw, (max-width: 699px) 328px, (max-width: 759px) 48vw, (max-width: 959px) 371px, (max-width: 1279px) 30vw, 381px'
+              />
             </li>
           ))}
         </ul>

@@ -16,6 +16,7 @@ import { removeMarkdown } from '@/utils/remove-markdown';
 export default function List({ list, reviewNum }: ListTypes) {
   const [reviews, setReviews] = useState<SingleReviewType[]>(list);
   const [isLoading, setIsLoading] = useState(false);
+  const imgSizes = '(max-width: 459px) 63vw, (max-width: 1035px) 22vw, (max-width: 1259px) 222px, 209px';
   const fetchMoreReviews = async () => {
     setIsLoading(true);
 
@@ -40,7 +41,11 @@ export default function List({ list, reviewNum }: ListTypes) {
             </div>
             <div className={styles.container}>
               <div className={styles.box}>
-                {video ? <OpenVideoBox img={image} video={video} /> : <Img data={image} sizes='' />}
+                {video ? (
+                  <OpenVideoBox img={image} video={video} sizes={imgSizes} />
+                ) : (
+                  <Img data={image} sizes={imgSizes} />
+                )}
               </div>
             </div>
             {removeMarkdown(content)}

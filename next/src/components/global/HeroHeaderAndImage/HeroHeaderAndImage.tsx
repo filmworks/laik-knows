@@ -10,7 +10,7 @@ export default function HeroHeaderAndImage({ index, heading, paragraph, img, cta
 
   return (
     <section className={styles.section}>
-      <Img data={img} sizes='' />
+      <Img data={img} sizes='100vw' />
       <div className='max-width'>
         <Heading className={styles.heading}>{heading}</Heading>
         <Markdown.p className={styles.paragraph}>{paragraph}</Markdown.p>
