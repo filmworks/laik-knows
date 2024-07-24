@@ -1,5 +1,5 @@
-import {defineField} from 'sanity'
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { defineField } from 'sanity'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 const title = 'Sekcja HERO z nagłówkiem i obrazem'
 const icon = () => '⭐️'
@@ -29,6 +29,11 @@ export default defineField({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'details',
+      type: 'detailsButton',
+      title: 'Tekst przycisku nawigacyjnego',
+    }),
+    defineField({
       name: 'img',
       type: 'image',
       title: 'Zdjęcie',
@@ -40,7 +45,7 @@ export default defineField({
       heading: 'heading',
       media: 'img',
     },
-    prepare: ({heading, media}) => ({
+    prepare: ({ heading, media }) => ({
       title: title,
       subtitle: removeMarkdown(heading),
       media,

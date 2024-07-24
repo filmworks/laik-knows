@@ -1,7 +1,7 @@
 import styles from './Pricing.module.scss';
 import type { PricingTypes } from './Pricing.types';
 
-export default function Pricing({ fullPrice, discountPrice, smallestPriceMonth }: PricingTypes) {
+export default function Pricing({ fullPrice, discountPrice, smallestPrice }: PricingTypes) {
   return (
     <div className={styles.pricing}>
       <div className={styles.row}>
@@ -11,7 +11,7 @@ export default function Pricing({ fullPrice, discountPrice, smallestPriceMonth }
         </span>
         <span>{discountPrice} zł</span>
       </div>
-      <p className={styles.paragraph}>Najniższa cena od 30 dni {smallestPriceMonth} zł.</p>
+      <p className={styles.paragraph}>Najniższa cena od 30 dni {smallestPrice} zł.</p>
     </div>
   );
 }

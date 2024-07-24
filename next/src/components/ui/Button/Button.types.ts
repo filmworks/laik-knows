@@ -16,3 +16,8 @@ export type ButtonDataTypes = {
   href: string;
   text: string | React.ReactNode;
 };
+
+export type CtaDataTypes = {
+  button: ButtonDataTypes;
+  paragraph: string;
+};

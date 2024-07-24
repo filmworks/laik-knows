@@ -1,5 +1,5 @@
-import {defineField} from 'sanity'
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { defineField } from 'sanity'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 const title = 'Sekcja ze szczegółami kursu'
 const icon = () => '📑'
@@ -50,7 +50,7 @@ export default defineField({
               name: 'form',
               type: 'object',
               title: 'Formularz',
-              options: {collapsible: true, collapsed: false},
+              options: { collapsible: true, collapsed: false },
               validation: (Rule) => Rule.required(),
               fields: [
                 defineField({
@@ -83,7 +83,7 @@ export default defineField({
               heading: 'heading',
               paragraph: 'paragraph',
             },
-            prepare: ({icon, heading, paragraph}) => ({
+            prepare: ({ icon, heading, paragraph }) => ({
               icon,
               title: removeMarkdown(heading),
               subtitle: removeMarkdown(paragraph),
@@ -120,7 +120,7 @@ export default defineField({
     select: {
       heading: 'heading',
     },
-    prepare: ({heading}) => ({
+    prepare: ({ heading }) => ({
       title: title,
       subtitle: removeMarkdown(heading),
       icon,

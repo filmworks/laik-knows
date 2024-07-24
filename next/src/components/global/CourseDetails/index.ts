@@ -1,7 +1,8 @@
-import { ButtonDataQuery } from '@/components/ui/Button';
+import { ButtonDataQuery, CtaDataQuery } from '@/components/ui/Button';
 import CourseDetails from './CourseDetails';
 import { ImgDataQuery } from '@/components/ui/image';
 import { VideoDataQuery } from '@/components/ui/video';
+import { CourseDataQuery } from '@/global/queries';
 export default CourseDetails;
 export type { CourseDetailsTypes } from './CourseDetails.types';
 
@@ -12,11 +13,12 @@ export const CourseDetails_Query = `
             ${VideoDataQuery}
         },
         cta {
-            ${ButtonDataQuery}
+            ${CtaDataQuery}
         },
         img {
             ${ImgDataQuery}
         },
+        "course": ${CourseDataQuery}
         list[] {
             heading,
             paragraph,

@@ -6,3 +6,10 @@ export const ButtonDataQuery = `
   text,
   href,
 `;
+
+export const CtaDataQuery = `
+  "button": {
+    ${ButtonDataQuery}
+  },
+  paragraph,
+`;

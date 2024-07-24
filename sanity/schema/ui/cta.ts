@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'cta',
@@ -11,6 +11,7 @@ export default defineType({
       type: 'string',
       title: 'Tekst',
       validation: (Rule) => Rule.required(),
+      initialValue: 'Kup teraz',
     }),
     defineField({
       name: 'href',
@@ -29,6 +30,13 @@ export default defineType({
           }
           return true
         }).required(),
+    }),
+    defineField({
+      name: 'paragraph',
+      type: 'markdown',
+      title: 'Paragraf pod przyciskiem',
+      validation: (Rule) => Rule.required(),
+      initialValue: 'Zostaniesz przekierowany na stronę EasyCart',
     }),
   ],
   preview: {
