@@ -5,8 +5,10 @@ import Button from '@/components/ui/Button';
 import Markdown from '@/components/ui/markdown';
 import DetailsAccordion from './DetailsAccordion';
 import OpenVideoBox from '@/components/ui/OpenVideoBox';
+import getLegalLink from '@/components/ui/get-legal-link';
 
-export default function CourseDetails({ heading, video, img, cta, list, course }: CourseDetailsTypes) {
+export default async function CourseDetails({ heading, video, img, cta, list, course }: CourseDetailsTypes) {
+  const { privacyPolicy } = await getLegalLink();
   const _list = list.map(props => ({
     ...props,
     heading: <Markdown.h3>{props.heading}</Markdown.h3>,
@@ -15,6 +17,7 @@ export default function CourseDetails({ heading, video, img, cta, list, course }
       ...props.form,
       heading: <Markdown.h4>{props.form.heading}</Markdown.h4>,
       paragraph: <Markdown.p>{props.form.paragraph}</Markdown.p>,
+      privacyLink: privacyPolicy,
     },
   }));
   return (

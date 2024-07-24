@@ -1,6 +1,8 @@
+import getLegalLink from '@/components/ui/get-legal-link';
 import styles from './Footer.module.scss';
 
-export default function Footer() {
+export default async function Footer() {
+  const { privacyPolicy } = await getLegalLink();
   return (
     <footer className={styles.footer}>
       <div className={`${styles.container} max-width`}>
@@ -10,7 +12,7 @@ export default function Footer() {
             Kryptonum
           </a>
         </p>
-        <a href='/' target='_blank' rel='noreferrer' className='link'>
+        <a href={privacyPolicy} target='_blank' rel='noreferrer' className='link'>
           Polityka prywatności
         </a>
       </div>

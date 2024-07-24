@@ -23,6 +23,7 @@ export type DetailsAccordionTypes = {
     heading: JSX.Element;
     paragraph: JSX.Element;
     video: VideoDataTypes;
-    form: { heading: JSX.Element; paragraph: JSX.Element; cta: string };
+
+    form: { heading: JSX.Element; paragraph: JSX.Element; cta: string; privacyLink: string };
   }[];
 };

@@ -6,9 +6,9 @@ import { FormStatusTypes } from '@/global/types';
 import { useState } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
 
-type FormTypes = { heading: JSX.Element; paragraph: JSX.Element; cta: string; isOpen: boolean };
+type FormTypes = { heading: JSX.Element; paragraph: JSX.Element; cta: string; isOpen: boolean; privacyLink: string };
 
-export default function Form({ heading, paragraph, cta, isOpen }: FormTypes) {
+export default function Form({ heading, paragraph, cta, isOpen, privacyLink }: FormTypes) {
   const [status, setStatus] = useState<FormStatusTypes>({ sending: false, success: undefined });
   const {
     register,
@@ -60,7 +60,7 @@ export default function Form({ heading, paragraph, cta, isOpen }: FormTypes) {
         label={
           <>
             Akceptuję{' '}
-            <a tabIndex={tabIndex} href='https://kryptonum.eu/pl' target='_blank' rel='noreferrer' className='link'>
+            <a tabIndex={tabIndex} href={privacyLink} target='_blank' rel='noreferrer' className='link'>
               politykę prywatności
             </a>
           </>
