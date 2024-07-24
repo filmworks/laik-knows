@@ -30,7 +30,7 @@ export const course = defineType({
     }),
     defineField({
       name: 'saleFinishDate',
-      type: 'date',
+      type: 'datetime',
       title: 'Data zakończenia sprzedaży kursu',
       validation: (Rule) => Rule.required(),
     }),

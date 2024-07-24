@@ -7,5 +7,5 @@ export type CourseDataTypes = {
   fullPrice: number;
   discountPrice: number;
   smallestPrice: number;
-  saleFinishDate: Date;
+  saleFinishDate: string;
 };
