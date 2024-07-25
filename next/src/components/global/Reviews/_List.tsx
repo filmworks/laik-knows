@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { ListTypes, SingleReviewType } from './Reviews.types';
 import sanityFetch from '@/utils/sanity.fetch';
 import { SingleReview_Query } from '@/components/global/Reviews';
-import { VISIBLE_REVIEWS } from '@/global/constants';
 import Img from '@/components/ui/image';
 import OpenVideoBox from '@/components/ui/OpenVideoBox';
 import Link from 'next/link';
@@ -14,6 +13,7 @@ import Button from '@/components/ui/Button';
 import { removeMarkdown } from '@/utils/remove-markdown';
 
 export default function List({ list, reviewNum }: ListTypes) {
+  const VISIBLE_REVIEWS = 6;
   const [reviews, setReviews] = useState<SingleReviewType[]>(list);
   const [isLoading, setIsLoading] = useState(false);
   const imgSizes = '(max-width: 459px) 63vw, (max-width: 1035px) 22vw, (max-width: 1259px) 222px, 209px';

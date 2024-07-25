@@ -18,11 +18,40 @@
 }
 
 .header {
+  position: relative;
   margin: 0 auto;
-  padding-top: clamp(28px, calc(36vw / 7.68), 48px);
   position: sticky;
   top: 0;
-  z-index: 5;
+  z-index: 35;
+  width: 100%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: calc(100% + 64px);
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: -64px;
+    z-index: -1;
+    mask-image: linear-gradient(#000, #000, rgba(256, 256, 256, 0));
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter 0.4s;
+  }
+  &[data-active='true'] {
+    &::before {
+      backdrop-filter: blur(13px);
+    }
+  }
+
+  div {
+    padding-top: clamp(28px, calc(36vw / 7.68), 48px);
+  }
+
+  a {
+    display: block;
+    width: max-content;
+  }
 
   svg {
     width: clamp(69px, calc(80vw / 7.68), 80px);
