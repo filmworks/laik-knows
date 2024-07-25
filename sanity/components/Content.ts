@@ -6,10 +6,20 @@ import Reviews from '../schema/components/Reviews'
 import TargetGroup from '../schema/components/TargetGroup'
 import CourseDetails from '../schema/components/CourseDetails'
 import SaleFinishTime from '../schema/components/SaleFinishTime'
+import AboutCourseLeader from '../schema/components/AboutCourseLeader'
 
 export default defineType({
   name: 'content',
   type: 'array',
   title: 'Komponenty',
-  of: [HeroSection, Benefits, Numbers, Reviews, TargetGroup, CourseDetails, SaleFinishTime],
+  of: [
+    HeroSection,
+    Benefits,
+    Numbers,
+    Reviews,
+    TargetGroup,
+    CourseDetails,
+    SaleFinishTime,
+    AboutCourseLeader,
+  ],
 })

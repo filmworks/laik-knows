@@ -13,40 +13,10 @@ export const global = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'socials',
-      type: 'object',
-      title: 'Social media',
-      options: { collapsible: true },
-      validation: (Rule) => Rule.required(),
-      fields: [
-        defineField({
-          name: 'instagram',
-          type: 'url',
-          title: 'Instagram',
-          validation: (Rule) =>
-            Rule.uri({ scheme: ['https'] }).error(
-              'Podaj prawidłowy adres URL (rozpoczynający się od https://)',
-            ),
-        }),
-        defineField({
-          name: 'youtube',
-          type: 'url',
-          title: 'YouTube',
-          validation: (Rule) =>
-            Rule.uri({ scheme: ['https'] }).error(
-              'Podaj prawidłowy adres URL (rozpoczynający się od https://)',
-            ),
-        }),
-        defineField({
-          name: 'linkedin',
-          type: 'url',
-          title: 'LinkedIn',
-          validation: (Rule) =>
-            Rule.uri({ scheme: ['https'] }).error(
-              'Podaj prawidłowy adres URL (rozpoczynający się od https://)',
-            ),
-        }),
-      ],
+      name: 'email',
+      type: 'string',
+      title: 'Adres e-mail',
+      validation: (Rule) => Rule.required().email(),
     }),
     defineField({
       name: 'seo',

@@ -8,6 +8,7 @@ import Reviews, { Reviews_Query, ReviewsTypes } from './global/Reviews';
 import TargetGroup, { TargetGroup_Query, TargetGroupTypes } from './global/TargetGroup';
 import CourseDetails, { CourseDetails_Query, CourseDetailsTypes } from './global/CourseDetails';
 import SaleFinishTime, { SaleFinishTime_Query, SaleFinishTimeTypes } from './global/SaleFinishTime';
+import AboutCourseLeader, { AboutCourseLeader_Query, AboutCourseLeaderTypes } from './global/AboutCourseLeader';
 
 type componentsMapTypes = {
   HeroHeaderAndImage: HeroHeaderAndImageTypes;
@@ -17,6 +18,7 @@ type componentsMapTypes = {
   TargetGroup: TargetGroupTypes;
   CourseDetails: CourseDetailsTypes;
   SaleFinishTime: SaleFinishTimeTypes;
+  AboutCourseLeader: AboutCourseLeaderTypes;
 };
 
 export type ComponentTypes = componentsMapTypes[keyof componentsMapTypes] & { _type: string };
@@ -33,6 +35,7 @@ export default function Components({ data }: { data: ComponentTypes[] }) {
       TargetGroup: <TargetGroup {...(item as TargetGroupTypes)} />,
       CourseDetails: <CourseDetails {...(item as CourseDetailsTypes)} />,
       SaleFinishTime: <SaleFinishTime {...(item as SaleFinishTimeTypes)} />,
+      AboutCourseLeader: <AboutCourseLeader {...(item as AboutCourseLeaderTypes)} />,
     };
     const DynamicComponent = componentsMapTypes[componentType];
     if (!DynamicComponent) return null;
@@ -50,5 +53,6 @@ export const Components_Query = /* groq */ `
       ${TargetGroup_Query}
       ${CourseDetails_Query}
       ${SaleFinishTime_Query}
+      ${AboutCourseLeader_Query}
     },
   `;
