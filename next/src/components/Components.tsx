@@ -9,6 +9,8 @@ import TargetGroup, { TargetGroup_Query, TargetGroupTypes } from './global/Targe
 import CourseDetails, { CourseDetails_Query, CourseDetailsTypes } from './global/CourseDetails';
 import SaleFinishTime, { SaleFinishTime_Query, SaleFinishTimeTypes } from './global/SaleFinishTime';
 import AboutCourseLeader, { AboutCourseLeader_Query, AboutCourseLeaderTypes } from './global/AboutCourseLeader';
+import HeadingParagraph, { HeadingParagraph_Query, HeadingParagraphTypes } from './global/HeadingParagraph';
+import AdvantagesCta, { AdvantagesCta_Query, AdvantagesCtaTypes } from './global/AdvantagesCta';
 
 type componentsMapTypes = {
   HeroHeaderAndImage: HeroHeaderAndImageTypes;
@@ -19,6 +21,8 @@ type componentsMapTypes = {
   CourseDetails: CourseDetailsTypes;
   SaleFinishTime: SaleFinishTimeTypes;
   AboutCourseLeader: AboutCourseLeaderTypes;
+  HeadingParagraph: HeadingParagraphTypes;
+  AdvatangesCta: AdvantagesCtaTypes;
 };
 
 export type ComponentTypes = componentsMapTypes[keyof componentsMapTypes] & { _type: string };
@@ -36,6 +40,8 @@ export default function Components({ data }: { data: ComponentTypes[] }) {
       CourseDetails: <CourseDetails {...(item as CourseDetailsTypes)} />,
       SaleFinishTime: <SaleFinishTime {...(item as SaleFinishTimeTypes)} />,
       AboutCourseLeader: <AboutCourseLeader {...(item as AboutCourseLeaderTypes)} />,
+      HeadingParagraph: <HeadingParagraph {...(item as HeadingParagraphTypes)} />,
+      AdvantagesCta: <AdvantagesCta {...(item as AdvantagesCtaTypes)} />,
     };
     const DynamicComponent = componentsMapTypes[componentType];
     if (!DynamicComponent) return null;
@@ -54,5 +60,7 @@ export const Components_Query = /* groq */ `
       ${CourseDetails_Query}
       ${SaleFinishTime_Query}
       ${AboutCourseLeader_Query}
+      ${HeadingParagraph_Query}
+      ${AdvantagesCta_Query}
     },
   `;

@@ -5,7 +5,7 @@ export default function SocialMedia({ socials }: SocialMediaTypes) {
   return (
     <nav className={styles.socials}>
       {socials.map(({ _type, url }) => (
-        <a key={_type} href={url} target='_blank' rel='noreferrer'>
+        <a key={_type} href={url} aria-label={`Link do ${_type}`} target='_blank' rel='noreferrer'>
           <span>
             {_type === 'instagram' && <InstagramIcon />}
             {_type === 'youtube' && <YoutubeIcon />}

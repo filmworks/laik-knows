@@ -1,0 +1,30 @@
+.nav {
+  margin-top: clamp(28px, calc(32vw / 7.68), 32px);
+  margin-bottom: clamp(8px, calc(12vw / 7.68), 12px);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  row-gap: 12px;
+
+  @media (max-width: 549px) {
+    & > a,
+    & > button {
+      width: 100%;
+
+      & > span:first-child {
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+.ctaText {
+  font-size: calc(12rem / 16);
+  letter-spacing: calc(0.12rem / 16);
+  color: var(--primary-300);
+
+  @media (max-width: 599px) {
+    font-size: calc(14rem / 16);
+    letter-spacing: calc(0.28rem / 16);
+  }
+}

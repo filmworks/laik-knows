@@ -3,7 +3,6 @@ import { CheckboxTypes } from './Checkbox.types';
 import styles from './Checkbox.module.scss';
 export default function Checkbox({ label, register, errors, ...props }: CheckboxTypes) {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    console.log(event);
     if (event.key === 'Enter') {
       event.preventDefault();
       const target = event.target as HTMLInputElement;

@@ -1,0 +1,21 @@
+.section {
+  padding: 80px 0;
+  border-top: var(--sectionBorder);
+  border-bottom: var(--sectionBorder);
+
+  &[data-enlarged-top='true'] {
+    padding-top: clamp(112px, calc(160vw / 7.68), 200px);
+  }
+
+  &[data-enlarged-bottom='true'] {
+    padding-bottom: clamp(112px, calc(160vw / 7.68), 200px);
+  }
+
+  h2 {
+    margin-bottom: clamp(12px, calc(16vw / 7.68), 16px);
+  }
+
+  p {
+    max-width: 587px;
+  }
+}

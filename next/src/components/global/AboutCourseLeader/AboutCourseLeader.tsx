@@ -5,7 +5,6 @@ import Markdown from '@/components/ui/markdown';
 import Img from '@/components/ui/image';
 
 export default function AboutCourseLeader({ heading, paragraph, imgSm, imgLg, socials }: AboutCourseLeaderTypes) {
-  console.log(socials);
   return (
     <section className={`${styles.section} max-width`}>
       <Img data={imgLg} sizes='' />

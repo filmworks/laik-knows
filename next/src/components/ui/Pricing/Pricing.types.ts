@@ -1,1 +1,5 @@
-export type PricingTypes = { fullPrice: number; discountPrice: number; smallestPrice: number };
+export type PricingTypes = {
+  fullPrice: number;
+  discountPrice: number;
+  smallestPrice: number;
+} & React.HTMLAttributes<HTMLDivElement>;
