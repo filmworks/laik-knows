@@ -1,4 +1,4 @@
-import { ButtonDataQuery, CtaDataQuery } from '@/components/ui/Button';
+import { CtaDataQuery } from '@/components/ui/Button';
 import HeroHeaderAndImage from './HeroHeaderAndImage';
 import { ImgDataQuery } from '@/components/ui/image';
 import { CourseDataQuery } from '@/global/queries';

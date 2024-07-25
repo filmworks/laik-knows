@@ -17,7 +17,6 @@ export default function Counter({ duration }: CounterProps) {
   }, [timeLeft]);
 
   function getTime(miliseconds: number) {
-    const newDate = new Date(miliseconds);
     const totalSeconds = Math.floor(miliseconds / 1000);
     const totalMinutes = Math.floor(totalSeconds / 60);
     const totalHours = Math.floor(totalMinutes / 60);

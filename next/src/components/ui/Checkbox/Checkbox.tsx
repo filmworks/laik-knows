@@ -1,12 +1,13 @@
 import Error from '../Error';
 import { CheckboxTypes } from './Checkbox.types';
 import styles from './Checkbox.module.scss';
-
 export default function Checkbox({ label, register, errors, ...props }: CheckboxTypes) {
-  const handleKeyDown = (event: any) => {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    console.log(event);
     if (event.key === 'Enter') {
       event.preventDefault();
-      event.target.checked = !event.target.checked;
+      const target = event.target as HTMLInputElement;
+      target.checked = !target.checked;
       event.target.dispatchEvent(new Event('change', { bubbles: true }));
     }
   };

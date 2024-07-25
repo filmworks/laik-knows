@@ -1,4 +1,4 @@
-import { ButtonDataQuery, CtaDataQuery } from '@/components/ui/Button';
+import { CtaDataQuery } from '@/components/ui/Button';
 import CourseDetails from './CourseDetails';
 import { ImgDataQuery } from '@/components/ui/image';
 import { VideoDataQuery } from '@/components/ui/video';

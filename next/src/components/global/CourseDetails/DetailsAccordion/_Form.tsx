@@ -4,7 +4,7 @@ import Checkbox from '@/components/ui/Checkbox';
 import Button from '@/components/ui/Button';
 import { FormStatusTypes } from '@/global/types';
 import { useState } from 'react';
-import { FieldValues, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 type FormTypes = { heading: JSX.Element; paragraph: JSX.Element; cta: string; isOpen: boolean; privacyLink: string };
 
@@ -18,7 +18,7 @@ export default function Form({ heading, paragraph, cta, isOpen, privacyLink }: F
     getValues,
   } = useForm({ mode: 'onTouched' });
 
-  const onSubmit = async (data: FieldValues) => {
+  const onSubmit = async () => {
     setStatus({ sending: true, success: undefined });
     try {
       await new Promise(resolve => setTimeout(resolve, 1000));
