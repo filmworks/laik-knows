@@ -42,6 +42,8 @@ export default function Form({ heading, paragraph, cta, isOpen, privacyLink }: F
       {heading}
       {paragraph}
       <Input
+        disabled={status.sending}
+        type='email'
         tabIndex={tabIndex}
         label='E-mail'
         register={register('email', {
@@ -55,6 +57,7 @@ export default function Form({ heading, paragraph, cta, isOpen, privacyLink }: F
         errors={errors}
       />
       <Checkbox
+        disabled={status.sending}
         tabIndex={tabIndex}
         className={styles.checkbox}
         label={

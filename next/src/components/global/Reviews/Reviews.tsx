@@ -3,12 +3,12 @@ import styles from './Reviews.module.scss';
 import type { ReviewsTypes } from './Reviews.types';
 import List from './_List';
 
-export default function Reviews({ heading, list, reviewNum }: ReviewsTypes) {
+export default function Reviews({ heading, list }: ReviewsTypes) {
   return (
     <section className={styles.section}>
       <div className='max-width'>
         <Markdown.h2>{heading}</Markdown.h2>
-        <List list={list} reviewNum={reviewNum} />
+        <List list={list} />
       </div>
     </section>
   );

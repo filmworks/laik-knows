@@ -4,7 +4,6 @@ import { VideoDataTypes } from '@/components/ui/video';
 export type ReviewsTypes = {
   heading: string;
   list: SingleReviewType[];
-  reviewNum: number;
 };
 
 export type SingleReviewType = {
@@ -20,5 +19,4 @@ export type SingleReviewType = {
 
 export type ListTypes = {
   list: SingleReviewType[];
-  reviewNum: number;
 };

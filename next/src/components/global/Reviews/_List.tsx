@@ -1,43 +1,30 @@
 'use client';
 
-import { useState } from 'react';
-import { ListTypes, SingleReviewType } from './Reviews.types';
-import sanityFetch from '@/utils/sanity.fetch';
-import { SingleReview_Query } from '@/components/global/Reviews';
+import { useRef, useState } from 'react';
+import { ListTypes } from './Reviews.types';
 import Img from '@/components/ui/image';
 import OpenVideoBox from '@/components/ui/OpenVideoBox';
-import Link from 'next/link';
 import styles from './Reviews.module.scss';
-import Loader from '@/components/ui/Loader';
 import Button from '@/components/ui/Button';
 import { removeMarkdown } from '@/utils/remove-markdown';
 
-export default function List({ list, reviewNum }: ListTypes) {
-  const VISIBLE_REVIEWS = 6;
-  const [reviews, setReviews] = useState<SingleReviewType[]>(list);
-  const [isLoading, setIsLoading] = useState(false);
-  const imgSizes = '(max-width: 459px) 63vw, (max-width: 1035px) 22vw, (max-width: 1259px) 222px, 209px';
-  const fetchMoreReviews = async () => {
-    setIsLoading(true);
+const REVIEWS_AT_ONCE = 6;
+const SCROLL_OFFSET = 120;
 
-    const additionalReviews: (SingleReviewType & { content: string })[] = await sanityFetch({
-      query: `
-              *[_type == "Index_Page"][0].content[_type == "Reviews"].list[${reviews.length} ... ${reviews.length + VISIBLE_REVIEWS}] -> ${SingleReview_Query}
-        `,
-    });
-    setReviews(prev => [...prev, ...additionalReviews]);
-    setIsLoading(false);
-  };
+export default function List({ list }: ListTypes) {
+  const [visibleReviews, setVisibleReviews] = useState(REVIEWS_AT_ONCE);
+  const listRef = useRef<HTMLUListElement>(null);
+  const imgSizes = '(max-width: 459px) 63vw, (max-width: 1035px) 22vw, (max-width: 1259px) 222px, 209px';
   return (
     <>
-      <ul className={styles.list}>
-        {reviews.map(({ name, content, instagram, image, video }, i) => (
+      <ul className={styles.list} ref={listRef}>
+        {list.slice(0, visibleReviews).map(({ name, content, instagram, image, video }, i) => (
           <li className={styles.item} key={i}>
             <div className={styles.instagram}>
               <span className={styles.name}>{name}</span>
-              <Link className={styles.link} href={instagram.url || '/'}>
+              <a target='_blank' rel='noreferrer' className={styles.link} href={instagram.url || '/'}>
                 <span>{instagram.username}</span>
-              </Link>
+              </a>
             </div>
             <div className={styles.container}>
               <div className={styles.box}>
@@ -52,13 +39,24 @@ export default function List({ list, reviewNum }: ListTypes) {
           </li>
         ))}
       </ul>
-      {isLoading && <Loader center />}
-      {!isLoading && (
-        <div className={styles.buttons}>
-          {reviews.length !== VISIBLE_REVIEWS && <Button onClick={() => setReviews(list)}>Zobacz mniej</Button>}
-          {reviews.length < reviewNum && <Button onClick={fetchMoreReviews}>Zobacz więcej</Button>}
-        </div>
-      )}
+      <div className={styles.buttons}>
+        {visibleReviews !== REVIEWS_AT_ONCE && (
+          <Button
+            onClick={() => {
+              setVisibleReviews(REVIEWS_AT_ONCE);
+              if (listRef.current) {
+                const top = listRef.current.getBoundingClientRect().top + window.scrollY - SCROLL_OFFSET;
+                window.scrollTo({ top, behavior: 'auto' });
+              }
+            }}
+          >
+            Zobacz mniej
+          </Button>
+        )}
+        {visibleReviews < list.length && (
+          <Button onClick={() => setVisibleReviews(prev => prev + REVIEWS_AT_ONCE)}>Zobacz więcej</Button>
+        )}
+      </div>
     </>
   );
 }

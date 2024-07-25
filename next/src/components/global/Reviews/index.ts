@@ -21,7 +21,6 @@ export const SingleReview_Query = `
 export const Reviews_Query = `
  _type == "Reviews" =>  {
     heading,
-    list[] [0 ... 6] -> ${SingleReview_Query},
-    "reviewNum": count(list)
+    list[]  -> ${SingleReview_Query},
   },
 `;

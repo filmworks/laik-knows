@@ -12,6 +12,21 @@
     opacity: 0;
   }
 
+  *:has(input:disabled) {
+    cursor: auto;
+    &:hover {
+      .icon {
+        div {
+          background: var(--primary-900, #000);
+        }
+
+        &::before {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
   & > span:first-child {
     position: absolute;
     top: -21px;

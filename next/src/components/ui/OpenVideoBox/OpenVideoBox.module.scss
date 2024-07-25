@@ -21,7 +21,7 @@
   }
 
   & img {
-    transition: transform 0.3s;
+    transition: transform 0.3s var(--easing);
 
     &:hover {
       transform: scale(1.05);

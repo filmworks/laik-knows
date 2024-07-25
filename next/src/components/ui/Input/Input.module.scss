@@ -28,9 +28,9 @@
   .label {
     transform: translate(8px, calc(100% + 8px));
     font-size: clamp(calc(14rem / 16), calc(16vw / 7.68), calc(16rem / 16));
-    letter-spacing: clamp(calc(0.28rem / 16), calc(0.32vw / 7.68), calc(0.32rem / 16));
+    letter-spacing: calc(0.32rem / 16);
     transition:
-      transform 0.2s,
+      transform 0.2s var(--easing),
       font-size 0.2s,
       color 0.2s;
   }

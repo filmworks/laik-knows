@@ -1,7 +1,7 @@
 .section {
   border-top: var(--sectionBorder);
   padding-top: clamp(32px, calc(96vw / 7.68), 128px);
-  margin-bottom: 40px; //temporary;
+  scroll-behavior: auto;
 
   h2 {
     margin-bottom: clamp(48px, calc(64vw / 7.68), 64px);
@@ -49,7 +49,7 @@
 
 .name {
   font-size: clamp(calc(12rem / 16), calc(12vw / 7.68), calc(16rem / 16));
-  letter-spacing: clamp(calc(0.12rem / 16), calc(0.12vw / 7.68), calc(0.32rem / 16));
+  letter-spacing: calc(0.32rem / 16);
 }
 
 .link {

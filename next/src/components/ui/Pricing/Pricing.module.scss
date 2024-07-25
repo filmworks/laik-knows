@@ -18,7 +18,7 @@
   border: 1px solid var(--primary-600, #434e5b);
   text-transform: uppercase;
   color: var(--primary-300);
-  letter-spacing: clamp(calc(0.28rem / 16), calc(0.16vw / 7.68), calc(0.16rem / 16));
+  letter-spacing: calc(0.16vw / 7.68);
 
   & svg {
     width: 100%;
