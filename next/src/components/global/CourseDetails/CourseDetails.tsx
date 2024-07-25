@@ -1,11 +1,11 @@
+import Button from '@/components/ui/Button';
+import OpenVideoBox from '@/components/ui/OpenVideoBox';
+import Pricing from '@/components/ui/Pricing';
+import getLegalLink from '@/components/ui/get-legal-link';
+import Markdown from '@/components/ui/markdown';
 import styles from './CourseDetails.module.scss';
 import type { CourseDetailsTypes } from './CourseDetails.types';
-import Pricing from '@/components/ui/Pricing';
-import Button from '@/components/ui/Button';
-import Markdown from '@/components/ui/markdown';
 import DetailsAccordion from './DetailsAccordion';
-import OpenVideoBox from '@/components/ui/OpenVideoBox';
-import getLegalLink from '@/components/ui/get-legal-link';
 
 export default async function CourseDetails({ heading, video, img, cta, list, course }: CourseDetailsTypes) {
   const { privacyPolicy } = await getLegalLink();

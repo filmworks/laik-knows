@@ -1,5 +1,5 @@
-import {defineField} from 'sanity'
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { defineField } from 'sanity'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 const title = 'Sekcja ze statystykami'
 const icon = () => '📝'
@@ -45,7 +45,7 @@ export default defineField({
               paragraph: 'description',
               icon: 'icon',
             },
-            prepare: ({icon, heading, paragraph}) => ({
+            prepare: ({ icon, heading, paragraph }) => ({
               icon,
               title: `${heading}%`,
               subtitle: removeMarkdown(paragraph),
@@ -62,7 +62,7 @@ export default defineField({
       heading: 'heading',
       icon: 'icon',
     },
-    prepare: ({heading, icon}) => ({
+    prepare: ({ heading, icon }) => ({
       title,
       subtitle: removeMarkdown(heading),
       icon,

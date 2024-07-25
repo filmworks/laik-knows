@@ -1,5 +1,5 @@
-import Components, { Components_Query, ComponentTypes } from '@/components/Components';
 import sanityFetch from '@/utils/sanity.fetch';
+import Components, { ComponentTypes, Components_Query } from '@/components/Components';
 
 const query = async (): Promise<{ content: ComponentTypes[] }> => {
   return await sanityFetch({

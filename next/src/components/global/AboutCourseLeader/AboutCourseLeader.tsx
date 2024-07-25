@@ -1,8 +1,8 @@
 import SocialMedia from '@/components/ui/SocialMedia';
+import Img from '@/components/ui/image';
+import Markdown from '@/components/ui/markdown';
 import styles from './AboutCourseLeader.module.scss';
 import type { AboutCourseLeaderTypes } from './AboutCourseLeader.types';
-import Markdown from '@/components/ui/markdown';
-import Img from '@/components/ui/image';
 
 export default function AboutCourseLeader({ heading, paragraph, imgSm, imgLg, socials }: AboutCourseLeaderTypes) {
   return (

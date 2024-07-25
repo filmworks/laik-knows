@@ -1,5 +1,6 @@
 import { CourseDataQuery } from '@/global/queries';
 import SaleFinishTime from './SaleFinishTime';
+
 export default SaleFinishTime;
 export type { SaleFinishTimeTypes } from './SaleFinishTime.types';
 

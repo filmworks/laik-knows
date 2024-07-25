@@ -1,4 +1,5 @@
 import HeadingParagraph from './HeadingParagraph';
+
 export default HeadingParagraph;
 export type { HeadingParagraphTypes } from './HeadingParagraph.types';
 

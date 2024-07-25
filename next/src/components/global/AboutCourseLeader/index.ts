@@ -1,5 +1,6 @@
 import { ImgDataQuery } from '@/components/ui/image';
 import AboutCourseLeader from './AboutCourseLeader';
+
 export default AboutCourseLeader;
 export type { AboutCourseLeaderTypes } from './AboutCourseLeader.types';
 

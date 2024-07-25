@@ -1,10 +1,10 @@
-import Input from '@/components/ui/Input';
-import styles from './DetailsAccordion.module.scss';
-import Checkbox from '@/components/ui/Checkbox';
-import Button from '@/components/ui/Button';
-import { FormStatusTypes } from '@/global/types';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { FormStatusTypes } from '@/global/types';
+import Button from '@/components/ui/Button';
+import Checkbox from '@/components/ui/Checkbox';
+import Input from '@/components/ui/Input';
+import styles from './DetailsAccordion.module.scss';
 
 type FormTypes = { heading: JSX.Element; paragraph: JSX.Element; cta: string; isOpen: boolean; privacyLink: string };
 

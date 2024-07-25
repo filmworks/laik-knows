@@ -1,10 +1,10 @@
 'use client';
 
-import { useState } from 'react';
 import Img from '../image';
+import Video from '../video';
+import { useState } from 'react';
 import styles from './OpenVideoBox.module.scss';
 import type { OpenVideoBoxTypes } from './OpenVideoBox.types';
-import Video from '../video';
 
 // Temporary solution with fullscreen ------------
 

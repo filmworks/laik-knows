@@ -1,9 +1,9 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { DetailsAccordionTypes } from '@/components/global/CourseDetails/CourseDetails.types';
 import styles from './DetailsAccordion.module.scss';
-import { motion } from 'framer-motion';
 import Form from './_Form';
 
 export default function DetailsAccordion({ list }: DetailsAccordionTypes) {

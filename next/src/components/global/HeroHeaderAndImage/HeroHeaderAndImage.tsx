@@ -1,9 +1,9 @@
-import Markdown from '@/components/ui/markdown';
-import styles from './HeroHeaderAndImage.module.scss';
-import type { HeroHeaderAndImageTypes } from './HeroHeaderAndImage.types';
 import Button from '@/components/ui/Button';
 import Pricing from '@/components/ui/Pricing';
 import Img from '@/components/ui/image';
+import Markdown from '@/components/ui/markdown';
+import styles from './HeroHeaderAndImage.module.scss';
+import type { HeroHeaderAndImageTypes } from './HeroHeaderAndImage.types';
 
 export default function HeroHeaderAndImage({
   index,

@@ -1,5 +1,6 @@
 import { ImgDataQuery } from '@/components/ui/image';
 import Benefits from './Benefits';
+
 export default Benefits;
 export type { BenefitsTypes } from './Benefits.types';
 

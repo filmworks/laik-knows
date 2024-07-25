@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
+import { LOCALE } from '@/global/constants';
 import { RedHatDisplay } from '@/global/fonts';
 import '@/global/global.scss';
-import Header from '@/components/global/Header';
 import Footer from '@/components/global/Footer';
-import { LOCALE } from '@/global/constants';
+import Header from '@/components/global/Header';
 
 export const metadata: Metadata = {
   title: 'Create Next App',

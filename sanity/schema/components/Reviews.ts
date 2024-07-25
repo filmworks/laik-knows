@@ -1,5 +1,5 @@
-import {defineField} from 'sanity'
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { defineField } from 'sanity'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 const title = 'Sekcja opinii'
 const icon = () => '👍'
@@ -23,7 +23,7 @@ export default defineField({
       of: [
         {
           type: 'reference',
-          to: [{type: 'Review_Collection'}],
+          to: [{ type: 'Review_Collection' }],
         },
       ],
       title: 'Lista opinii',
@@ -34,7 +34,7 @@ export default defineField({
     select: {
       heading: 'heading',
     },
-    prepare: ({heading}) => ({
+    prepare: ({ heading }) => ({
       title: title,
       subtitle: removeMarkdown(heading),
       icon,

@@ -1,12 +1,12 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import { ListTypes } from './Reviews.types';
-import Img from '@/components/ui/image';
-import OpenVideoBox from '@/components/ui/OpenVideoBox';
-import styles from './Reviews.module.scss';
-import Button from '@/components/ui/Button';
 import { removeMarkdown } from '@/utils/remove-markdown';
+import Button from '@/components/ui/Button';
+import OpenVideoBox from '@/components/ui/OpenVideoBox';
+import Img from '@/components/ui/image';
+import styles from './Reviews.module.scss';
+import { ListTypes } from './Reviews.types';
 
 const REVIEWS_AT_ONCE = 6;
 const SCROLL_OFFSET = 120;

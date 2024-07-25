@@ -1,7 +1,7 @@
 import Markdown from '@/components/ui/markdown';
-import Counter from './_Counter';
 import styles from './SaleFinishTime.module.scss';
 import type { SaleFinishTimeTypes } from './SaleFinishTime.types';
+import Counter from './_Counter';
 
 export default function SaleFinishTime({ heading, course }: SaleFinishTimeTypes) {
   const duration = new Date(course.saleFinishDate).getTime() - new Date().getTime();

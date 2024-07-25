@@ -1,7 +1,8 @@
-import { CtaDataQuery } from '@/components/ui/Button';
-import AdvantagesCta from './AdvantagesCta';
-import { ImgDataQuery } from '@/components/ui/image';
 import { CourseDataQuery } from '@/global/queries';
+import { CtaDataQuery } from '@/components/ui/Button';
+import { ImgDataQuery } from '@/components/ui/image';
+import AdvantagesCta from './AdvantagesCta';
+
 export default AdvantagesCta;
 export type { AdvantagesCtaTypes } from './AdvantagesCta.types';
 

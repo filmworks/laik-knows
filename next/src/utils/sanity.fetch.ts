@@ -1,5 +1,6 @@
 'use server';
-import { createClient, type QueryParams } from 'next-sanity';
+
+import { type QueryParams, createClient } from 'next-sanity';
 import { isPreviewDeployment, isProductionDeployment } from './is-preview-deployment';
 
 const projectId = process.env.SANITY_PROJECT_ID;

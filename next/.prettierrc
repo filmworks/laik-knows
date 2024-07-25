@@ -8,5 +8,17 @@
   "bracketSameLine": false,
   "arrowParens": "avoid",
   "braceStyle": "stroustrup",
-  "importFormatting": "auto"
+  "importFormatting": "auto",
+  "importOrder": [
+    "<THIRD_PARTY_MODULES>",
+    "^@/public/(.*)$",
+    "^@/utils/(.*)$",
+    "^@/assets/(.*)$",
+    "^@/global/(.*)$",
+    "^@/app/(.*)$",
+    "^@/components/(.*)$",
+    "^./(.*)$"
+  ],
+  "importOrderSortSpecifiers": true,
+  "plugins": ["@trivago/prettier-plugin-sort-imports"]
 }

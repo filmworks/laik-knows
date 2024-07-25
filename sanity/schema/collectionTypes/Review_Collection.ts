@@ -1,5 +1,5 @@
-import {defineField, defineType} from 'sanity'
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { defineField, defineType } from 'sanity'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 const title = 'Zbiór opinii'
 const icon = () => '👍'
@@ -75,7 +75,7 @@ export default defineType({
       content: 'content',
       image: 'image',
     },
-    prepare: ({name, image, content}) => {
+    prepare: ({ name, image, content }) => {
       return {
         title: name,
         subtitle: removeMarkdown(content),

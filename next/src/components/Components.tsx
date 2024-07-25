@@ -2,15 +2,15 @@ import HeroHeaderAndImage, {
   HeroHeaderAndImageTypes,
   HeroHeaderAndImage_Query,
 } from '@/components/global/HeroHeaderAndImage';
-import Benefits, { Benefits_Query, BenefitsTypes } from './global/Benefits';
-import Numbers, { Numbers_Query, NumbersTypes } from './global/Numbers';
-import Reviews, { Reviews_Query, ReviewsTypes } from './global/Reviews';
-import TargetGroup, { TargetGroup_Query, TargetGroupTypes } from './global/TargetGroup';
-import CourseDetails, { CourseDetails_Query, CourseDetailsTypes } from './global/CourseDetails';
-import SaleFinishTime, { SaleFinishTime_Query, SaleFinishTimeTypes } from './global/SaleFinishTime';
-import AboutCourseLeader, { AboutCourseLeader_Query, AboutCourseLeaderTypes } from './global/AboutCourseLeader';
-import HeadingParagraph, { HeadingParagraph_Query, HeadingParagraphTypes } from './global/HeadingParagraph';
-import AdvantagesCta, { AdvantagesCta_Query, AdvantagesCtaTypes } from './global/AdvantagesCta';
+import AboutCourseLeader, { AboutCourseLeaderTypes, AboutCourseLeader_Query } from './global/AboutCourseLeader';
+import AdvantagesCta, { AdvantagesCtaTypes, AdvantagesCta_Query } from './global/AdvantagesCta';
+import Benefits, { BenefitsTypes, Benefits_Query } from './global/Benefits';
+import CourseDetails, { CourseDetailsTypes, CourseDetails_Query } from './global/CourseDetails';
+import HeadingParagraph, { HeadingParagraphTypes, HeadingParagraph_Query } from './global/HeadingParagraph';
+import Numbers, { NumbersTypes, Numbers_Query } from './global/Numbers';
+import Reviews, { ReviewsTypes, Reviews_Query } from './global/Reviews';
+import SaleFinishTime, { SaleFinishTimeTypes, SaleFinishTime_Query } from './global/SaleFinishTime';
+import TargetGroup, { TargetGroupTypes, TargetGroup_Query } from './global/TargetGroup';
 
 type componentsMapTypes = {
   HeroHeaderAndImage: HeroHeaderAndImageTypes;

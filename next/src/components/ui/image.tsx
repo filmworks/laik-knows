@@ -19,19 +19,19 @@ export type ImgDataTypes = {
 
 type ImageTypes = (
   | {
-    data: ImgDataTypes;
-    src?: never;
-    width?: number;
-    height?: number;
-    alt?: string;
-  }
+      data: ImgDataTypes;
+      src?: never;
+      width?: number;
+      height?: number;
+      alt?: string;
+    }
   | {
-    data?: never;
-    src: string;
-    width: number;
-    height: number;
-    alt: string;
-  }
+      data?: never;
+      src: string;
+      width: number;
+      height: number;
+      alt: string;
+    }
 ) & {
   sizes: string;
   priority?: boolean;

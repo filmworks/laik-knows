@@ -1,6 +1,7 @@
 import Error from '../Error';
-import { CheckboxTypes } from './Checkbox.types';
 import styles from './Checkbox.module.scss';
+import { CheckboxTypes } from './Checkbox.types';
+
 export default function Checkbox({ label, register, errors, ...props }: CheckboxTypes) {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {

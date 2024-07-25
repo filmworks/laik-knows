@@ -1,7 +1,7 @@
+import Link from 'next/link';
 import { isExternalLink } from '@/utils/is-external-link';
 import styles from './Button.module.scss';
 import type { ButtonTypes } from './Button.types';
-import Link from 'next/link';
 
 export default function Button({ data, href, children, isLoading = false, ...props }: ButtonTypes) {
   if (data) {

@@ -1,5 +1,6 @@
 import { ImgDataQuery } from '@/components/ui/image';
 import TargetGroup from './TargetGroup';
+
 export default TargetGroup;
 export type { TargetGroupTypes } from './TargetGroup.types';
 

@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import styles from './Header.module.scss';
 import { useEffect, useState } from 'react';
+import styles from './Header.module.scss';
 
 type HeaderTypes = {
   logo: JSX.Element;

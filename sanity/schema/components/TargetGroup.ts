@@ -1,5 +1,5 @@
-import {defineField} from 'sanity'
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { defineField } from 'sanity'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 const title = 'Sekcja z opisem grupy dolecowej'
 const icon = () => '🙋‍♀️'
@@ -23,7 +23,7 @@ export default defineField({
         {
           type: 'object',
           fields: [
-            {name: 'img', type: 'image', title: 'Zdjęcie', validation: (Rule) => Rule.required()},
+            { name: 'img', type: 'image', title: 'Zdjęcie', validation: (Rule) => Rule.required() },
             {
               name: 'heading',
               type: 'markdown',
@@ -43,7 +43,7 @@ export default defineField({
               heading: 'heading',
               paragraph: 'paragraph',
             },
-            prepare: ({media, heading, paragraph}) => ({
+            prepare: ({ media, heading, paragraph }) => ({
               title: removeMarkdown(heading),
               subtitle: removeMarkdown(paragraph),
               media,
@@ -59,7 +59,7 @@ export default defineField({
     select: {
       heading: 'heading',
     },
-    prepare: ({heading}) => ({
+    prepare: ({ heading }) => ({
       title: title,
       subtitle: removeMarkdown(heading),
       icon,

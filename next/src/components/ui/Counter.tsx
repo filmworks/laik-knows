@@ -1,6 +1,7 @@
 'use client';
-import { useEffect, useRef } from 'react';
+
 import { useInView, useMotionValue, useSpring } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 
 type CounterTypes = {
   value: number;

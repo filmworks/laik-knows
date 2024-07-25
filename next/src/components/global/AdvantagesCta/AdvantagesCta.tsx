@@ -1,9 +1,9 @@
+import CtaButtonRow from '@/components/ui/CtaButtonRow';
+import Pricing from '@/components/ui/Pricing';
 import Img from '@/components/ui/image';
+import Markdown from '@/components/ui/markdown';
 import styles from './AdvantagesCta.module.scss';
 import type { AdvantagesCtaTypes } from './AdvantagesCta.types';
-import Pricing from '@/components/ui/Pricing';
-import CtaButtonRow from '@/components/ui/CtaButtonRow';
-import Markdown from '@/components/ui/markdown';
 
 export default function AdvantagesCta({ heading, paragraph, img, course, cta, details }: AdvantagesCtaTypes) {
   return (

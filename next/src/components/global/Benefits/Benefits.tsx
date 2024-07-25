@@ -1,7 +1,7 @@
+import Img from '@/components/ui/image';
 import Markdown from '@/components/ui/markdown';
 import styles from './Benefits.module.scss';
 import type { BenefitsTypes } from './Benefits.types';
-import Img from '@/components/ui/image';
 
 export default function Benefits({ heading, paragraph, list }: BenefitsTypes) {
   return (

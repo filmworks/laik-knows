@@ -1,8 +1,9 @@
+import { CourseDataQuery } from '@/global/queries';
 import { CtaDataQuery } from '@/components/ui/Button';
-import CourseDetails from './CourseDetails';
 import { ImgDataQuery } from '@/components/ui/image';
 import { VideoDataQuery } from '@/components/ui/video';
-import { CourseDataQuery } from '@/global/queries';
+import CourseDetails from './CourseDetails';
+
 export default CourseDetails;
 export type { CourseDetailsTypes } from './CourseDetails.types';
 

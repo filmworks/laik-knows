@@ -1,7 +1,7 @@
+import Img from '@/components/ui/image';
 import Markdown from '@/components/ui/markdown';
 import styles from './TargetGroup.module.scss';
 import type { TargetGroupTypes } from './TargetGroup.types';
-import Img from '@/components/ui/image';
 
 export default function TargetGroup({ heading, list }: TargetGroupTypes) {
   return (

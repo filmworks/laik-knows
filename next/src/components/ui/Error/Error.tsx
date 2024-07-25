@@ -1,4 +1,5 @@
 'use client';
+
 import styles from './Error.module.scss';
 import type { ErrorTypes } from './Error.types';
 
