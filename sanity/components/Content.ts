@@ -9,6 +9,7 @@ import HeadingParagraph from '../schema/components/HeadingParagraph'
 import AdvantagesCta from '../schema/components/AdvantagesCta'
 import ProvenResults from '../schema/components/ProvenResults'
 import ThreeColGrid from '../schema/components/ThreeColGrid'
+import StickyRows from '../schema/components/StickyRows'
 
 export default defineType({
   name: 'content',
@@ -25,5 +26,6 @@ export default defineType({
     AboutCourseLeader,
     HeadingParagraph,
     AdvantagesCta,
+    StickyRows,
   ],
 })

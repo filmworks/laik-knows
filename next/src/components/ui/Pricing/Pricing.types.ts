@@ -1,5 +1,5 @@
 export type PricingTypes = {
   fullPrice: number;
-  discountPrice: number;
+  discountPrice?: number;
   smallestPrice: number;
 } & React.HTMLAttributes<HTMLDivElement>;

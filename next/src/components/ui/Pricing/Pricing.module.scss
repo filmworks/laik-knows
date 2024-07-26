@@ -7,10 +7,24 @@
   align-items: center;
   gap: 20px;
   margin-bottom: clamp(8px, calc(12vw / 7.68), 12px);
+  del {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 117%;
+      height: 1px;
+      top: 0%;
+      left: 0;
+      background-color: var(--primary-600, #434e5b);
+      transform: rotate(25deg);
+      transform-origin: left top;
+    }
+  }
 }
 
 .box {
-  position: relative;
   display: flex;
   padding: 8px 12px;
   align-items: center;
@@ -21,25 +35,6 @@
   letter-spacing: calc(0.16vw / 7.68);
   text-decoration: none;
   overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    width: 117%;
-    height: 1px;
-    top: 0%;
-    left: 0;
-    background-color: var(--primary-600, #434e5b);
-    transform: rotate(25deg);
-    transform-origin: left top;
-  }
-
-  & svg {
-    width: 100%;
-    height: auto;
-    position: absolute;
-    bottom: 4px;
-  }
 }
 
 .paragraph {

@@ -10,6 +10,7 @@ import HeadingParagraph, { HeadingParagraphTypes, HeadingParagraph_Query } from 
 import ProvenResults, { ProvenResultsTypes, ProvenResults_Query } from './global/ProvenResults';
 import Reviews, { ReviewsTypes, Reviews_Query } from './global/Reviews';
 import SaleFinishTime, { SaleFinishTimeTypes, SaleFinishTime_Query } from './global/SaleFinishTime';
+import StickyRows, { StickyRowsTypes, StickyRows_Query } from './global/StickyRows';
 import ThreeColGrid, { ThreeColGridTypes, ThreeColGrid_Query } from './global/ThreeColGrid';
 
 type componentsMapTypes = {
@@ -23,6 +24,7 @@ type componentsMapTypes = {
   AboutCourseLeader: AboutCourseLeaderTypes;
   HeadingParagraph: HeadingParagraphTypes;
   AdvatangesCta: AdvantagesCtaTypes;
+  StickyRows: StickyRowsTypes;
 };
 
 export type ComponentTypes = componentsMapTypes[keyof componentsMapTypes] & { _type: string };
@@ -42,6 +44,7 @@ export default function Components({ data }: { data: ComponentTypes[] }) {
       AboutCourseLeader: <AboutCourseLeader {...(item as AboutCourseLeaderTypes)} />,
       HeadingParagraph: <HeadingParagraph {...(item as HeadingParagraphTypes)} />,
       AdvantagesCta: <AdvantagesCta {...(item as AdvantagesCtaTypes)} />,
+      StickyRows: <StickyRows {...(item as StickyRowsTypes)} />,
     };
     const DynamicComponent = componentsMapTypes[componentType];
     if (!DynamicComponent) return null;
@@ -62,5 +65,6 @@ export const Components_Query = /* groq */ `
       ${AboutCourseLeader_Query}
       ${HeadingParagraph_Query}
       ${AdvantagesCta_Query}
+      ${StickyRows_Query}
     },
   `;
