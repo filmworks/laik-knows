@@ -1,7 +1,6 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import { removeMarkdown } from '@/utils/remove-markdown';
 import Button from '@/components/ui/Button';
 import OpenVideoBox from '@/components/ui/OpenVideoBox';
 import Img from '@/components/ui/image';
@@ -35,7 +34,7 @@ export default function List({ list }: ListTypes) {
                 )}
               </div>
             </div>
-            {removeMarkdown(content)}
+            {content}
           </li>
         ))}
       </ul>

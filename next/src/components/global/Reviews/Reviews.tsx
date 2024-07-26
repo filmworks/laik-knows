@@ -3,12 +3,14 @@ import styles from './Reviews.module.scss';
 import type { ReviewsTypes } from './Reviews.types';
 import List from './_List';
 
-export default function Reviews({ heading, list }: ReviewsTypes) {
+export default function Reviews({ heading, list, index }: ReviewsTypes) {
+  const Heading = index === 0 ? Markdown.h1 : Markdown.h2;
+  const _list = list.map(review => ({ ...review, content: <Markdown.p>{review.content}</Markdown.p> }));
   return (
     <section className={styles.section}>
       <div className='max-width'>
-        <Markdown.h2>{heading}</Markdown.h2>
-        <List list={list} />
+        <Heading>{heading}</Heading>
+        <List list={_list} />
       </div>
     </section>
   );

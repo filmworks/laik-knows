@@ -3,12 +3,15 @@ import Markdown from '@/components/ui/markdown';
 import styles from './Benefits.module.scss';
 import type { BenefitsTypes } from './Benefits.types';
 
-export default function Benefits({ heading, paragraph, list }: BenefitsTypes) {
+export default function Benefits({ heading, paragraph, list, index }: BenefitsTypes) {
+  const Heading = index === 0 ? Markdown.h1 : Markdown.h2;
+  const Subheading = index === 0 ? Markdown.h2 : Markdown.h3;
+
   return (
-    <section className={`${styles.section}`}>
+    <section className={styles.section}>
       <div className='max-width'>
-        <header className={`${styles.header}`}>
-          <Markdown.h2>{heading}</Markdown.h2>
+        <header className={styles.header}>
+          <Heading>{heading}</Heading>
           <Markdown.p>{paragraph}</Markdown.p>
         </header>
       </div>
@@ -18,7 +21,7 @@ export default function Benefits({ heading, paragraph, list }: BenefitsTypes) {
             <li key={i} className={styles.item}>
               <div className={styles.content}>
                 <Markdown.p>{paragraph}</Markdown.p>
-                <Markdown.h3>{heading}</Markdown.h3>
+                <Subheading>{heading}</Subheading>
               </div>
               <Img
                 data={img}

@@ -3,10 +3,12 @@ import Markdown from '@/components/ui/markdown';
 import styles from './TargetGroup.module.scss';
 import type { TargetGroupTypes } from './TargetGroup.types';
 
-export default function TargetGroup({ heading, list }: TargetGroupTypes) {
+export default function TargetGroup({ heading, list, index }: TargetGroupTypes) {
+  const Heading = index === 0 ? Markdown.h1 : Markdown.h2;
+  const Subheading = index === 0 ? Markdown.h2 : Markdown.h3;
   return (
     <section className={styles.section}>
-      <Markdown.h2>{heading}</Markdown.h2>
+      <Heading>{heading}</Heading>
       <ul className={`${styles.list} max-width`}>
         {list.map(({ heading, paragraph, img }, i) => (
           <li className={`${styles.item} ${i % 2 !== 0 ? styles.reverse : ''}`} key={i}>
@@ -15,7 +17,7 @@ export default function TargetGroup({ heading, list }: TargetGroupTypes) {
               sizes='(max-width: 562px) 156px, (max-width: 923px) 28vw, (max-width: 959px) 256px, (max-width: 1285px) 30vw, 381px'
             />
             <div className={styles.content}>
-              <Markdown.h3>{heading}</Markdown.h3>
+              <Subheading>{heading}</Subheading>
               <Markdown.p>{paragraph}</Markdown.p>
             </div>
           </li>

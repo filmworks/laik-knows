@@ -3,13 +3,15 @@ import styles from './SaleFinishTime.module.scss';
 import type { SaleFinishTimeTypes } from './SaleFinishTime.types';
 import Counter from './_Counter';
 
-export default function SaleFinishTime({ heading, course }: SaleFinishTimeTypes) {
+export default function SaleFinishTime({ heading, course, index }: SaleFinishTimeTypes) {
+  const Heading = index === 0 ? Markdown.h1 : Markdown.h2;
   const duration = new Date(course.saleFinishDate).getTime() - new Date().getTime();
+
   return (
     <section className={styles.section}>
       <div className='max-width'>
         <div className={styles.content}>
-          <Markdown.h2>{heading}</Markdown.h2>
+          <Heading>{heading}</Heading>
           <Counter duration={duration} />
         </div>
       </div>

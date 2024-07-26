@@ -7,22 +7,26 @@ import styles from './CourseDetails.module.scss';
 import type { CourseDetailsTypes } from './CourseDetails.types';
 import DetailsAccordion from './DetailsAccordion';
 
-export default async function CourseDetails({ heading, video, img, cta, list, course }: CourseDetailsTypes) {
+export default async function CourseDetails({ heading, video, img, cta, list, course, index }: CourseDetailsTypes) {
+  const Heading = index === 0 ? Markdown.h1 : Markdown.h2;
+  const Subheading = index === 0 ? Markdown.h2 : Markdown.h3;
+  const TertiaryHeading = index === 0 ? Markdown.h3 : Markdown.h4;
+
   const { privacyPolicy } = await getLegalLink();
   const _list = list.map(props => ({
     ...props,
-    heading: <Markdown.h3>{props.heading}</Markdown.h3>,
+    heading: <Subheading>{props.heading}</Subheading>,
     paragraph: <Markdown.p>{props.paragraph}</Markdown.p>,
     form: {
       ...props.form,
-      heading: <Markdown.h4>{props.form.heading}</Markdown.h4>,
+      heading: <TertiaryHeading>{props.form.heading}</TertiaryHeading>,
       paragraph: <Markdown.p>{props.form.paragraph}</Markdown.p>,
       privacyLink: privacyPolicy,
     },
   }));
   return (
     <section className={`${styles.section} max-width`}>
-      <Markdown.h2>{heading}</Markdown.h2>
+      <Heading>{heading}</Heading>
       <div className={styles.container}>
         <DetailsAccordion list={_list} />
         <div className={styles.col}>

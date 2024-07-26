@@ -3,11 +3,13 @@ import Markdown from '@/components/ui/markdown';
 import styles from './Numbers.module.scss';
 import type { NumbersTypes } from './Numbers.types';
 
-export default function Numbers({ heading, list }: NumbersTypes) {
+export default function Numbers({ heading, list, index }: NumbersTypes) {
+  const Heading = index === 0 ? Markdown.h1 : Markdown.h2;
+
   return (
     <section className={styles.section}>
       <div className='max-width'>
-        <Markdown.h2>{heading}</Markdown.h2>
+        <Heading>{heading}</Heading>
         <ul className={styles.list}>
           {list.map(({ percent, description }, i) => (
             <li className={styles.item} key={i}>

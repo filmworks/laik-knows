@@ -1,1 +1,6 @@
-export type HeadingParagraphTypes = { heading: string; paragraph: string; enlarged: { top: boolean; bottom: boolean } };
+export type HeadingParagraphTypes = {
+  index: number;
+  heading: string;
+  paragraph: string;
+  enlarged: { top: boolean; bottom: boolean };
+};

@@ -19,6 +19,20 @@
   text-transform: uppercase;
   color: var(--primary-300);
   letter-spacing: calc(0.16vw / 7.68);
+  text-decoration: none;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 117%;
+    height: 1px;
+    top: 0%;
+    left: 0;
+    background-color: var(--primary-600, #434e5b);
+    transform: rotate(25deg);
+    transform-origin: left top;
+  }
 
   & svg {
     width: 100%;
