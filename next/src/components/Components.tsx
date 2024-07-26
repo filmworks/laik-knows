@@ -7,17 +7,17 @@ import AdvantagesCta, { AdvantagesCtaTypes, AdvantagesCta_Query } from './global
 import Benefits, { BenefitsTypes, Benefits_Query } from './global/Benefits';
 import CourseDetails, { CourseDetailsTypes, CourseDetails_Query } from './global/CourseDetails';
 import HeadingParagraph, { HeadingParagraphTypes, HeadingParagraph_Query } from './global/HeadingParagraph';
-import Numbers, { NumbersTypes, Numbers_Query } from './global/Numbers';
+import ProvenResults, { ProvenResultsTypes, ProvenResults_Query } from './global/ProvenResults';
 import Reviews, { ReviewsTypes, Reviews_Query } from './global/Reviews';
 import SaleFinishTime, { SaleFinishTimeTypes, SaleFinishTime_Query } from './global/SaleFinishTime';
-import TargetGroup, { TargetGroupTypes, TargetGroup_Query } from './global/TargetGroup';
+import ThreeColGrid, { ThreeColGridTypes, ThreeColGrid_Query } from './global/ThreeColGrid';
 
 type componentsMapTypes = {
   HeroHeaderAndImage: HeroHeaderAndImageTypes;
   Benefits: BenefitsTypes;
-  Numbers: NumbersTypes;
+  ProvenResults: ProvenResultsTypes;
   Reviews: ReviewsTypes;
-  TargetGroup: TargetGroupTypes;
+  ThreeColGrid: ThreeColGridTypes;
   CourseDetails: CourseDetailsTypes;
   SaleFinishTime: SaleFinishTimeTypes;
   AboutCourseLeader: AboutCourseLeaderTypes;
@@ -34,9 +34,9 @@ export default function Components({ data }: { data: ComponentTypes[] }) {
     const componentsMapTypes: Record<string, React.ReactNode> = {
       HeroHeaderAndImage: <HeroHeaderAndImage {...(item as HeroHeaderAndImageTypes)} />,
       Benefits: <Benefits {...(item as BenefitsTypes)} />,
-      Numbers: <Numbers {...(item as NumbersTypes)} />,
+      ProvenResults: <ProvenResults {...(item as ProvenResultsTypes)} />,
       Reviews: <Reviews {...(item as ReviewsTypes)} />,
-      TargetGroup: <TargetGroup {...(item as TargetGroupTypes)} />,
+      ThreeColGrid: <ThreeColGrid {...(item as ThreeColGridTypes)} />,
       CourseDetails: <CourseDetails {...(item as CourseDetailsTypes)} />,
       SaleFinishTime: <SaleFinishTime {...(item as SaleFinishTimeTypes)} />,
       AboutCourseLeader: <AboutCourseLeader {...(item as AboutCourseLeaderTypes)} />,
@@ -54,9 +54,9 @@ export const Components_Query = /* groq */ `
       _type,
       ${HeroHeaderAndImage_Query}
       ${Benefits_Query}
-      ${Numbers_Query}
+      ${ProvenResults_Query}
       ${Reviews_Query}
-      ${TargetGroup_Query}
+      ${ThreeColGrid_Query}
       ${CourseDetails_Query}
       ${SaleFinishTime_Query}
       ${AboutCourseLeader_Query}

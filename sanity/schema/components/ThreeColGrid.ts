@@ -1,12 +1,11 @@
 import { defineField } from 'sanity'
 import { removeMarkdown } from '../../utils/remove-markdown'
 
-const title = 'Sekcja ze statystykami'
-const icon = () => '📝'
-const listIcon = () => '%'
+const title = 'Sekcja z trzema kolumnami obok siebie'
+const icon = () => '🙋‍♀️'
 
 export default defineField({
-  name: 'Numbers',
+  name: 'ThreeColGrid',
   type: 'document',
   title,
   icon,
@@ -23,32 +22,31 @@ export default defineField({
       of: [
         {
           type: 'object',
-          icon: listIcon,
           fields: [
+            { name: 'img', type: 'image', title: 'Zdjęcie', validation: (Rule) => Rule.required() },
             {
-              name: 'percent',
-              type: 'number',
-              title: 'Procent',
-              description: 'Tutaj wyznaczamy procent jaki chcemy ukazać na stronie (bez znaczka %)',
+              name: 'heading',
+              type: 'markdown',
+              title: 'Nagłówek',
               validation: (Rule) => Rule.required(),
             },
             {
-              name: 'description',
+              name: 'paragraph',
               type: 'markdown',
-              title: 'Opis',
+              title: 'Paragraf',
               validation: (Rule) => Rule.required(),
             },
           ],
           preview: {
             select: {
-              heading: 'percent',
-              paragraph: 'description',
-              icon: 'icon',
+              media: 'img',
+              heading: 'heading',
+              paragraph: 'paragraph',
             },
-            prepare: ({ icon, heading, paragraph }) => ({
-              icon,
-              title: `${heading}%`,
+            prepare: ({ media, heading, paragraph }) => ({
+              title: removeMarkdown(heading),
               subtitle: removeMarkdown(paragraph),
+              media,
             }),
           },
         },
@@ -60,10 +58,9 @@ export default defineField({
   preview: {
     select: {
       heading: 'heading',
-      icon: 'icon',
     },
-    prepare: ({ heading, icon }) => ({
-      title,
+    prepare: ({ heading }) => ({
+      title: title,
       subtitle: removeMarkdown(heading),
       icon,
     }),

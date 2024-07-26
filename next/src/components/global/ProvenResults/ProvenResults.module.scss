@@ -46,7 +46,7 @@
   text-transform: uppercase;
   font-weight: 348;
   line-height: 120%;
-  width: clamp(80px, calc(110vw / 7.68), 110px);
+  min-width: clamp(80px, calc(110vw / 7.68), 110px);
   @media (max-width: 899px) {
     align-self: flex-start;
   }
