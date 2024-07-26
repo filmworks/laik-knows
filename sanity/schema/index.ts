@@ -5,7 +5,7 @@ import { course } from './singleTypes/course.js'
 import seo from './components/seo'
 import Index_Page from './singleTypes/Index_Page'
 import cta from './ui/cta'
-import detailsButton from './ui/detailsButton'
+import fullCtaBox from './ui/fullCtaBox'
 
 export const schemaTypes = [
   Index_Page,
@@ -15,5 +15,5 @@ export const schemaTypes = [
   course,
   cta,
   Review_Collection,
-  detailsButton,
+  fullCtaBox,
 ]

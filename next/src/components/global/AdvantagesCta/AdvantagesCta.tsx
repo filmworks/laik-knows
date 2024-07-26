@@ -5,7 +5,7 @@ import Markdown from '@/components/ui/markdown';
 import styles from './AdvantagesCta.module.scss';
 import type { AdvantagesCtaTypes } from './AdvantagesCta.types';
 
-export default function AdvantagesCta({ heading, paragraph, img, course, cta, details, index }: AdvantagesCtaTypes) {
+export default function AdvantagesCta({ heading, paragraph, img, course, cta, index }: AdvantagesCtaTypes) {
   const Heading = index === 0 ? Markdown.h1 : Markdown.h2;
 
   return (
@@ -15,7 +15,7 @@ export default function AdvantagesCta({ heading, paragraph, img, course, cta, de
         <Heading>{heading}</Heading>
         <Markdown.p>{paragraph}</Markdown.p>
         <Pricing {...course} />
-        <CtaButtonRow cta={cta} details={details} />
+        <CtaButtonRow {...cta} />
       </div>
     </section>
   );

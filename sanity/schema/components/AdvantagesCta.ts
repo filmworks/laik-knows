@@ -24,14 +24,9 @@ export default defineField({
     }),
     defineField({
       name: 'cta',
-      type: 'cta',
+      type: 'fullCtaBox',
       title: 'Wezwanie do działania',
       validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'details',
-      type: 'detailsButton',
-      title: 'Tekst przycisku nawigacyjnego',
     }),
     defineField({
       name: 'img',

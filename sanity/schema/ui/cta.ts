@@ -1,17 +1,28 @@
-import { defineField, defineType } from 'sanity'
+import { defineField } from 'sanity'
 
-export default defineType({
+export default defineField({
   name: 'cta',
   type: 'object',
-  title: 'Wezwanie do działania',
-  icon: () => '🗣️',
+  title: 'Przycisk (CTA)',
+  icon: () => '📢',
   fields: [
     defineField({
-      name: 'text',
+      name: 'role',
+      type: 'string',
+      title: 'Gatunek',
+      options: {
+        list: [
+          { value: 'primary', title: 'Główne' },
+          { value: 'secondary', title: 'Dodatkowe' },
+        ],
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'value',
       type: 'string',
       title: 'Tekst',
       validation: (Rule) => Rule.required(),
-      initialValue: 'Kup teraz',
     }),
     defineField({
       name: 'href',
@@ -31,18 +42,21 @@ export default defineType({
           return true
         }).required(),
     }),
-    defineField({
-      name: 'paragraph',
-      type: 'markdown',
-      title: 'Paragraf pod przyciskiem',
-      validation: (Rule) => Rule.required(),
-      initialValue: 'Zostaniesz przekierowany na stronę EasyCart',
-    }),
   ],
   preview: {
     select: {
-      title: 'text',
-      subtitle: 'href',
+      heading: 'value',
+      paragraph: 'href',
+      role: 'role',
+      icon: 'icon',
+    },
+    prepare: ({ heading, paragraph, icon, role }) => {
+      const roleTitle = role === 'primary' ? 'Główne' : 'Dodatkowe'
+      return {
+        title: `(${roleTitle}) ${heading}`,
+        subtitle: paragraph,
+        icon,
+      }
     },
   },
 })

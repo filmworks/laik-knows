@@ -111,7 +111,7 @@ export default defineField({
     }),
     defineField({
       name: 'cta',
-      type: 'cta',
+      type: 'fullCtaBox',
       title: 'Wezwanie do działania',
       validation: (Rule) => Rule.required(),
     }),

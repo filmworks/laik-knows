@@ -9,5 +9,4 @@ export type AdvantagesCtaTypes = {
   img: ImgDataTypes;
   cta: CtaDataTypes;
   course: CourseDataTypes;
-  details: string;
 };

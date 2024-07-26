@@ -3,14 +3,12 @@ import Button from './Button';
 export default Button;
 export type { ButtonTypes } from './Button.types';
 
-export const ButtonDataQuery = `
-  text,
-  href,
-`;
-
 export const CtaDataQuery = `
-  "button": {
-    ${ButtonDataQuery}
+  list[]{
+    role,
+    value,
+    href,
   },
-  paragraph,
+  additionalInfo,
+
 `;

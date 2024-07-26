@@ -8,6 +8,5 @@ export type HeroHeaderAndImageTypes = {
   paragraph: string;
   img: ImgDataTypes;
   cta: CtaDataTypes;
-  details: string;
   course: CourseDataTypes;
 };

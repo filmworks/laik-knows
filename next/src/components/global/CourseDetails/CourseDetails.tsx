@@ -1,4 +1,4 @@
-import Button from '@/components/ui/Button';
+import CtaButtonRow from '@/components/ui/CtaButtonRow';
 import OpenVideoBox from '@/components/ui/OpenVideoBox';
 import Pricing from '@/components/ui/Pricing';
 import getLegalLink from '@/components/ui/get-legal-link';
@@ -25,7 +25,7 @@ export default async function CourseDetails({ heading, video, img, cta, list, co
     },
   }));
   return (
-    <section className={`${styles.section} max-width`}>
+    <section id='plan' className={`${styles.section} max-width`}>
       <Heading>{heading}</Heading>
       <div className={styles.container}>
         <DetailsAccordion list={_list} />
@@ -35,8 +35,7 @@ export default async function CourseDetails({ heading, video, img, cta, list, co
           </div>
           <div className={styles.box}>
             <Pricing {...course} />
-            <Button data={cta.button} />
-            <Markdown.p className={styles.ctaText}>{cta.paragraph}</Markdown.p>
+            <CtaButtonRow {...cta} />
           </div>
         </div>
       </div>

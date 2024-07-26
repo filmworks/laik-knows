@@ -13,7 +13,6 @@ export const AdvantagesCta_Query = `
         cta {
             ${CtaDataQuery}
         },
-        details,
         img {
             ${ImgDataQuery}
         },

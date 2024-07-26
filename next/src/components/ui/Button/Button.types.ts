@@ -7,17 +7,22 @@ export type ButtonTypes = (
   | {
       data?: never;
       href?: ButtonDataTypes['href'];
-      children: ButtonDataTypes['text'];
+      children: ButtonDataTypes['value'];
     }
 ) & { isLoading?: boolean } & React.AnchorHTMLAttributes<HTMLAnchorElement> &
   React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export type ButtonDataTypes = {
   href: string;
-  text: string | React.ReactNode;
+  value: string | React.ReactNode;
+  role: string;
 };
 
 export type CtaDataTypes = {
-  button: ButtonDataTypes;
-  paragraph: string;
+  list: {
+    role: string;
+    value: string;
+    href: string;
+  }[];
+  additionalInfo: string;
 };

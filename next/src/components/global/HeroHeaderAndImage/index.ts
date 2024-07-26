@@ -13,7 +13,6 @@ export const HeroHeaderAndImage_Query = `
     cta {
       ${CtaDataQuery}
     },
-    details,
     img {
       ${ImgDataQuery}
     },

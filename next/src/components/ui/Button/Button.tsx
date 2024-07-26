@@ -6,7 +6,7 @@ import type { ButtonTypes } from './Button.types';
 export default function Button({ data, href, children, isLoading = false, ...props }: ButtonTypes) {
   if (data) {
     href = data.href;
-    children = data.text;
+    children = data.value;
   }
 
   const isExternal = isExternalLink(href);
@@ -21,7 +21,8 @@ export default function Button({ data, href, children, isLoading = false, ...pro
         ...(isExternal && { target: '_blank', rel: 'noopener' }),
       })}
       {...props}
-      className={`${styles.btn} ${isExternal && styles.external}`}
+      className={styles.btn}
+      data-primary={data?.role === 'primary'}
     >
       <span>
         {isLoading ? <span className={styles.loader}></span> : children}
