@@ -6,6 +6,7 @@ import AboutCourseLeader, { AboutCourseLeaderTypes, AboutCourseLeader_Query } fr
 import AdvantagesCta, { AdvantagesCtaTypes, AdvantagesCta_Query } from './global/AdvantagesCta';
 import Benefits, { BenefitsTypes, Benefits_Query } from './global/Benefits';
 import CourseDetails, { CourseDetailsTypes, CourseDetails_Query } from './global/CourseDetails';
+import FeatureList, { FeatureListTypes, FeatureList_Query } from './global/FeatureList';
 import HeadingParagraph, { HeadingParagraphTypes, HeadingParagraph_Query } from './global/HeadingParagraph';
 import ProvenResults, { ProvenResultsTypes, ProvenResults_Query } from './global/ProvenResults';
 import Reviews, { ReviewsTypes, Reviews_Query } from './global/Reviews';
@@ -25,6 +26,7 @@ type componentsMapTypes = {
   HeadingParagraph: HeadingParagraphTypes;
   AdvatangesCta: AdvantagesCtaTypes;
   StickyRows: StickyRowsTypes;
+  FeatureList: FeatureListTypes;
 };
 
 export type ComponentTypes = componentsMapTypes[keyof componentsMapTypes] & { _type: string };
@@ -45,6 +47,7 @@ export default function Components({ data }: { data: ComponentTypes[] }) {
       HeadingParagraph: <HeadingParagraph {...(item as HeadingParagraphTypes)} />,
       AdvantagesCta: <AdvantagesCta {...(item as AdvantagesCtaTypes)} />,
       StickyRows: <StickyRows {...(item as StickyRowsTypes)} />,
+      FeatureList: <FeatureList {...(item as FeatureListTypes)} />,
     };
     const DynamicComponent = componentsMapTypes[componentType];
     if (!DynamicComponent) return null;
@@ -66,5 +69,6 @@ export const Components_Query = /* groq */ `
       ${HeadingParagraph_Query}
       ${AdvantagesCta_Query}
       ${StickyRows_Query}
+      ${FeatureList_Query}
     },
   `;

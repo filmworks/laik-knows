@@ -10,6 +10,7 @@ import AdvantagesCta from '../schema/components/AdvantagesCta'
 import ProvenResults from '../schema/components/ProvenResults'
 import ThreeColGrid from '../schema/components/ThreeColGrid'
 import StickyRows from '../schema/components/StickyRows'
+import FeatureList from '../schema/components/FeatureList'
 
 export default defineType({
   name: 'content',
@@ -27,5 +28,6 @@ export default defineType({
     HeadingParagraph,
     AdvantagesCta,
     StickyRows,
+    FeatureList,
   ],
 })
