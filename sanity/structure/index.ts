@@ -12,5 +12,5 @@ export const structure: StructureResolver = (S) =>
       createSingleton(S, 'global'),
       createSingleton(S, 'Index_Page'),
       createSingleton(S, 'course'),
-      S.documentTypeListItem('Review_Collection'),
+      S.documentTypeListItem('Participant_Collection'),
     ])

@@ -1,11 +1,11 @@
 import { defineField } from 'sanity'
 import { removeMarkdown } from '../../utils/remove-markdown'
 
-const title = 'Sekcja opinii'
-const icon = () => '👍'
+const title = 'Sekcja z karuzelą kursantek'
+const icon = () => '🌟'
 
 export default defineField({
-  name: 'Reviews',
+  name: 'ParticipantCarousel',
   type: 'object',
   title,
   icon,
@@ -15,19 +15,19 @@ export default defineField({
       type: 'markdown',
       title: 'Nagłówek',
       validation: (Rule) => Rule.required(),
-      initialValue: 'Zobacz opinie kursantek',
     }),
     defineField({
       name: 'list',
       type: 'array',
+      title: 'Lista',
       of: [
         {
           type: 'reference',
           to: [{ type: 'Participant_Collection' }],
         },
       ],
-      title: 'Lista opinii',
-      validation: (Rule) => Rule.required().unique(),
+      validation: (Rule) =>
+        Rule.required().max(6).error('List może zawierać maksymalnie 6 elementów').unique(),
     }),
   ],
   preview: {

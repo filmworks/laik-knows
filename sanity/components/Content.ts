@@ -12,6 +12,7 @@ import ThreeColGrid from '../schema/components/ThreeColGrid'
 import StickyRows from '../schema/components/StickyRows'
 import FeatureList from '../schema/components/FeatureList'
 import Partners from '../schema/components/Partners'
+import ParticipantCarousel from '../schema/components/ParticipantCarousel'
 
 export default defineType({
   name: 'content',
@@ -31,5 +32,6 @@ export default defineType({
     StickyRows,
     FeatureList,
     Partners,
+    ParticipantCarousel,
   ],
 })

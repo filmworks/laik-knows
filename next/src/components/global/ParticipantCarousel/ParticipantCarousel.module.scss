@@ -1,0 +1,129 @@
+.section {
+  padding: clamp(80px, calc(120vw / 7.68), 120px) 0;
+}
+
+.box {
+  max-width: calc(1206px);
+  margin: 0 auto;
+}
+
+.slider {
+  overflow: hidden;
+  max-width: 100%;
+  width: calc(100vw - var(--pageMargin));
+  margin-left: auto;
+}
+
+.container {
+  backface-visibility: hidden;
+  display: flex;
+  touch-action: pan-y;
+  gap: clamp(32px, calc(68vw / 7.68), 68px);
+
+  & > div:last-child {
+    margin-right: clamp(32px, calc(68vw / 7.68), 68px);
+  }
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 310px;
+  flex: 0 0 clamp(280px, calc(310vw / 7.68), 310px);
+
+  img {
+    height: clamp(428px, calc(474vw / 7.68), 474px);
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: clamp(48px, calc(64vw / 7.68), 80px);
+  column-gap: 64px;
+  row-gap: 32px;
+  flex-wrap: wrap;
+
+  header {
+    max-width: clamp(328px, calc(530vw / 7.68), 587px);
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  .dots {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    button {
+      background-color: var(--primary-400, #707b87);
+      width: 10px;
+      height: 10px;
+      border: 1px solid transparent;
+      transition:
+        width 0.2s,
+        height 0.2s,
+        background-color 0.2s;
+      border-color: 0.2s;
+
+      &:hover {
+        background-color: var(--primary-600, #434e5b);
+      }
+      &[aria-current='true'] {
+        width: 12px;
+        height: 12px;
+        border: 1px solid var(--secondary-500, #1e87c1);
+        background-color: var(--primary-800, #101010);
+      }
+    }
+  }
+  > button {
+    background: var(--primary-800, #101010);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+
+    svg {
+      position: relative;
+      z-index: 5;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(68.84% 100% at 50% 100%, rgba(26, 159, 255, 0.4) 0%, rgba(16, 16, 16, 0.2) 100%),
+        var(--primary-800, #101010);
+      opacity: 0;
+      z-index: 2;
+      transition: opacity 0.3s;
+    }
+    &:hover {
+      border: 1px solid var(--secondary-500);
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}

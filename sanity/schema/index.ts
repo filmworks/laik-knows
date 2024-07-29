@@ -1,5 +1,5 @@
 import Content from '../components/Content'
-import Review_Collection from './collectionTypes/Review_Collection'
+import Participant_Collection from './collectionTypes/Participant_Collection'
 import { global } from './singleTypes/global'
 import { course } from './singleTypes/course.js'
 import seo from './components/seo'
@@ -14,6 +14,6 @@ export const schemaTypes = [
   global,
   course,
   cta,
-  Review_Collection,
+  Participant_Collection,
   fullCtaBox,
 ]

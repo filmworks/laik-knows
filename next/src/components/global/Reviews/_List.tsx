@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react';
 import Button from '@/components/ui/Button';
+import InstagramButton from '@/components/ui/InstagramButton';
 import OpenVideoBox from '@/components/ui/OpenVideoBox';
 import Img from '@/components/ui/image';
 import styles from './Reviews.module.scss';
@@ -21,9 +22,7 @@ export default function List({ list }: ListTypes) {
           <li className={styles.item} key={i}>
             <div className={styles.instagram}>
               <span className={styles.name}>{name}</span>
-              <a target='_blank' rel='noreferrer' className={styles.link} href={instagram.url || '/'}>
-                <span>{instagram.username}</span>
-              </a>
+              <InstagramButton {...instagram} />
             </div>
             <div className={styles.container}>
               <div className={styles.box}>

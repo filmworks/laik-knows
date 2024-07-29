@@ -8,8 +8,9 @@ export type { ReviewsTypes } from './Reviews.types';
 export const SingleReview_Query = `
   {
     name,
-    content,
     instagram,
+    "content": review.content,
+    "visible": review.visible,
     image {
       ${ImgDataQuery}
     },

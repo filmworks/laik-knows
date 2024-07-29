@@ -1,23 +1,14 @@
 import { defineField, defineType } from 'sanity'
-import { removeMarkdown } from '../../utils/remove-markdown'
 
-const title = 'Zbiór opinii'
-const icon = () => '👍'
+const title = 'Uczestniczki'
+const icon = () => '👸'
 
 export default defineType({
-  name: 'Review_Collection',
+  name: 'Participant_Collection',
   type: 'document',
   title,
   icon,
   fields: [
-    defineField({
-      name: 'visible',
-      type: 'boolean',
-      title: 'Czy recencja widoczna?',
-      description: 'Zaznacz, jeśli recenzja ma być widoczna na stronie.',
-      validation: (Rule) => Rule.required(),
-      initialValue: false,
-    }),
     defineField({
       name: 'name',
       type: 'string',
@@ -45,10 +36,32 @@ export default defineType({
       ],
     }),
     defineField({
-      name: 'content',
-      type: 'markdown',
-      title: 'Treść',
-      validation: (Rule) => Rule.required(),
+      name: 'review',
+      type: 'object',
+      title: 'Recenzja',
+      fields: [
+        defineField({
+          name: 'visible',
+          type: 'boolean',
+          title: 'Czy recencja widoczna?',
+          description: 'Zaznacz, jeśli recenzja ma być widoczna na stronie.',
+          validation: (Rule) => Rule.required(),
+          initialValue: false,
+        }),
+        defineField({
+          name: 'content',
+          type: 'markdown',
+          title: 'Recenzja',
+          hidden: ({ parent }) => !parent?.visible,
+          validation: (Rule) =>
+            Rule.custom((content, context) => {
+              if ((context.parent as { visible: boolean })?.visible && !content) {
+                return 'Recenzja jest wymagana jeśli jest widoczna.'
+              }
+              return true
+            }),
+        }),
+      ],
     }),
     defineField({
       name: 'image',
@@ -59,7 +72,7 @@ export default defineType({
     defineField({
       name: 'video',
       type: 'file',
-      title: 'Plik Wideo',
+      title: 'Plik Wideo (Opcjonalny)',
       description:
         'Wideo pokazuje się po kliknięciu na zdjęcie kursantki. Wideo nie jest wymagane.',
       options: {
@@ -72,13 +85,13 @@ export default defineType({
   preview: {
     select: {
       name: 'name',
-      content: 'content',
+      instagramUsername: 'instagram.username',
       image: 'image',
     },
-    prepare: ({ name, image, content }) => {
+    prepare: ({ name, instagramUsername, image }) => {
       return {
         title: name,
-        subtitle: removeMarkdown(content),
+        subtitle: instagramUsername,
         media: image,
       }
     },

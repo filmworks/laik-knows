@@ -10,6 +10,7 @@ export type ReviewsTypes = {
 export type SingleReviewType = {
   name: string;
   content: string;
+  visible: boolean;
   instagram: {
     url: string;
     username: string;

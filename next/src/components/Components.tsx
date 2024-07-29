@@ -8,6 +8,7 @@ import Benefits, { BenefitsTypes, Benefits_Query } from './global/Benefits';
 import CourseDetails, { CourseDetailsTypes, CourseDetails_Query } from './global/CourseDetails';
 import FeatureList, { FeatureListTypes, FeatureList_Query } from './global/FeatureList';
 import HeadingParagraph, { HeadingParagraphTypes, HeadingParagraph_Query } from './global/HeadingParagraph';
+import ParticipantCarousel, { ParticipantCarouselTypes, ParticipantCarousel_Query } from './global/ParticipantCarousel';
 import Partners, { PartnersTypes, Partners_Query } from './global/Partners';
 import ProvenResults, { ProvenResultsTypes, ProvenResults_Query } from './global/ProvenResults';
 import Reviews, { ReviewsTypes, Reviews_Query } from './global/Reviews';
@@ -29,6 +30,7 @@ type componentsMapTypes = {
   StickyRows: StickyRowsTypes;
   FeatureList: FeatureListTypes;
   Partners: PartnersTypes;
+  ParticipantCarousel: ParticipantCarouselTypes;
 };
 
 export type ComponentTypes = componentsMapTypes[keyof componentsMapTypes] & { _type: string };
@@ -51,6 +53,7 @@ export default function Components({ data }: { data: ComponentTypes[] }) {
       StickyRows: <StickyRows {...(item as StickyRowsTypes)} />,
       FeatureList: <FeatureList {...(item as FeatureListTypes)} />,
       Partners: <Partners {...(item as PartnersTypes)} />,
+      ParticipantCarousel: <ParticipantCarousel {...(item as ParticipantCarouselTypes)} />,
     };
     const DynamicComponent = componentsMapTypes[componentType];
     if (!DynamicComponent) return null;
@@ -74,5 +77,6 @@ export const Components_Query = /* groq */ `
       ${StickyRows_Query}
       ${FeatureList_Query}
       ${Partners_Query}
+      ${ParticipantCarousel_Query}
     },
   `;
