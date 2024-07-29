@@ -37,7 +37,7 @@ export default function Partners({ heading, paragraph, list, index }: PartnersTy
                 rel='noreferrer'
                 aria-label={`Przejdź do strony ${name}`}
               >
-                <Img data={img} sizes='' />
+                <Img data={img} sizes='(max-width: 1023px) 35vw, (max-width: 1286px) 25vw, 313px' />
               </a>
             </li>
           ))}

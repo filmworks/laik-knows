@@ -31,7 +31,7 @@ export default async function CourseDetails({ heading, video, img, cta, list, co
         <DetailsAccordion list={_list} />
         <div className={styles.col}>
           <div>
-            <OpenVideoBox img={img} video={video} />
+            <OpenVideoBox img={img} video={video} sizes='(max-width: 531px) 231px, (max-width: 810px) 47vw, 381px' />
           </div>
           <div className={styles.box}>
             <Pricing {...course} />

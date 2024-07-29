@@ -5,7 +5,6 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { ReactNode } from 'react';
 import InstagramButton from '@/components/ui/InstagramButton';
 import OpenVideoBox from '@/components/ui/OpenVideoBox';
-import Img from '@/components/ui/image';
 import styles from './ParticipantCarousel.module.scss';
 import { ParticipantTypes } from './ParticipantCarousel.types';
 
@@ -60,7 +59,7 @@ export default function _Carousel({ list, children, leftArrowIcon, rightArrowIco
           <div className={styles.container}>
             {list.map(({ name, image, video, instagram }, i) => (
               <div key={i} className={styles.slide}>
-                {video ? <OpenVideoBox img={image} video={video} sizes='' /> : <Img data={image} sizes='' />}
+                <OpenVideoBox img={image} video={video} sizes='(max-width: 689px) 280px, 310px' />
                 <div className={styles.content}>
                   <span>{name}</span>
                   <InstagramButton {...instagram} />

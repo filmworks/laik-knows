@@ -4,7 +4,6 @@ import { useRef, useState } from 'react';
 import Button from '@/components/ui/Button';
 import InstagramButton from '@/components/ui/InstagramButton';
 import OpenVideoBox from '@/components/ui/OpenVideoBox';
-import Img from '@/components/ui/image';
 import styles from './Reviews.module.scss';
 import { ListTypes } from './Reviews.types';
 
@@ -25,13 +24,7 @@ export default function List({ list }: ListTypes) {
               <InstagramButton {...instagram} />
             </div>
             <div className={styles.container}>
-              <div className={styles.box}>
-                {video ? (
-                  <OpenVideoBox img={image} video={video} sizes={imgSizes} />
-                ) : (
-                  <Img data={image} sizes={imgSizes} />
-                )}
-              </div>
+              <OpenVideoBox video={video} img={image} sizes={imgSizes} />
             </div>
             {content}
           </li>

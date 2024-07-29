@@ -28,8 +28,11 @@ export default function FeatureList({ heading, paragraph, list, cta, imgLg, imgS
           <CtaButtonRow {...cta} />
         </div>
         <div className={styles.images}>
-          <Img data={imgSm} sizes='' />
-          <Img data={imgLg} sizes='' />
+          <Img data={imgSm} sizes='175px' />
+          <Img
+            data={imgLg}
+            sizes='(max-width: 389px) 95vw, (max-width: 479px) 360px, (max-width: 599px) 65vw, (max-width: 699px) 50vw, (max-width: 1023px) 380px, (max-width: 1079px) 35vw, (max-width: 1159px) 380px, (max-width: 1290px) 30vw, 380px'
+          />
         </div>
       </div>
     </section>

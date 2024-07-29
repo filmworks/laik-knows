@@ -16,7 +16,7 @@ export default function AboutCourseLeader({
 
   return (
     <section className={`${styles.section} max-width`}>
-      <Img data={imgLg} sizes='' />
+      <Img data={imgLg} sizes='(max-width: 599px) 242px, (max-width: 1260px) 38vw, 484px' />
       <div className={styles.box}>
         <header>
           <Heading>{heading}</Heading>
@@ -24,7 +24,7 @@ export default function AboutCourseLeader({
           <SocialMedia socials={socials} />
         </header>
         <div>
-          <Img data={imgSm} sizes='' />
+          <Img data={imgSm} sizes='(max-width: 559px) 156px, (max-width: 994px) 28vw, 275px' />
         </div>
       </div>
     </section>

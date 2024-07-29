@@ -14,7 +14,7 @@ export default function StickyRows({ heading, rows, index }: StickyRowsTypes) {
         {rows.map(({ heading, paragraph, img }, i) => (
           <li className={styles.item} key={i}>
             <div className={styles.container}>
-              <Img data={img} sizes='' />
+              <Img data={img} sizes='(max-width: 359px) 173px, (max-width: 1366px) 50vw, 667px' />
               <div className={styles.content}>
                 <span className={styles.num}>{i + 1}</span>
                 <div>
