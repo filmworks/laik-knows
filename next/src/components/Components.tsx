@@ -8,6 +8,7 @@ import Benefits, { BenefitsTypes, Benefits_Query } from './global/Benefits';
 import CourseDetails, { CourseDetailsTypes, CourseDetails_Query } from './global/CourseDetails';
 import FeatureList, { FeatureListTypes, FeatureList_Query } from './global/FeatureList';
 import HeadingParagraph, { HeadingParagraphTypes, HeadingParagraph_Query } from './global/HeadingParagraph';
+import Partners, { PartnersTypes, Partners_Query } from './global/Partners';
 import ProvenResults, { ProvenResultsTypes, ProvenResults_Query } from './global/ProvenResults';
 import Reviews, { ReviewsTypes, Reviews_Query } from './global/Reviews';
 import SaleFinishTime, { SaleFinishTimeTypes, SaleFinishTime_Query } from './global/SaleFinishTime';
@@ -27,6 +28,7 @@ type componentsMapTypes = {
   AdvatangesCta: AdvantagesCtaTypes;
   StickyRows: StickyRowsTypes;
   FeatureList: FeatureListTypes;
+  Partners: PartnersTypes;
 };
 
 export type ComponentTypes = componentsMapTypes[keyof componentsMapTypes] & { _type: string };
@@ -48,6 +50,7 @@ export default function Components({ data }: { data: ComponentTypes[] }) {
       AdvantagesCta: <AdvantagesCta {...(item as AdvantagesCtaTypes)} />,
       StickyRows: <StickyRows {...(item as StickyRowsTypes)} />,
       FeatureList: <FeatureList {...(item as FeatureListTypes)} />,
+      Partners: <Partners {...(item as PartnersTypes)} />,
     };
     const DynamicComponent = componentsMapTypes[componentType];
     if (!DynamicComponent) return null;
@@ -70,5 +73,6 @@ export const Components_Query = /* groq */ `
       ${AdvantagesCta_Query}
       ${StickyRows_Query}
       ${FeatureList_Query}
+      ${Partners_Query}
     },
   `;

@@ -21,6 +21,6 @@ export const FeatureList_Query = `
             ${CtaDataQuery}
         },
         "course": ${CourseDataQuery}
-    }
+    },
 
 `;

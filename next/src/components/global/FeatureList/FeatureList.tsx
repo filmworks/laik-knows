@@ -9,26 +9,28 @@ export default function FeatureList({ heading, paragraph, list, cta, imgLg, imgS
   const Heading = index === 0 ? Markdown.h1 : Markdown.h2;
 
   return (
-    <section className={`${styles.section} max-width`}>
-      <div className={styles.content}>
-        <header>
-          <Heading className={styles.heading}>{heading}</Heading>
-          <Markdown.p>{paragraph}</Markdown.p>
-        </header>
-        <ul>
-          {list.map((item, i) => (
-            <li key={i}>
-              <ArrowRightIcon />
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-        <Pricing {...course} />
-        <CtaButtonRow {...cta} />
-      </div>
-      <div className={styles.images}>
-        <Img data={imgSm} sizes='' />
-        <Img data={imgLg} sizes='' />
+    <section className={styles.section}>
+      <div className='max-width'>
+        <div className={styles.content}>
+          <header>
+            <Heading className={styles.heading}>{heading}</Heading>
+            <Markdown.p>{paragraph}</Markdown.p>
+          </header>
+          <ul>
+            {list.map((item, i) => (
+              <li key={i}>
+                <ArrowRightIcon />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <Pricing {...course} />
+          <CtaButtonRow {...cta} />
+        </div>
+        <div className={styles.images}>
+          <Img data={imgSm} sizes='' />
+          <Img data={imgLg} sizes='' />
+        </div>
       </div>
     </section>
   );

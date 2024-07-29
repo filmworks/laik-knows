@@ -11,6 +11,7 @@ import ProvenResults from '../schema/components/ProvenResults'
 import ThreeColGrid from '../schema/components/ThreeColGrid'
 import StickyRows from '../schema/components/StickyRows'
 import FeatureList from '../schema/components/FeatureList'
+import Partners from '../schema/components/Partners'
 
 export default defineType({
   name: 'content',
@@ -29,5 +30,6 @@ export default defineType({
     AdvantagesCta,
     StickyRows,
     FeatureList,
+    Partners,
   ],
 })
