@@ -3,10 +3,29 @@ import { useForm } from 'react-hook-form';
 import { FormStatusTypes } from '@/global/types';
 import Button from '@/components/ui/Button';
 import Checkbox from '@/components/ui/Checkbox';
+import FormState from '@/components/ui/FormState';
 import Input from '@/components/ui/Input';
 import styles from './DetailsAccordion.module.scss';
 
 type FormTypes = { heading: JSX.Element; paragraph: JSX.Element; cta: string; isOpen: boolean; privacyLink: string };
+
+const formStateData = {
+  errorState: {
+    heading: 'Nie udało się dodać maila',
+    paragraph: (
+      <>
+        Podczas przesyłania informacji pojawił się problem z serwerem. Jeśli problem się powtórzy napisz na adres:&nbsp;
+        <a href='mailto:laik.knows@gmail.com' className='link' target='_blank' rel='noreferrer'>
+          laik.knows@gmail.com
+        </a>
+      </>
+    ),
+  },
+  successState: {
+    heading: 'Dziękuję za dodanie adresu e-mail',
+    paragraph: 'Wkrótce na twój adres e-mail zostanie wysłana wiadomość z pierwszą darmową lekcją',
+  },
+};
 
 export default function Form({ heading, paragraph, cta, isOpen, privacyLink }: FormTypes) {
   const [status, setStatus] = useState<FormStatusTypes>({ sending: false, success: undefined });
@@ -76,6 +95,7 @@ export default function Form({ heading, paragraph, cta, isOpen, privacyLink }: F
       <Button tabIndex={tabIndex} isLoading={status.sending}>
         {cta}
       </Button>
+      <FormState {...formStateData} isSuccess={status.success} setStatus={setStatus} />
     </form>
   );
 }
