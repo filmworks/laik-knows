@@ -27,46 +27,8 @@ export default defineField({
       type: 'array',
       of: [
         {
-          type: 'object',
-          fields: [
-            {
-              name: 'img',
-              type: 'image',
-              title: 'Zdjęcie',
-              validation: (Rule) => Rule.required(),
-            },
-            {
-              name: 'name',
-              type: 'markdown',
-              title: 'Nazwa partnera',
-              validation: (Rule) => Rule.required(),
-            },
-            {
-              name: 'href',
-              type: 'string',
-              title: 'Link',
-              description: 'Link absolutny (wymagany protokół https://)',
-              validation: (Rule) =>
-                Rule.custom((value: string) => {
-                  if (value && !value.startsWith('https://')) {
-                    return 'Nieprawidłowy adres URL.'
-                  }
-                  return true
-                }).required(),
-            },
-          ],
-          preview: {
-            select: {
-              heading: 'name',
-              paragraph: 'href',
-              media: 'img',
-            },
-            prepare: ({ heading, paragraph, media }) => ({
-              title: removeMarkdown(heading),
-              subtitle: removeMarkdown(paragraph),
-              media,
-            }),
-          },
+          type: 'reference',
+          to: [{ type: 'Partners_Collection' }],
         },
       ],
       validation: (Rule) =>

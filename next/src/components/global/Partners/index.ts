@@ -8,7 +8,7 @@ export const Partners_Query = `
     _type == "Partners" => {
         heading,
         paragraph,
-        list[]{
+        list[] -> {
             img {
                 ${ImgDataQuery}
             },

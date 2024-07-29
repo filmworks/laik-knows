@@ -6,6 +6,8 @@ import seo from './components/seo'
 import Index_Page from './singleTypes/Index_Page'
 import cta from './ui/cta'
 import fullCtaBox from './ui/fullCtaBox'
+import Partners_Collection from './collectionTypes/Partners_Collection'
+import Faq_Collection from './collectionTypes/Faq_Collection'
 
 export const schemaTypes = [
   Index_Page,
@@ -15,5 +17,7 @@ export const schemaTypes = [
   course,
   cta,
   Participant_Collection,
+  Partners_Collection,
+  Faq_Collection,
   fullCtaBox,
 ]
