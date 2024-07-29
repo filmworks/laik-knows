@@ -1,4 +1,4 @@
-import { CourseDataQuery } from '@/global/queries';
+import { CourseDataQuery, Email_Query } from '@/global/queries';
 import { CtaDataQuery } from '@/components/ui/Button';
 import { ImgDataQuery } from '@/components/ui/image';
 import { VideoDataQuery } from '@/components/ui/video';
@@ -20,6 +20,7 @@ export const CourseDetails_Query = `
             ${ImgDataQuery}
         },
         "course": ${CourseDataQuery}
+        "email": ${Email_Query}
         list[] {
             heading,
             paragraph,

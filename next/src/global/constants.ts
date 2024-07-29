@@ -9,3 +9,9 @@ export const DOMAIN: string = 'https://laik-knows.pl/';
  * @constant
  */
 export const LOCALE: string = 'pl';
+
+/**
+ * Global default title.
+ * @constant
+ */
+export const DEFAULT_TITLE: string = 'Laik Knows';

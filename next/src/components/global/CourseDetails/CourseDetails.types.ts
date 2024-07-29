@@ -10,6 +10,7 @@ export type CourseDetailsTypes = {
   img: ImgDataTypes;
   cta: CtaDataTypes;
   course: CourseDataTypes;
+  email: string;
   list: {
     heading: string;
     paragraph: string;
@@ -19,6 +20,7 @@ export type CourseDetailsTypes = {
 };
 
 export type DetailsAccordionTypes = {
+  email: string;
   list: {
     heading: JSX.Element;
     paragraph: JSX.Element;

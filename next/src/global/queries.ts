@@ -6,3 +6,9 @@ export const CourseDataQuery = `
       saleFinishDate,
     },
 `;
+
+export const Email_Query = `
+    *[_type == "global"][0]{
+      email
+    }.email,
+`;

@@ -6,7 +6,7 @@ import { DetailsAccordionTypes } from '@/components/global/CourseDetails/CourseD
 import styles from './DetailsAccordion.module.scss';
 import Form from './_Form';
 
-export default function DetailsAccordion({ list }: DetailsAccordionTypes) {
+export default function DetailsAccordion({ list, email }: DetailsAccordionTypes) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const handleClick = (e: React.MouseEvent<HTMLElement>, i: number) => {
     e.preventDefault();
@@ -36,7 +36,7 @@ export default function DetailsAccordion({ list }: DetailsAccordionTypes) {
             }}
           >
             {paragraph}
-            <Form {...form} isOpen={openIndex === i} />
+            <Form {...form} email={email} isOpen={openIndex === i} />
           </motion.div>
         </details>
       ))}

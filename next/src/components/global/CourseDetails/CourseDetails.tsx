@@ -7,7 +7,16 @@ import styles from './CourseDetails.module.scss';
 import type { CourseDetailsTypes } from './CourseDetails.types';
 import DetailsAccordion from './DetailsAccordion';
 
-export default async function CourseDetails({ heading, video, img, cta, list, course, index }: CourseDetailsTypes) {
+export default async function CourseDetails({
+  heading,
+  video,
+  img,
+  cta,
+  list,
+  course,
+  index,
+  email,
+}: CourseDetailsTypes) {
   const Heading = index === 0 ? Markdown.h1 : Markdown.h2;
   const Subheading = index === 0 ? Markdown.h2 : Markdown.h3;
   const TertiaryHeading = index === 0 ? Markdown.h3 : Markdown.h4;
@@ -24,11 +33,12 @@ export default async function CourseDetails({ heading, video, img, cta, list, co
       privacyLink: privacyPolicy,
     },
   }));
+
   return (
     <section id='plan' className={`${styles.section} max-width`}>
       <Heading>{heading}</Heading>
       <div className={styles.container}>
-        <DetailsAccordion list={_list} />
+        <DetailsAccordion email={email} list={_list} />
         <div className={styles.col}>
           <div>
             <OpenVideoBox img={img} video={video} sizes='(max-width: 531px) 231px, (max-width: 810px) 47vw, 381px' />
