@@ -42,8 +42,8 @@ export default function Form({ heading, paragraph, cta, email, privacyLink }: Fo
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors },
-    getValues,
   } = useForm({ mode: 'onTouched' });
 
   const onSubmit = async () => {
@@ -62,6 +62,9 @@ export default function Form({ heading, paragraph, cta, email, privacyLink }: Fo
       setStatus({ sending: false, success: false });
     }
   };
+
+  const emailValue = watch('email');
+  const messageValue = watch('message');
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={`${styles.form} contact-box`}>
       {heading}
@@ -77,7 +80,7 @@ export default function Form({ heading, paragraph, cta, email, privacyLink }: Fo
             message: 'Nieprawidłowy format',
           },
         })}
-        filled={getValues().email}
+        filled={emailValue}
         errors={errors}
       />
       <Input
@@ -87,7 +90,7 @@ export default function Form({ heading, paragraph, cta, email, privacyLink }: Fo
         register={register('message', {
           required: { value: true, message: 'Wiadomość jest wymagana' },
         })}
-        filled={getValues().message}
+        filled={messageValue}
         errors={errors}
       />
       <Checkbox

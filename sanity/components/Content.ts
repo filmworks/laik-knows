@@ -14,6 +14,7 @@ import FeatureList from '../schema/components/FeatureList'
 import Partners from '../schema/components/Partners'
 import ParticipantCarousel from '../schema/components/ParticipantCarousel'
 import Faq from '../schema/components/Faq'
+import CtaImage from '../schema/components/CtaImage'
 
 export default defineType({
   name: 'content',
@@ -35,5 +36,6 @@ export default defineType({
     Partners,
     ParticipantCarousel,
     Faq,
+    CtaImage,
   ],
 })

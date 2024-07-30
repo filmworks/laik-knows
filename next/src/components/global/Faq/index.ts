@@ -14,5 +14,5 @@ export const Faq_Query = `
         },
         contactForm ${ContactForm_Query}
         "email": ${Email_Query}
-    }
+    },
 `;

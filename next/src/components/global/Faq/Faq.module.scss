@@ -57,4 +57,8 @@
 
 .form {
   width: 100%;
+
+  > label:first-of-type {
+    margin-bottom: 12px;
+  }
 }

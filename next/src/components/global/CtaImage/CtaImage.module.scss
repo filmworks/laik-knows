@@ -1,0 +1,147 @@
+.section {
+  padding-top: clamp(80px, calc(120vw / 7.68), 120px);
+  border-bottom: var(--sectionBorder);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: clamp(328px, calc(440vw / 7.68), 722px) 1fr;
+  row-gap: 42px;
+
+  @media (max-width: 899px) {
+    grid-template-columns: 1fr;
+    max-width: none;
+    width: 100%;
+  }
+}
+
+.content {
+  border-top: var(--sectionBorder);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  padding: 80px;
+  padding-left: 0;
+  width: 100%;
+
+  header {
+    max-width: clamp(328px, calc(530vw / 7.68), 587px);
+    h1,
+    h2,
+    h3 {
+      margin-bottom: clamp(12px, calc(16vw / 7.68), 16px);
+    }
+
+    > p:first-of-type {
+      margin-bottom: 36px;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    width: 100vw;
+    height: 100%;
+    background: #000;
+    z-index: -1;
+    border-top: var(--sectionBorder);
+    margin-top: -1px;
+  }
+
+  @media (max-width: 899px) {
+    padding: 64px var(--pageMargin) 0;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.lines {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-left: var(--sectionBorder);
+  border-top: var(--sectionBorder);
+  border-right: var(--sectionBorder);
+  height: 682px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 189px;
+    width: 1px;
+    height: 100%;
+    background-color: var(--primary-700, #262c33);
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 166px;
+    left: 0;
+    width: 189px;
+    height: 1px;
+    background-color: var(--primary-700, #262c33);
+    z-index: -1;
+  }
+
+  img {
+    width: 100%;
+    max-width: clamp(360px, calc(487vw / 7.68), 487px);
+    height: auto;
+    max-height: 410px;
+  }
+
+  @media (max-width: 899px) {
+    margin-right: var(--pageMargin);
+    height: auto;
+
+    img {
+      max-height: 491px;
+    }
+
+    &::before {
+      height: 190px;
+      right: 23%;
+      bottom: 0;
+      left: auto;
+      top: auto;
+    }
+
+    &::after {
+      bottom: 190px;
+      right: 0;
+      width: 380px;
+      left: auto;
+      top: auto;
+    }
+  }
+
+  @media (max-width: 459px) {
+    height: 489px;
+    max-width: clamp(348px, calc(360vw / 4.59), 360px);
+
+    &::before {
+      left: 134px;
+      top: 0;
+      height: 220px;
+      right: auto;
+      bottom: auto;
+    }
+
+    &::after {
+      top: 120px;
+      left: 0;
+      width: 134px;
+      right: auto;
+      bottom: auto;
+    }
+  }
+}

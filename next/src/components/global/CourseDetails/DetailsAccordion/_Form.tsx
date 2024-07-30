@@ -42,7 +42,7 @@ export default function Form({ heading, paragraph, cta, isOpen, privacyLink, ema
     handleSubmit,
     reset,
     formState: { errors },
-    getValues,
+    watch,
   } = useForm({ mode: 'onTouched' });
 
   const onSubmit = async () => {
@@ -62,6 +62,7 @@ export default function Form({ heading, paragraph, cta, isOpen, privacyLink, ema
     }
   };
 
+  const emailValue = watch('email');
   const tabIndex = isOpen ? 0 : -1;
 
   return (
@@ -80,7 +81,7 @@ export default function Form({ heading, paragraph, cta, isOpen, privacyLink, ema
             message: 'Nieprawidłowy format',
           },
         })}
-        filled={getValues().email}
+        filled={emailValue}
         errors={errors}
       />
       <Checkbox
