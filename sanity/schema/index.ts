@@ -9,9 +9,11 @@ import fullCtaBox from './ui/fullCtaBox'
 import Partners_Collection from './collectionTypes/Partners_Collection'
 import Faq_Collection from './collectionTypes/Faq_Collection'
 import contactForm from './ui/contactForm'
+import NotFound_Page from './singleTypes/NotFound_Page'
 
 export const schemaTypes = [
   Index_Page,
+  NotFound_Page,
   Content,
   seo,
   global,

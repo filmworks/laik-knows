@@ -10,7 +10,7 @@ export default function CtaImage({ heading, paragraph, img, course, cta, index }
   return (
     <section className={styles.section}>
       <div className={`${styles.container} max-width`}>
-        <div className={styles.content}>cd 
+        <div className={styles.content}>
           <header>
             <Heading>{heading}</Heading>
             <Markdown.p>{paragraph}</Markdown.p>
