@@ -9,3 +9,5 @@ export type CourseDataTypes = {
   smallestPrice: number;
   saleFinishDate: string;
 };
+
+export type ContactFormTypes = { heading: string; paragraph?: string; cta: string };

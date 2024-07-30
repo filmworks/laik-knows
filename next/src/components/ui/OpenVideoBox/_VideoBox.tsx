@@ -11,7 +11,7 @@ export default function VideoBox({ video, img, sizes, videoIcon }: VideoBoxTypes
 
   return (
     <>
-      <button onClick={() => setIsOpen(true)} className={styles.open}>
+      <button aria-label='Otwórz wideo kursantki' onClick={() => setIsOpen(true)} className={styles.open}>
         <Img data={img} sizes={sizes} />
         <div>{videoIcon}</div>
       </button>

@@ -69,8 +69,8 @@
 
     button {
       background-color: var(--primary-400, #707b87);
-      width: 10px;
-      height: 10px;
+      width: 12px;
+      height: 12px;
       border: 1px solid transparent;
       transition:
         width 0.2s,
@@ -82,8 +82,8 @@
         background-color: var(--primary-600, #434e5b);
       }
       &[aria-current='true'] {
-        width: 12px;
-        height: 12px;
+        width: 14px;
+        height: 14px;
         border: 1px solid var(--secondary-500, #1e87c1);
         background-color: var(--primary-800, #101010);
       }

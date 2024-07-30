@@ -35,18 +35,16 @@
       color 0.2s;
   }
 
-  input {
-    font-size: calc(16rem / 16);
-    border-bottom: 1px solid var(--primary-600, #434e5b);
-    width: 100%;
-  }
   textarea {
-    min-height: 96px;
+    min-height: 102px;
     resize: none;
   }
   input,
   textarea {
+    border-bottom: 1px solid var(--primary-600, #434e5b);
     padding: 8px 16px;
+    font-size: calc(16rem / 16);
+    width: 100%;
     transition:
       border-color 0.3s,
       background-color 0.3s;

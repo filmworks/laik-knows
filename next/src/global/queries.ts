@@ -12,3 +12,11 @@ export const Email_Query = `
       email
     }.email,
 `;
+
+export const ContactForm_Query = `
+    {
+      heading,
+      paragraph,
+      cta,
+    },
+`;

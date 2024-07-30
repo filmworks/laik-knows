@@ -6,6 +6,7 @@ import AboutCourseLeader, { AboutCourseLeaderTypes, AboutCourseLeader_Query } fr
 import AdvantagesCta, { AdvantagesCtaTypes, AdvantagesCta_Query } from './global/AdvantagesCta';
 import Benefits, { BenefitsTypes, Benefits_Query } from './global/Benefits';
 import CourseDetails, { CourseDetailsTypes, CourseDetails_Query } from './global/CourseDetails';
+import Faq, { FaqTypes, Faq_Query } from './global/Faq';
 import FeatureList, { FeatureListTypes, FeatureList_Query } from './global/FeatureList';
 import HeadingParagraph, { HeadingParagraphTypes, HeadingParagraph_Query } from './global/HeadingParagraph';
 import ParticipantCarousel, { ParticipantCarouselTypes, ParticipantCarousel_Query } from './global/ParticipantCarousel';
@@ -31,6 +32,7 @@ type componentsMapTypes = {
   FeatureList: FeatureListTypes;
   Partners: PartnersTypes;
   ParticipantCarousel: ParticipantCarouselTypes;
+  Faq: FaqTypes;
 };
 
 export type ComponentTypes = componentsMapTypes[keyof componentsMapTypes] & { _type: string };
@@ -54,6 +56,7 @@ export default function Components({ data }: { data: ComponentTypes[] }) {
       FeatureList: <FeatureList {...(item as FeatureListTypes)} />,
       Partners: <Partners {...(item as PartnersTypes)} />,
       ParticipantCarousel: <ParticipantCarousel {...(item as ParticipantCarouselTypes)} />,
+      Faq: <Faq {...(item as FaqTypes)} />,
     };
     const DynamicComponent = componentsMapTypes[componentType];
     if (!DynamicComponent) return null;
@@ -78,5 +81,6 @@ export const Components_Query = /* groq */ `
       ${FeatureList_Query}
       ${Partners_Query}
       ${ParticipantCarousel_Query}
+      ${Faq_Query}
     },
   `;

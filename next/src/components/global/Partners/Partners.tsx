@@ -5,7 +5,6 @@ import type { PartnersTypes } from './Partners.types';
 
 export default function Partners({ heading, paragraph, list, index }: PartnersTypes) {
   const Heading = index === 0 ? Markdown.h1 : Markdown.h2;
-  console.log(list);
 
   return (
     <section className={styles.section}>

@@ -8,6 +8,7 @@ import cta from './ui/cta'
 import fullCtaBox from './ui/fullCtaBox'
 import Partners_Collection from './collectionTypes/Partners_Collection'
 import Faq_Collection from './collectionTypes/Faq_Collection'
+import contactForm from './ui/contactForm'
 
 export const schemaTypes = [
   Index_Page,
@@ -20,4 +21,5 @@ export const schemaTypes = [
   Partners_Collection,
   Faq_Collection,
   fullCtaBox,
+  contactForm,
 ]

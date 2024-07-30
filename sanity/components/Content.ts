@@ -13,6 +13,7 @@ import StickyRows from '../schema/components/StickyRows'
 import FeatureList from '../schema/components/FeatureList'
 import Partners from '../schema/components/Partners'
 import ParticipantCarousel from '../schema/components/ParticipantCarousel'
+import Faq from '../schema/components/Faq'
 
 export default defineType({
   name: 'content',
@@ -33,5 +34,6 @@ export default defineType({
     FeatureList,
     Partners,
     ParticipantCarousel,
+    Faq,
   ],
 })

@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FormStatusTypes } from '@/global/types';
@@ -5,21 +7,20 @@ import Button from '@/components/ui/Button';
 import Checkbox from '@/components/ui/Checkbox';
 import FormState from '@/components/ui/FormState';
 import Input from '@/components/ui/Input';
-import styles from './DetailsAccordion.module.scss';
+import styles from './Faq.module.scss';
 
 type FormTypes = {
   heading: JSX.Element;
-  paragraph: JSX.Element;
+  paragraph: JSX.Element | null;
   cta: string;
-  isOpen: boolean;
   privacyLink: string;
   email: string;
 };
 
-export default function Form({ heading, paragraph, cta, isOpen, privacyLink, email }: FormTypes) {
+export default function Form({ heading, paragraph, cta, email, privacyLink }: FormTypes) {
   const formStateData = {
     errorState: {
-      heading: 'Nie udało się dodać maila',
+      heading: 'Nie udało się wysłać wiadomości',
       paragraph: (
         <>
           Podczas przesyłania informacji pojawił się problem z serwerem. Jeśli problem się powtórzy napisz na
@@ -31,8 +32,8 @@ export default function Form({ heading, paragraph, cta, isOpen, privacyLink, ema
       ),
     },
     successState: {
-      heading: 'Dziękuję za dodanie adresu e-mail',
-      paragraph: 'Wkrótce na twój adres e-mail zostanie wysłana wiadomość z pierwszą darmową lekcją',
+      heading: 'Dziękuję za dodanie przesłanie wiadomości',
+      paragraph: 'Postaramy się odpowiedzieć na twoje pytanie jak najszybciej',
     },
   };
 
@@ -61,17 +62,13 @@ export default function Form({ heading, paragraph, cta, isOpen, privacyLink, ema
       setStatus({ sending: false, success: false });
     }
   };
-
-  const tabIndex = isOpen ? 0 : -1;
-
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className='contact-box'>
+    <form onSubmit={handleSubmit(onSubmit)} className={`${styles.form} contact-box`}>
       {heading}
       {paragraph}
       <Input
         disabled={status.sending}
         type='email'
-        tabIndex={tabIndex}
         label='E-mail'
         register={register('email', {
           required: { value: true, message: 'Adres e-mail jest wymagany' },
@@ -83,14 +80,23 @@ export default function Form({ heading, paragraph, cta, isOpen, privacyLink, ema
         filled={getValues().email}
         errors={errors}
       />
+      <Input
+        disabled={status.sending}
+        textarea
+        label='Wiadomość'
+        register={register('message', {
+          required: { value: true, message: 'Wiadomość jest wymagana' },
+        })}
+        filled={getValues().message}
+        errors={errors}
+      />
       <Checkbox
         disabled={status.sending}
-        tabIndex={tabIndex}
         className={styles.checkbox}
         label={
           <>
             Akceptuję{' '}
-            <a tabIndex={tabIndex} href={privacyLink} target='_blank' rel='noreferrer' className='link'>
+            <a href={privacyLink} target='_blank' rel='noreferrer' className='link'>
               politykę prywatności
             </a>
           </>
@@ -100,9 +106,7 @@ export default function Form({ heading, paragraph, cta, isOpen, privacyLink, ema
         })}
         errors={errors}
       />
-      <Button tabIndex={tabIndex} isLoading={status.sending}>
-        {cta}
-      </Button>
+      <Button isLoading={status.sending}>{cta}</Button>
       <FormState {...formStateData} isSuccess={status.success} setStatus={setStatus} />
     </form>
   );

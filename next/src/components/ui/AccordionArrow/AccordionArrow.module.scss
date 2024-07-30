@@ -1,0 +1,16 @@
+.arrows {
+  overflow: hidden;
+  width: 25px;
+  height: 24px;
+
+  svg {
+    transition: transform 0.3s var(--easing);
+    transform: translateY(-100%);
+  }
+
+  &[data-open='true'] {
+    svg {
+      transform: none;
+    }
+  }
+}
