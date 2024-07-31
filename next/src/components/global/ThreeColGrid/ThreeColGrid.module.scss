@@ -1,6 +1,7 @@
 .section {
-  padding: clamp(80px, calc(160vw / 7.68), 240px) 0 clamp(64px, calc(128vw / 7.68), 180px);
+  padding: clamp(64px, calc(132vw / 7.68), 200px) 0 clamp(42px, calc(96vw / 7.68), 140px);
 
+  > h1,
   h2 {
     text-align: center;
     margin: 0 auto;

@@ -13,7 +13,7 @@ export default function FeatureList({ heading, paragraph, list, cta, imgLg, imgS
       <div className='max-width'>
         <div className={styles.content}>
           <header>
-            <Heading className={styles.heading}>{heading}</Heading>
+            <Heading>{heading}</Heading>
             <Markdown.p>{paragraph}</Markdown.p>
           </header>
           <ul>

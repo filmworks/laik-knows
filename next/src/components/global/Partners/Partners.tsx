@@ -10,7 +10,7 @@ export default function Partners({ heading, paragraph, list, index }: PartnersTy
     <section className={styles.section}>
       <div className='max-width'>
         <header>
-          <Heading className={styles.heading}>{heading}</Heading>
+          <Heading>{heading}</Heading>
           <Markdown.p>{paragraph}</Markdown.p>
         </header>
       </div>

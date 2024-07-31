@@ -4,6 +4,7 @@
   text-align: center;
   margin-bottom: clamp(64px, calc(64vw / 7.68), 80px);
 
+  h1,
   h2 {
     margin: 0 auto clamp(48px, calc(64vw / 7.68), 80px) auto;
     max-width: clamp(calc(530rem / 16), calc(530vw / 7.68), calc(587rem / 16));

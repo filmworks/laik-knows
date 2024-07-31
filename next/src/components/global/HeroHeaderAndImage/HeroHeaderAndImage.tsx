@@ -9,10 +9,10 @@ export default function HeroHeaderAndImage({ index, heading, paragraph, img, cta
   const Heading = index === 0 ? Markdown.h1 : Markdown.h2;
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} data-first={index === 0}>
       <Img data={img} sizes='100vw' />
       <div className='max-width'>
-        <Heading className={styles.heading}>{heading}</Heading>
+        <Heading>{heading}</Heading>
         <Markdown.p className={styles.paragraph}>{paragraph}</Markdown.p>
         <Pricing {...course} />
         <CtaButtonRow {...cta} />

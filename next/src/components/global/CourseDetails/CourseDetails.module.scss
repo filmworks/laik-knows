@@ -1,5 +1,6 @@
 .section {
-  padding: clamp(18px, calc(48vw / 7.68), 60px) 0 clamp(64px, calc(80vw / 7.68), 120px);
+  padding: clamp(36px, calc(80vw / 7.68), 100px) 0 clamp(64px, calc(80vw / 7.68), 120px);
+  h1,
   h2 {
     margin: 0 auto;
     text-align: center;
@@ -15,8 +16,6 @@
   @media (max-width: 1023px) {
     grid-template-columns: 1fr;
   }
-
-  margin-bottom: 32px; //temp;
 }
 
 .col {

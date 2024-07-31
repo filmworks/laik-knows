@@ -1,9 +1,9 @@
-import { TargetGroupTypes } from '../TargetGroup';
 import Img from '@/components/ui/image';
 import Markdown from '@/components/ui/markdown';
 import styles from './ThreeColGrid.module.scss';
+import { ThreeColGridTypes } from './ThreeColGrid.types';
 
-export default function ThreeColGrid({ heading, list, index }: TargetGroupTypes) {
+export default function ThreeColGrid({ heading, list, index }: ThreeColGridTypes) {
   const Heading = index === 0 ? Markdown.h1 : Markdown.h2;
   const Subheading = index === 0 ? Markdown.h2 : Markdown.h3;
   return (
