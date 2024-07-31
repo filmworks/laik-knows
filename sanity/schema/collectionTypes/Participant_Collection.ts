@@ -23,9 +23,12 @@ export default defineType({
       fields: [
         defineField({
           name: 'url',
-          type: 'string',
+          type: 'url',
           title: 'Link do konta',
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) =>
+            Rule.required()
+              .uri({ scheme: ['https'] })
+              .error('Podaj prawidłowy adres URL (rozpoczynający się od https://)'),
         }),
         defineField({
           name: 'username',

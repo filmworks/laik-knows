@@ -15,6 +15,8 @@ export default defineField({
           { value: 'primary', title: 'Główne' },
           { value: 'secondary', title: 'Dodatkowe' },
         ],
+        layout: 'radio',
+        direction: 'horizontal',
       },
       validation: (Rule) => Rule.required(),
     }),

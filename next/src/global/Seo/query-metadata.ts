@@ -15,12 +15,13 @@ import type { QueryMetadataTypes, QueryTypes } from './Seo.types';
 export const QueryMetadata = async ({ name, path }: QueryMetadataTypes): Promise<Metadata> => {
   const customQuery = `*[_id == "${name}"][0]`;
 
-  const { title, description } = await query(customQuery, name);
+  const { title, description, openGraphImage } = await query(customQuery, name);
 
   return Seo({
     title,
     description,
     path,
+    ...(openGraphImage?.url && { openGraphImage }),
   });
 };
 
@@ -30,6 +31,10 @@ const query = async (customQuery: string, tag: string): Promise<QueryTypes> => {
       ${customQuery} {
         "title": seo.title,
         "description": seo.description,
+        "openGraphImage": {
+          "url": seo.img.asset -> url + "?w=1200",
+          "height": round(1200 / seo.img.asset -> metadata.dimensions.aspectRatio),
+        },
       }
     `,
     tags: [tag],

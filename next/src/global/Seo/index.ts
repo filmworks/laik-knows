@@ -3,7 +3,7 @@ import sanityFetch from '@/utils/sanity.fetch';
 import { DEFAULT_TITLE, DOMAIN, LOCALE } from '@/global/constants';
 import type { GlobalQueryTypes, SeoTypes } from './Seo.types';
 
-export default async function Seo({ title, description, path, ...props }: SeoTypes): Promise<Metadata> {
+export default async function Seo({ title, description, openGraphImage, path, ...props }: SeoTypes): Promise<Metadata> {
   const { globalOpenGraphImage } = await query();
 
   const url = `${DOMAIN}${path}`;
@@ -12,7 +12,7 @@ export default async function Seo({ title, description, path, ...props }: SeoTyp
     title: title || DEFAULT_TITLE,
     description: description || '',
     url,
-    image:  globalOpenGraphImage,
+    image: openGraphImage || globalOpenGraphImage,
   };
 
   const metadata: Metadata = {

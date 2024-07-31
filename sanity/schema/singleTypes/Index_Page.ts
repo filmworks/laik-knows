@@ -10,6 +10,8 @@ export default defineType({
       name: 'content',
       type: 'content',
       title: 'Komponenty strony',
+      description:
+        'Komponenty podstrony to sekcje strony internetowej, które można dodawać, usuwać i zmieniać ich kolejność. Umożliwiają elastyczne zarządzanie treścią i układem strony.',
       options: { collapsible: true },
     }),
     defineField({

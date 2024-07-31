@@ -13,6 +13,7 @@ type OpenGraphImageTypes = {
 export type QueryTypes = {
   title: string;
   description: string;
+  openGraphImage?: OpenGraphImageTypes;
 };
 
 export type SeoTypes = {

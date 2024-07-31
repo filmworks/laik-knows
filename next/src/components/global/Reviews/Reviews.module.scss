@@ -19,6 +19,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(20px, calc(24vw / 7.68), 32px);
   margin-bottom: clamp(48px, calc(64vw / 7.68), 80px);
+  scroll-margin-top: 160px;
 
   @media (max-width: 1259px) {
     grid-template-columns: repeat(2, 1fr);
