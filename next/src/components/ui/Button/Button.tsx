@@ -26,10 +26,10 @@ export default function Button({ data, href, children, isLoading = false, ...pro
     >
       <span>
         {isLoading ? <span className={styles.loader}></span> : children}
-        {isExternal && <ArrowIcon />}
+        {data?.role === 'primary' && <ArrowIcon />}
       </span>
 
-      {isExternal && (
+      {data?.role === 'primary' && (
         <>
           <span className={styles.glow} />
           <span className={styles.bullets}>

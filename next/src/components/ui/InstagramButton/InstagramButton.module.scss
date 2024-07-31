@@ -8,7 +8,7 @@
   max-width: 133px;
   display: flex;
   justify-content: center;
-  transition: border 0.2s;
+  transition: border-color 0.2s;
 
   & > span {
     z-index: 3;
@@ -28,7 +28,7 @@
     transition: opacity 0.5s;
   }
   &:hover {
-    border: 1px solid var(--secondary-500);
+    border-color: var(--secondary-500);
 
     &::after {
       opacity: 1;
@@ -36,7 +36,7 @@
   }
 
   &:focus {
-    border: 1px solid var(--secondary-300);
+    border-color: var(--secondary-300);
   }
 
   &:focus-visible {

@@ -19,16 +19,13 @@ export default function _Header({ logo }: HeaderTypes) {
     }
 
     window.addEventListener('scroll', setHeaderBackground);
-    function dispatch() {
-      window.removeEventListener('scroll', setHeaderBackground);
-    }
 
-    return dispatch;
+    return () => window.removeEventListener('scroll', setHeaderBackground);
   }, [isActive]);
   return (
     <header className={styles.header} data-active={isActive}>
       <div className='max-width'>
-        <Link href='#root' aria-label='Przejdź na górę strony'>
+        <Link href='/' aria-label='Przejdź na górę strony'>
           {logo}
         </Link>
       </div>

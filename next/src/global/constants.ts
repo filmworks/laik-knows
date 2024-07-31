@@ -15,3 +15,9 @@ export const LOCALE: string = 'pl';
  * @constant
  */
 export const DEFAULT_TITLE: string = 'Laik Knows';
+
+/**
+ * Declaration of global easing.
+ * @constant
+ */
+export const EASING: number[] = [0.5, 1, 0.89, 1];

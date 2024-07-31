@@ -4,7 +4,7 @@ const Textarea = forwardRef((props, ref) => {
   const handleExpand = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const textarea = e.target;
     textarea.style.height = 'auto';
-    textarea.style.height = `${textarea.scrollHeight + 2}px`;
+    textarea.style.height = `${textarea.scrollHeight + 1}px`;
   };
 
   return <textarea onInput={handleExpand} ref={ref as React.Ref<HTMLTextAreaElement>} {...props} />;

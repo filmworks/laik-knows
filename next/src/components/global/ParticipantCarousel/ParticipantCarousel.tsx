@@ -7,7 +7,7 @@ export default function ParticipantCarousel({ heading, list, index }: Participan
   const Heading = index === 0 ? Markdown.h1 : Markdown.h2;
   return (
     <section className={styles.section}>
-      <Carousel leftArrowIcon={LeftArrowIcon} rightArrowIcon={RightArrowIcon} list={list}>
+      <Carousel LeftArrowIcon={LeftArrowIcon} RightArrowIcon={RightArrowIcon} list={list}>
         <Heading>{heading}</Heading>
       </Carousel>
       <BlobIcon />

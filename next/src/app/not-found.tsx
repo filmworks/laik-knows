@@ -3,7 +3,7 @@ import { QueryMetadata } from '@/global/Seo/query-metadata';
 import NotFound, { NotFoundTypes } from '@/components/global/NotFound';
 import { ImgDataQuery } from '@/components/ui/image';
 
-export default async function IndexPage() {
+export default async function NotFoundPage() {
   const data = await query();
 
   return <NotFound {...data} />;

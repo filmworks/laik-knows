@@ -11,7 +11,7 @@ export default function ThreeColGrid({ heading, list, index }: ThreeColGridTypes
       <Heading>{heading}</Heading>
       <ul className={`${styles.list} max-width`}>
         {list.map(({ heading, paragraph, img }, i) => (
-          <li className={`${styles.item} ${i % 2 !== 0 ? styles.reverse : ''}`} key={i}>
+          <li className={styles.item} key={i}>
             <Img
               data={img}
               sizes='(max-width: 562px) 156px, (max-width: 923px) 28vw, (max-width: 959px) 256px, (max-width: 1285px) 30vw, 381px'

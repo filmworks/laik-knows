@@ -11,11 +11,11 @@ import { ParticipantTypes } from './ParticipantCarousel.types';
 type CarouselTypes = {
   list: ParticipantTypes[];
   children: JSX.Element;
-  leftArrowIcon: ReactNode;
-  rightArrowIcon: ReactNode;
+  LeftArrowIcon: ReactNode;
+  RightArrowIcon: ReactNode;
 };
 
-export default function _Carousel({ list, children, leftArrowIcon, rightArrowIcon }: CarouselTypes) {
+export default function _Carousel({ list, children, LeftArrowIcon, RightArrowIcon }: CarouselTypes) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'start', skipSnaps: true, loop: true });
   const { scrollSnaps, selectedIndex, onDotButtonClick } = usePagination(emblaApi);
   const { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick } = useNavigation(emblaApi);
@@ -31,7 +31,7 @@ export default function _Carousel({ list, children, leftArrowIcon, rightArrowIco
             disabled={prevBtnDisabled}
             aria-label='Przejdź do poprzedniego elementu'
           >
-            {leftArrowIcon}
+            {LeftArrowIcon}
           </button>
           <div className={styles.dots}>
             {scrollSnaps.map((_, i) => (
@@ -50,7 +50,7 @@ export default function _Carousel({ list, children, leftArrowIcon, rightArrowIco
             disabled={nextBtnDisabled}
             aria-label='Przejdź do następnego elementu'
           >
-            {rightArrowIcon}
+            {RightArrowIcon}
           </button>
         </nav>
       </div>

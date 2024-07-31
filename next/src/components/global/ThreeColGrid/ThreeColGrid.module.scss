@@ -38,6 +38,11 @@
   border-right: var(--sectionBorder);
   height: 794px;
   gap: clamp(16px, calc(24vw / 7.68), 32px);
+  &:nth-child(2n) {
+    img {
+      order: 1;
+    }
+  }
 
   img {
     max-width: none;
@@ -63,12 +68,6 @@
     flex-direction: column;
     height: auto;
     padding: 0 clamp(16px, calc(32vw / 7.68), 32px);
-  }
-}
-
-.reverse {
-  img {
-    order: 1;
   }
 }
 

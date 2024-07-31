@@ -19,7 +19,10 @@ export default function CtaImage({ heading, paragraph, img, course, cta, index }
           </header>
         </div>
         <div className={styles.lines}>
-          <Img data={img} sizes='' />
+          <Img
+            data={img}
+            sizes='(max-width: 559px) 360px, (max-width: 759px) 64vw, (max-width: 899px) 487px, (max-width: 1299px) 37vw, 482px'
+          />
         </div>
         <BlobIcon />
       </div>
