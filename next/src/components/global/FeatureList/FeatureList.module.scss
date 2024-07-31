@@ -1,6 +1,7 @@
 .section {
   padding: clamp(80px, calc(128vw / 7.68), 160px) 0 clamp(48px, calc(64vw / 7.68), 80px);
   border-bottom: var(--sectionBorder);
+  position: relative;
 
   & > div {
     display: grid;
@@ -17,6 +18,14 @@
         margin: 0 auto;
       }
     }
+  }
+
+  > svg:last-child {
+    position: absolute;
+    top: -1200px;
+    right: -1240px;
+    transform: scale(0.6) rotate(30deg);
+    z-index: -50;
   }
 }
 

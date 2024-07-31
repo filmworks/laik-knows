@@ -7,11 +7,21 @@
   display: grid;
   grid-template-columns: clamp(328px, calc(440vw / 7.68), 722px) 1fr;
   row-gap: 42px;
+  position: relative;
 
   @media (max-width: 899px) {
     grid-template-columns: 1fr;
     max-width: none;
     width: 100%;
+  }
+
+  > svg:last-child {
+    position: absolute;
+    top: -80px;
+    right: 80px;
+    z-index: -50;
+    width: 812.187px;
+    height: 610.079px;
   }
 }
 

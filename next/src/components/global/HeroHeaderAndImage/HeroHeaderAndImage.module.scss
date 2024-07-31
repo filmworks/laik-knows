@@ -3,6 +3,7 @@
   position: relative;
   padding-bottom: clamp(20px, calc(80vw / 7.68), 80px);
   border-bottom: var(--sectionBorder);
+  z-index: 1;
 
   &[data-first='true'] {
     margin-top: -129px;
@@ -17,15 +18,15 @@
     margin-bottom: clamp(12px, calc(16vw / 7.68), 16px);
   }
 
-  @media (min-width: 1600px) {
+  @media (min-width: 1599px) {
     height: clamp(784px, calc(40vw), 1056px);
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     padding-top: 225px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 599px) {
     padding-top: 205px;
   }
 
@@ -50,7 +51,7 @@
     min-height: 183px;
     object-position: top;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1023px) {
       height: clamp(183px, calc(391vw / 7.68), 791px);
     }
   }

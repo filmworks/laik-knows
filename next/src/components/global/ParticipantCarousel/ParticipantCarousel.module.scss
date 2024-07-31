@@ -1,5 +1,14 @@
 .section {
   padding: clamp(80px, calc(120vw / 7.68), 120px) 0;
+  position: relative;
+
+  > svg:last-child {
+    position: absolute;
+    z-index: -50;
+    bottom: -400px;
+    left: -820px;
+    transform: scale(0.7) rotate(-40deg);
+  }
 }
 
 .box {
@@ -73,18 +82,16 @@
       height: 12px;
       border: 1px solid transparent;
       transition:
-        width 0.2s,
-        height 0.2s,
-        background-color 0.2s;
-      border-color: 0.2s;
+        transform 0.2s var(--easing),
+        background-color 0.2s,
+        border-color 0.2s;
 
       &:hover {
         background-color: var(--primary-600, #434e5b);
       }
       &[aria-current='true'] {
-        width: 14px;
-        height: 14px;
-        border: 1px solid var(--secondary-500, #1e87c1);
+        transform: scale(1.17);
+        border-color: var(--secondary-500, #1e87c1);
         background-color: var(--primary-800, #101010);
       }
     }

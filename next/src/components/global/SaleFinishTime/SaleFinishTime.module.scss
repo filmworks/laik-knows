@@ -2,14 +2,21 @@
   border-top: var(--sectionBorder);
   border-bottom: var(--sectionBorder);
   text-align: center;
+  position: relative;
 
-  & > div:first-child {
+  > div:first-child {
     border-left: var(--sectionBorder);
     border-right: var(--sectionBorder);
 
     @media (max-width: 379px) {
       width: calc(100% - ((clamp(8px, calc(16vw / 7.68), 16px)) * 2));
     }
+  }
+  > svg:last-child {
+    position: absolute;
+    top: -400px;
+    left: -1300px;
+    z-index: -50;
   }
 
   .content {

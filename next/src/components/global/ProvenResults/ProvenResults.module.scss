@@ -3,11 +3,22 @@
   border-bottom: var(--sectionBorder);
   text-align: center;
   margin-bottom: clamp(64px, calc(64vw / 7.68), 80px);
+  position: relative;
 
   h1,
   h2 {
     margin: 0 auto clamp(48px, calc(64vw / 7.68), 80px) auto;
     max-width: clamp(calc(530rem / 16), calc(530vw / 7.68), calc(587rem / 16));
+  }
+
+  > svg:last-child {
+    position: absolute;
+    width: 1794.692px;
+    height: 1873.742px;
+    bottom: 0px;
+    right: -840px;
+    transform: scale(1) rotate(20deg);
+    z-index: -50;
   }
 }
 

@@ -1,6 +1,15 @@
 .section {
   padding: clamp(64px, calc(128vw / 7.68), 160px) 0;
   border-bottom: var(--sectionBorder);
+  position: relative;
+
+  > svg:last-child {
+    position: absolute;
+    z-index: -50;
+    bottom: -550px;
+    right: -400px;
+    transform: scale(0.7) rotate(35deg);
+  }
 
   header {
     max-width: clamp(380px, calc(530vw / 7.68), 587px);

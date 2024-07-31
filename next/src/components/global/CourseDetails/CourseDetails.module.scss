@@ -1,5 +1,16 @@
 .section {
   padding: clamp(36px, calc(80vw / 7.68), 100px) 0 clamp(64px, calc(80vw / 7.68), 120px);
+  position: relative;
+
+  > svg:last-child {
+    position: absolute;
+    top: -300px;
+    right: -358px;
+    width: 1008.62px;
+    height: 1033.444px;
+    z-index: -50;
+  }
+
   h1,
   h2 {
     margin: 0 auto;

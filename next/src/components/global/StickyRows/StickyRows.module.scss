@@ -2,6 +2,13 @@
   padding-top: clamp(80px, calc(128vw / 7.68), 160px);
   display: grid;
   position: relative;
+
+  > svg:last-child {
+    position: absolute;
+    top: 20px;
+    left: 18vw;
+    z-index: -50;
+  }
 }
 
 .heading {

@@ -33,8 +33,12 @@
   flex-direction: column;
   gap: clamp(20px, calc(36vw / 7.68), 36px);
   details {
-    padding-bottom: 16px;
     border-bottom: 1px solid var(--primary-600, #434e5b);
+    transition: border-color 0.2s;
+
+    &:has(summary:hover) {
+      border-bottom-color: var(--secondary-500);
+    }
   }
 
   summary {
@@ -42,6 +46,7 @@
     align-items: center;
     justify-content: flex-start;
     gap: 12px;
+    padding-bottom: 16px;
 
     & > h3,
     h2 {
@@ -51,7 +56,10 @@
 
   .content {
     overflow: hidden;
-    padding: 8px 36px 0;
+
+    p {
+      padding: 0 36px 16px;
+    }
   }
 }
 

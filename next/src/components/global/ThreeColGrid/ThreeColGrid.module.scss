@@ -1,11 +1,21 @@
 .section {
   padding: clamp(64px, calc(132vw / 7.68), 200px) 0 clamp(42px, calc(96vw / 7.68), 140px);
+  position: relative;
 
   > h1,
   h2 {
     text-align: center;
     margin: 0 auto;
     margin-bottom: clamp(48px, calc(64vw / 7.68), 80px);
+  }
+
+  > svg:last-child {
+    position: absolute;
+    top: -540px;
+    left: -780px;
+    z-index: -1;
+    width: 1219.353px;
+    height: 1293.146px;
   }
 }
 
