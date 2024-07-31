@@ -12,12 +12,6 @@
       width: calc(100% - ((clamp(8px, calc(16vw / 7.68), 16px)) * 2));
     }
   }
-  > svg:last-child {
-    position: absolute;
-    top: -400px;
-    left: -1300px;
-    z-index: -50;
-  }
 
   .content {
     border-left: var(--sectionBorder);
