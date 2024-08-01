@@ -13,7 +13,7 @@ export default function HeroHeaderAndImage({ index, heading, paragraph, img, cta
       <Img data={img} sizes='100vw' />
       <div className='max-width'>
         <Heading>{heading}</Heading>
-        <Markdown.p className={styles.paragraph}>{paragraph}</Markdown.p>
+        <Markdown className={styles.paragraph}>{paragraph}</Markdown>
         <Pricing {...course} />
         <CtaButtonRow {...cta} />
       </div>

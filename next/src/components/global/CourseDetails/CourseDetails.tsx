@@ -59,106 +59,99 @@ export default async function CourseDetails({
 const BlobIcon = () => (
   <svg
     className='blob'
-    width='1448'
-    height='1439'
-    viewBox='0 0 1448 1439'
-    fill='none'
     xmlns='http://www.w3.org/2000/svg'
+    width={1448}
+    height={1439}
+    fill='none'
+    viewBox='0 0 1448 1439'
   >
     <g filter='url(#filter0_f_6252_2029)'>
       <path
-        d='M785.685 447.814C691.351 312.481 546.709 406.54 486.18 470.487C493.517 567.411 528.137 763.739 607.916 773.659C707.64 786.06 713.183 1000.71 812.61 951.341C912.037 901.967 851.974 777.082 997.412 840.521C1142.85 903.96 1122.41 486.067 1041.6 492.184C960.799 498.301 903.602 616.98 785.685 447.814Z'
         fill='#0076B7'
+        d='M786 448c-95-136-239-41-300 22 8 97 42 294 122 304 100 12 105 227 205 177 99-49 39-174 184-110 146 63 125-355 45-349-81 6-138 125-256-44Z'
       />
     </g>
     <g>
       <g filter='url(#filter1_f_6252_2029)'>
-        <path
-          d='M1089.95 970.5L1030.59 643.286L777.489 664.833L605.519 836.606L775.167 1050.9L1089.95 970.5Z'
-          fill='#22D3EE'
-        />
-        <path
-          d='M1089.95 970.5L1030.59 643.286L777.489 664.833L605.519 836.606L775.167 1050.9L1089.95 970.5Z'
-          stroke='#FF0518'
-          strokeWidth='100'
-        />
+        <path fill='#22D3EE' d='m1090 971-59-328-254 22-171 172 169 214 315-80Z' />
+        <path stroke='#FF0518' strokeWidth={100} d='m1090 971-59-328-254 22-171 172 169 214 315-80Z' />
       </g>
       <g filter='url(#filter2_f_6252_2029)'>
         <path
-          d='M395.795 1050.06C495.702 1023.88 703.319 576.761 794.639 356.476L955.644 377.96C919.312 465.484 849.548 679.405 861.149 834.895C875.65 1029.26 270.912 1082.79 395.795 1050.06Z'
           fill='#1D4ED8'
+          d='M396 1050c100-26 307-473 399-694l161 22c-37 87-106 301-95 457 15 194-590 248-465 215Z'
         />
       </g>
       <g filter='url(#filter3_f_6252_2029)'>
         <path
-          d='M499.113 1111.4C400.582 1134.52 401.161 785.967 413.767 608.803C548.373 597.343 836.783 574.999 913.58 577.299C1009.58 580.175 842.026 818.27 797.211 921.521C752.397 1024.77 659.022 841.216 583.312 860.347C507.603 879.478 622.276 1082.5 499.113 1111.4Z'
           fill='url(#paint0_linear_6252_2029)'
+          d='M499 1111c-98 24-98-325-85-502 134-12 423-34 500-32 96 3-72 241-117 345-45 103-138-81-214-62-75 19 39 223-84 251Z'
         />
       </g>
     </g>
     <defs>
       <filter
         id='filter0_f_6252_2029'
-        x='186.18'
-        y='78.6538'
-        width='1218.4'
-        height='1180.05'
-        filterUnits='userSpaceOnUse'
+        width={1218.4}
+        height={1180.05}
+        x={186.18}
+        y={78.6538}
         colorInterpolationFilters='sRGB'
+        filterUnits='userSpaceOnUse'
       >
-        <feFlood floodOpacity='0' result='BackgroundImageFix' />
-        <feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
-        <feGaussianBlur stdDeviation='150' result='effect1_foregroundBlur_6252_2029' />
+        <feFlood floodOpacity={0} result='BackgroundImageFix' />
+        <feBlend in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
+        <feGaussianBlur result='effect1_foregroundBlur_6252_2029' stdDeviation={150} />
       </filter>
       <filter
         id='filter1_f_6252_2029'
-        x='238.666'
-        y='289.608'
-        width='1208.8'
-        height='1117.77'
-        filterUnits='userSpaceOnUse'
+        width={1208.8}
+        height={1117.77}
+        x={238.666}
+        y={289.608}
         colorInterpolationFilters='sRGB'
+        filterUnits='userSpaceOnUse'
       >
-        <feFlood floodOpacity='0' result='BackgroundImageFix' />
-        <feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
-        <feGaussianBlur stdDeviation='150' result='effect1_foregroundBlur_6252_2029' />
+        <feFlood floodOpacity={0} result='BackgroundImageFix' />
+        <feBlend in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
+        <feGaussianBlur result='effect1_foregroundBlur_6252_2029' stdDeviation={150} />
       </filter>
       <filter
         id='filter2_f_6252_2029'
-        x='78.7983'
-        y='56.4761'
-        width='1176.85'
-        height='1302.55'
-        filterUnits='userSpaceOnUse'
+        width={1176.85}
+        height={1302.55}
+        x={78.7983}
+        y={56.4761}
         colorInterpolationFilters='sRGB'
+        filterUnits='userSpaceOnUse'
       >
-        <feFlood floodOpacity='0' result='BackgroundImageFix' />
-        <feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
-        <feGaussianBlur stdDeviation='150' result='effect1_foregroundBlur_6252_2029' />
+        <feFlood floodOpacity={0} result='BackgroundImageFix' />
+        <feBlend in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
+        <feGaussianBlur result='effect1_foregroundBlur_6252_2029' stdDeviation={150} />
       </filter>
       <filter
         id='filter3_f_6252_2029'
-        x='107.899'
-        y='277.134'
-        width='1134.89'
-        height='1135.36'
-        filterUnits='userSpaceOnUse'
+        width={1134.89}
+        height={1135.36}
+        x={107.899}
+        y={277.134}
         colorInterpolationFilters='sRGB'
+        filterUnits='userSpaceOnUse'
       >
-        <feFlood floodOpacity='0' result='BackgroundImageFix' />
-        <feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
-        <feGaussianBlur stdDeviation='150' result='effect1_foregroundBlur_6252_2029' />
+        <feFlood floodOpacity={0} result='BackgroundImageFix' />
+        <feBlend in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
+        <feGaussianBlur result='effect1_foregroundBlur_6252_2029' stdDeviation={150} />
       </filter>
       <linearGradient
         id='paint0_linear_6252_2029'
-        x1='663.139'
-        y1='587.572'
-        x2='706.272'
-        y2='1094.21'
+        x1={663.139}
+        x2={706.272}
+        y1={587.572}
+        y2={1094.21}
         gradientUnits='userSpaceOnUse'
       >
         <stop stopColor='#FF0018' />
-        <stop offset='1' stopColor='#0ADBFF' />
+        <stop offset={1} stopColor='#0ADBFF' />
       </linearGradient>
     </defs>
   </svg>

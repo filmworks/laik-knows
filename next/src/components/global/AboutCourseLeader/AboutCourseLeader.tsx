@@ -20,7 +20,7 @@ export default function AboutCourseLeader({
       <div className={styles.box}>
         <header>
           <Heading>{heading}</Heading>
-          <Markdown.p>{paragraph}</Markdown.p>
+          <Markdown className={styles.paragraph}>{paragraph}</Markdown>
           <SocialMedia socials={socials} />
         </header>
         <div>

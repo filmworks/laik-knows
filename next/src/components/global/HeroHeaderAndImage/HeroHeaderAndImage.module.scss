@@ -19,7 +19,8 @@
   }
 
   @media (min-width: 1599px) {
-    height: clamp(784px, calc(40vw), 1056px);
+    min-height: clamp(784px, calc(40vw), 1056px);
+    height: max-content;
   }
 
   @media (max-width: 1023px) {

@@ -5,6 +5,10 @@
   display: inline-block;
   cursor: pointer;
 
+  &:disabled {
+    cursor: not-allowed;
+  }
+
   &::before,
   &::after {
     content: '';

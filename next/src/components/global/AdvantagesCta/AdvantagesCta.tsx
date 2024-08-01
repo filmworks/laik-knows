@@ -30,140 +30,133 @@ export default function AdvantagesCta({ heading, paragraph, img, course, cta, in
 const BlobIcon = () => (
   <svg
     className='blob'
-    width='1403'
-    height='1628'
-    viewBox='0 0 1403 1628'
-    fill='none'
     xmlns='http://www.w3.org/2000/svg'
+    width={1403}
+    height={1628}
+    fill='none'
+    viewBox='0 0 1403 1628'
   >
     <g filter='url(#filter0_f_6252_2042)'>
       <path
-        d='M958.846 1101.08C1010.96 1092.86 900.302 904.79 838.461 811.779C779.815 762.143 668.018 679.816 690 747.589C717.477 832.306 583.804 712.511 650.211 832.9C716.618 953.29 774.261 970.589 785.677 1067.75C797.092 1164.91 1053.91 1389.23 1021.43 1311.18C988.955 1233.13 893.709 1111.35 958.846 1101.08Z'
         fill='#0076B7'
+        d='M959 1101c52-8-59-196-121-289-58-50-170-132-148-64 27 84-106-35-40 85 67 120 124 138 136 235 11 97 268 321 235 243-32-78-127-200-62-210Z'
       />
     </g>
     <g>
       <g filter='url(#filter1_f_6252_2042)'>
-        <path
-          d='M861.257 1052.66L1047 1188.34L943.756 942.475L774.319 683.986L698.982 715.681L861.257 1052.66Z'
-          fill='#22D3EE'
-        />
-        <path
-          d='M861.257 1052.66L1047 1188.34L943.756 942.475L774.319 683.986L698.982 715.681L861.257 1052.66Z'
-          stroke='#FF0518'
-          strokeWidth='100'
-        />
+        <path fill='#22D3EE' d='m861 1053 186 135-103-246-170-258-75 32 162 337Z' />
+        <path stroke='#FF0518' strokeWidth={100} d='m861 1053 186 135-103-246-170-258-75 32 162 337Z' />
       </g>
       <g filter='url(#filter2_f_6252_2042)'>
         <path
-          d='M832.731 1068.83C743.459 1035.39 596.703 817.889 534.484 713.321L525.075 705.45L301.409 301.458C363.217 338.475 531.046 455.139 707.9 625.667C928.967 838.827 944.322 1110.64 832.731 1068.83Z'
           fill='url(#paint0_linear_6252_2042)'
+          d='M833 1069c-90-34-236-251-299-356l-9-8-224-404c62 37 230 154 407 325 221 213 236 485 125 443Z'
         />
         <path
-          d='M832.731 1068.83C743.459 1035.39 596.703 817.889 534.484 713.321L525.075 705.45L301.409 301.458C363.217 338.475 531.046 455.139 707.9 625.667C928.967 838.827 944.322 1110.64 832.731 1068.83Z'
-          stroke='black'
+          stroke='#000'
+          d='M833 1069c-90-34-236-251-299-356l-9-8-224-404c62 37 230 154 407 325 221 213 236 485 125 443Z'
         />
       </g>
       <g filter='url(#filter3_f_6252_2042)'>
         <path
-          d='M451.286 331.872C503.209 439.209 859.253 890.781 1030.79 1103.15L1074.22 1239.07C1006.05 1154.65 846.176 965.858 752.033 886.074C634.354 786.344 386.383 197.7 451.286 331.872Z'
           fill='#1D4ED8'
+          d='M451 332c52 107 408 559 580 771l43 136c-68-84-228-273-322-353-118-100-366-688-301-554Z'
         />
       </g>
       <g filter='url(#filter4_f_6252_2042)'>
         <path
-          d='M530.249 604.496C480.749 500.21 701.196 703.563 817.608 818.276C872.514 949.034 988.763 1227.91 1014.5 1297.37C1046.68 1384.2 836.901 1091.19 755.789 989.794C674.678 888.4 757.598 909.13 718.699 828.203C679.801 747.276 592.124 734.854 530.249 604.496Z'
           fill='url(#paint1_linear_6252_2042)'
+          d='M530 604c-49-104 171 100 288 214 55 131 171 410 197 479 32 87-178-206-259-307-81-102 2-81-37-162s-127-93-189-224Z'
         />
       </g>
     </g>
     <defs>
       <filter
         id='filter0_f_6252_2042'
-        x='331.482'
-        y='421.922'
-        width='992.789'
-        height='1205.45'
-        filterUnits='userSpaceOnUse'
+        width={992.789}
+        height={1205.45}
+        x={331.482}
+        y={421.922}
         colorInterpolationFilters='sRGB'
+        filterUnits='userSpaceOnUse'
       >
-        <feFlood floodOpacity='0' result='BackgroundImageFix' />
-        <feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
-        <feGaussianBlur stdDeviation='150' result='effect1_foregroundBlur_6252_2042' />
+        <feFlood floodOpacity={0} result='BackgroundImageFix' />
+        <feBlend in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
+        <feGaussianBlur result='effect1_foregroundBlur_6252_2042' stdDeviation={150} />
       </filter>
       <filter
         id='filter1_f_6252_2042'
-        x='350.732'
-        y='320.356'
-        width='1051.66'
-        height='1240.67'
-        filterUnits='userSpaceOnUse'
+        width={1051.66}
+        height={1240.67}
+        x={350.732}
+        y={320.356}
         colorInterpolationFilters='sRGB'
+        filterUnits='userSpaceOnUse'
       >
-        <feFlood floodOpacity='0' result='BackgroundImageFix' />
-        <feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
-        <feGaussianBlur stdDeviation='150' result='effect1_foregroundBlur_6252_2042' />
+        <feFlood floodOpacity={0} result='BackgroundImageFix' />
+        <feBlend in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
+        <feGaussianBlur result='effect1_foregroundBlur_6252_2042' stdDeviation={150} />
       </filter>
       <filter
         id='filter2_f_6252_2042'
-        x='0.791992'
-        y='0.731445'
-        width='1200.33'
-        height='1372.96'
-        filterUnits='userSpaceOnUse'
+        width={1200.33}
+        height={1372.96}
+        x={0.791992}
+        y={0.731445}
         colorInterpolationFilters='sRGB'
+        filterUnits='userSpaceOnUse'
       >
-        <feFlood floodOpacity='0' result='BackgroundImageFix' />
-        <feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
-        <feGaussianBlur stdDeviation='150' result='effect1_foregroundBlur_6252_2042' />
+        <feFlood floodOpacity={0} result='BackgroundImageFix' />
+        <feBlend in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
+        <feGaussianBlur result='effect1_foregroundBlur_6252_2042' stdDeviation={150} />
       </filter>
       <filter
         id='filter3_f_6252_2042'
-        x='140.63'
-        y='12.0894'
-        width='1233.59'
-        height='1526.99'
-        filterUnits='userSpaceOnUse'
+        width={1233.59}
+        height={1526.99}
+        x={140.63}
+        y={12.0894}
         colorInterpolationFilters='sRGB'
+        filterUnits='userSpaceOnUse'
       >
-        <feFlood floodOpacity='0' result='BackgroundImageFix' />
-        <feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
-        <feGaussianBlur stdDeviation='150' result='effect1_foregroundBlur_6252_2042' />
+        <feFlood floodOpacity={0} result='BackgroundImageFix' />
+        <feBlend in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
+        <feGaussianBlur result='effect1_foregroundBlur_6252_2042' stdDeviation={150} />
       </filter>
       <filter
         id='filter4_f_6252_2042'
-        x='223.122'
-        y='275.643'
-        width='1094.71'
-        height='1337.6'
-        filterUnits='userSpaceOnUse'
+        width={1094.71}
+        height={1337.6}
+        x={223.122}
+        y={275.643}
         colorInterpolationFilters='sRGB'
+        filterUnits='userSpaceOnUse'
       >
-        <feFlood floodOpacity='0' result='BackgroundImageFix' />
-        <feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
-        <feGaussianBlur stdDeviation='150' result='effect1_foregroundBlur_6252_2042' />
+        <feFlood floodOpacity={0} result='BackgroundImageFix' />
+        <feBlend in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
+        <feGaussianBlur result='effect1_foregroundBlur_6252_2042' stdDeviation={150} />
       </filter>
       <linearGradient
         id='paint0_linear_6252_2042'
-        x1='915.791'
-        y1='969.361'
-        x2='631.923'
-        y2='1088.56'
+        x1={915.791}
+        x2={631.923}
+        y1={969.361}
+        y2={1088.56}
         gradientUnits='userSpaceOnUse'
       >
         <stop stopColor='#FF0018' />
-        <stop offset='1' stopColor='#0ADBFF' />
+        <stop offset={1} stopColor='#0ADBFF' />
       </linearGradient>
       <linearGradient
         id='paint1_linear_6252_2042'
-        x1='919.329'
-        y1='1060.52'
-        x2='751.207'
-        y2='1131.12'
+        x1={919.329}
+        x2={751.207}
+        y1={1060.52}
+        y2={1131.12}
         gradientUnits='userSpaceOnUse'
       >
         <stop stopColor='#FF0018' />
-        <stop offset='1' stopColor='#0ADBFF' />
+        <stop offset={1} stopColor='#0ADBFF' />
       </linearGradient>
     </defs>
   </svg>

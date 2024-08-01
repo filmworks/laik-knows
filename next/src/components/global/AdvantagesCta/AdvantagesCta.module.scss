@@ -4,7 +4,7 @@
 
   > div:first-child {
     display: grid;
-    grid-template-columns: repeat(2, max-content);
+    grid-template-columns: max-content 1fr;
     align-items: center;
     justify-content: space-between;
     column-gap: 48px;
@@ -32,7 +32,9 @@
   }
 
   @media (max-width: 1023px) {
-    grid-template-columns: 1fr;
+    > div:first-child {
+      grid-template-columns: 1fr;
+    }
     img {
       width: clamp(328px, calc(371vw / 7.68), 371px);
     }
