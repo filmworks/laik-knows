@@ -305,7 +305,6 @@ h2,
 
 .blob {
   transform: translateZ(0);
-  will-change: transform;
   pointer-events: none;
   @media (max-width: 1023px) {
     display: none;
