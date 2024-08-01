@@ -7,7 +7,6 @@ import Button from '@/components/ui/Button';
 import Checkbox from '@/components/ui/Checkbox';
 import FormState from '@/components/ui/FormState';
 import Input from '@/components/ui/Input';
-import Loader from '@/components/ui/Loader';
 import styles from './Faq.module.scss';
 
 type FormTypes = {
@@ -111,8 +110,7 @@ export default function Form({ heading, paragraph, cta, email, privacyLink }: Fo
         errors={errors}
       />
       <Button>{cta}</Button>
-      <Loader isLoading={status.sending} />
-      <FormState {...formStateData} isSuccess={status.success} setStatus={setStatus} />
+      <FormState {...formStateData} isSuccess={status.success} setStatus={setStatus} isLoading={status.sending} />
     </form>
   );
 }
