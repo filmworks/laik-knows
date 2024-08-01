@@ -68,8 +68,10 @@ export default function Form({ heading, paragraph, cta, isOpen, privacyLink, ema
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className='contact-box'>
-      {heading}
-      {paragraph}
+      <header>
+        {heading}
+        {paragraph}
+      </header>
       <Input
         disabled={status.sending}
         type='email'

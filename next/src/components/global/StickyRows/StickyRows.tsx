@@ -19,7 +19,7 @@ export default function StickyRows({ heading, rows, index }: StickyRowsTypes) {
                 <span className={styles.num}>{i + 1}</span>
                 <div>
                   <Subheading className={styles.subheading}>{heading}</Subheading>
-                  <Markdown.p>{paragraph}</Markdown.p>
+                  <Markdown>{paragraph}</Markdown>
                 </div>
               </div>
             </div>

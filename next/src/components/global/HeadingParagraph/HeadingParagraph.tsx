@@ -9,7 +9,7 @@ export default function HeadingParagraph({ heading, paragraph, enlarged, index }
     <section className={styles.section} data-enlarged-top={enlarged.top} data-enlarged-bottom={enlarged.bottom}>
       <div className='max-width'>
         <Heading>{heading}</Heading>
-        <Markdown.p>{paragraph}</Markdown.p>
+        <Markdown className={styles.paragraph}>{paragraph}</Markdown>
       </div>
     </section>
   );

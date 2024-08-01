@@ -33,7 +33,7 @@
   header {
     max-width: clamp(328px, calc(530vw / 7.68), 587px);
 
-    & > p {
+    .paragraph {
       margin-bottom: clamp(20px, calc(28vw / 7.68), 28px);
     }
 

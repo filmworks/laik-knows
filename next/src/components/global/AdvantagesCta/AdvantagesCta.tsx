@@ -17,7 +17,7 @@ export default function AdvantagesCta({ heading, paragraph, img, course, cta, in
         />
         <div>
           <Heading>{heading}</Heading>
-          <Markdown.p>{paragraph}</Markdown.p>
+          <Markdown className={styles.paragraph}>{paragraph}</Markdown>
           <Pricing {...course} />
           <CtaButtonRow {...cta} />
         </div>

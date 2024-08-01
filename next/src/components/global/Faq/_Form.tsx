@@ -67,8 +67,10 @@ export default function Form({ heading, paragraph, cta, email, privacyLink }: Fo
   const messageValue = watch('message');
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={`${styles.form} contact-box`}>
-      {heading}
-      {paragraph}
+      <header>
+        {heading}
+        {paragraph}
+      </header>
       <Input
         disabled={status.sending}
         type='email'

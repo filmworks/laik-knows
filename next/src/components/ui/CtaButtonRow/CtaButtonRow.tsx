@@ -11,7 +11,7 @@ export default function CtaButtonRow({ list, additionalInfo }: CtaDataTypes) {
           <Button {...btn} key={i} />
         ))}
       </nav>
-      {additionalInfo ? <Markdown.p className={styles.ctaText}>{additionalInfo}</Markdown.p> : null}
+      {additionalInfo ? <Markdown className={styles.ctaText}>{additionalInfo}</Markdown> : null}
     </>
   );
 }

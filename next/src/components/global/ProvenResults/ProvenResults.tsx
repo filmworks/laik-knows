@@ -16,7 +16,7 @@ export default function ProvenResults({ heading, list, index }: ProvenResultsTyp
               <div className={styles.percent}>
                 <Counter value={value} />
               </div>
-              <Markdown.p>{description}</Markdown.p>
+              <Markdown>{description}</Markdown>
             </li>
           ))}
         </ul>

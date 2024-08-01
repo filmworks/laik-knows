@@ -11,7 +11,7 @@ export default function Partners({ heading, paragraph, list, index }: PartnersTy
       <div className='max-width'>
         <header>
           <Heading>{heading}</Heading>
-          <Markdown.p>{paragraph}</Markdown.p>
+          <Markdown>{paragraph}</Markdown>
         </header>
       </div>
       <div className={styles.container}>

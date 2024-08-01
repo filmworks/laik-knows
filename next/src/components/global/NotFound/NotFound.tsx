@@ -9,7 +9,7 @@ export default function NotFound({ heading, paragraph, cta, imgLg, imgSm }: NotF
     <section className={`${styles.section} max-width`}>
       <header>
         <Markdown.h1>{heading}</Markdown.h1>
-        <Markdown.p>{paragraph}</Markdown.p>
+        <Markdown className={styles.paragraph}>{paragraph}</Markdown>
         <Button {...cta} />
       </header>
       <div className={styles.images}>

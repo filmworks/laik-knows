@@ -18,7 +18,7 @@ export default function ThreeColGrid({ heading, list, index }: ThreeColGridTypes
             />
             <div className={styles.content}>
               <Subheading>{heading}</Subheading>
-              <Markdown.p>{paragraph}</Markdown.p>
+              <Markdown>{paragraph}</Markdown>
             </div>
           </li>
         ))}

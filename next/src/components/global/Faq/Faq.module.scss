@@ -6,7 +6,7 @@
   row-gap: 48px;
   align-items: start;
 
-  header {
+  > div > header {
     max-width: clamp(328px, calc(530vw / 7.68), 587px);
     margin-bottom: clamp(32px, calc(64vw / 7.68), 80px);
     h1,
@@ -57,7 +57,7 @@
   .content {
     overflow: hidden;
 
-    p {
+    .paragraph {
       padding: 0 36px 16px;
     }
   }

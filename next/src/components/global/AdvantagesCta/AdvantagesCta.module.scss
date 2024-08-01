@@ -21,7 +21,8 @@
   img {
     width: clamp(371px, calc(371vw / 10), 483px);
   }
-  > div > div > p:first-of-type {
+
+  .paragraph {
     margin-bottom: clamp(48px, calc(64vw / 7.68), 80px);
     max-width: 587px;
   }

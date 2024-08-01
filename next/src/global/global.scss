@@ -165,6 +165,15 @@ main {
   flex-direction: column;
 }
 
+p {
+  margin-bottom: 8px;
+
+  &:last-child,
+  &:only-of-type {
+    margin-bottom: 0;
+  }
+}
+
 h1,
 .h1,
 h2,
@@ -266,10 +275,7 @@ h2,
     z-index: -1;
   }
 
-  > h4,
-  h3,
-  h2,
-  p,
+  > header,
   button,
   label:last-of-type {
     margin: 0 clamp(8px, calc(12vw / 7.68), 12px);
@@ -281,11 +287,11 @@ h2,
     margin-bottom: 12px;
   }
 
-  & > p {
+  > header {
     margin-bottom: 12px;
   }
 
-  & > label,
+  > label,
   label:last-of-type {
     margin-bottom: clamp(28px, calc(32vw / 7.68), 32px);
   }

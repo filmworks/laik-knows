@@ -25,11 +25,11 @@ export default async function CourseDetails({
   const _list = list.map(props => ({
     ...props,
     heading: <Subheading>{props.heading}</Subheading>,
-    paragraph: <Markdown.p>{props.paragraph}</Markdown.p>,
+    paragraph: <Markdown>{props.paragraph}</Markdown>,
     form: {
       ...props.form,
       heading: <TertiaryHeading>{props.form.heading}</TertiaryHeading>,
-      paragraph: <Markdown.p>{props.form.paragraph}</Markdown.p>,
+      paragraph: <Markdown>{props.form.paragraph}</Markdown>,
       privacyLink: privacyPolicy,
     },
   }));

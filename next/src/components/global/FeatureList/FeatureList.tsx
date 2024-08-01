@@ -14,7 +14,7 @@ export default function FeatureList({ heading, paragraph, list, cta, imgLg, imgS
         <div className={styles.content}>
           <header>
             <Heading>{heading}</Heading>
-            <Markdown.p>{paragraph}</Markdown.p>
+            <Markdown className={styles.paragraph}>{paragraph}</Markdown>
           </header>
           <ul>
             {list.map((item, i) => (

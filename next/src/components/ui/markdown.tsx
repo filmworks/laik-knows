@@ -45,24 +45,28 @@ type MarkdownTypes = {
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export default function Markdown({ Tag, components, children, ...props }: MarkdownTypes) {
+  const isSingleParagraph = children.trim().split('\n').length === 1;
+
   const markdown = (
     <MDXRemote
       source={children}
-      components={{
-        ...(Tag && {
-          p: ({ children }) => <Tag {...props}>{children}</Tag>,
-        }),
-        a: LinkRenderer,
-        li: ListRenderer,
-        ol: ({ children }) => <ol className='orderedList'>{children}</ol>,
-        ul: ({ children }) => <ul className='unorderedList'>{children}</ul>,
-        ...components,
-      }}
+      components={
+        isSingleParagraph && !Tag
+          ? { p: ({ children }) => <p {...props}>{children}</p> }
+          : {
+              ...(Tag && { p: ({ children }) => <Tag {...props}>{children}</Tag> }),
+              a: LinkRenderer,
+              li: ListRenderer,
+              ol: ({ children }) => <ol className='orderedList'>{children}</ol>,
+              ul: ({ children }) => <ul className='unorderedList'>{children}</ul>,
+              ...components,
+            }
+      }
       {...props}
     />
   );
 
-  return Tag ? markdown : <div {...props}>{markdown}</div>;
+  return Tag || isSingleParagraph ? markdown : <div {...props}>{markdown}</div>;
 }
 
 Markdown.h1 = (props: MarkdownTypes) => <Markdown Tag='h1' {...props} />;

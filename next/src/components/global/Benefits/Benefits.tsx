@@ -12,7 +12,7 @@ export default function Benefits({ heading, paragraph, list, index }: BenefitsTy
       <div className='max-width'>
         <header className={styles.header}>
           <Heading>{heading}</Heading>
-          <Markdown.p>{paragraph}</Markdown.p>
+          <Markdown className={styles.paragraph}>{paragraph}</Markdown>
         </header>
       </div>
       <div className={styles.container}>
@@ -20,7 +20,7 @@ export default function Benefits({ heading, paragraph, list, index }: BenefitsTy
           {list.map(({ heading, paragraph, img }, i) => (
             <li key={i} className={styles.item}>
               <div className={styles.content}>
-                <Markdown.p>{paragraph}</Markdown.p>
+                <Markdown>{paragraph}</Markdown>
                 <Subheading>{heading}</Subheading>
               </div>
               <Img

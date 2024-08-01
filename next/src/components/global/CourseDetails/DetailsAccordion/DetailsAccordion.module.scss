@@ -76,7 +76,8 @@
 
 .content {
   overflow: hidden;
-  > p {
+  > p,
+  > div {
     margin-bottom: 28px;
     padding: 0 48px 0 36px;
 
@@ -91,27 +92,26 @@
 
   > form {
     margin-bottom: 21px;
-  }
 
-  > h4,
-  p,
-  button,
-  label:last-of-type {
-    margin: 0 clamp(8px, calc(12vw / 7.68), 12px);
-  }
+    > header,
+    > button,
+    > label:last-of-type {
+      margin: 0 clamp(8px, calc(12vw / 7.68), 12px);
+    }
 
-  h4 {
-    margin-bottom: 12px;
-    color: var(--primary-300, #a7b4bc);
-  }
+    h4 {
+      margin-bottom: 12px;
+      color: var(--primary-300, #a7b4bc);
+    }
 
-  > p {
-    margin-bottom: 12px;
-  }
+    > header {
+      margin-bottom: 12px;
+    }
 
-  > label,
-  label:last-of-type {
-    margin-bottom: clamp(28px, calc(32vw / 7.68), 32px);
+    > label,
+    label:last-of-type {
+      margin-bottom: clamp(28px, calc(32vw / 7.68), 32px);
+    }
   }
 
   @media (max-width: 539px) {

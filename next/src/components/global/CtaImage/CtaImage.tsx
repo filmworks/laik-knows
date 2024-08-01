@@ -13,7 +13,7 @@ export default function CtaImage({ heading, paragraph, img, course, cta, index }
         <div className={styles.content}>
           <header>
             <Heading>{heading}</Heading>
-            <Markdown.p>{paragraph}</Markdown.p>
+            <Markdown className={styles.paragraph}>{paragraph}</Markdown>
             <Pricing {...course} />
             <CtaButtonRow {...cta} />
           </header>

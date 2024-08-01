@@ -23,6 +23,7 @@
     letter-spacing: calc(0.12rem / 16);
     font-size: calc(12rem / 16);
     color: var(--primary-300, #a7b4bc);
+    margin: 0 clamp(8px, 1.5625vw, 12px);
   }
 
   .label {
