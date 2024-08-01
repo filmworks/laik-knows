@@ -3,63 +3,28 @@ import { isExternalLink } from '@/utils/is-external-link';
 import styles from './Button.module.scss';
 import type { ButtonTypes } from './Button.types';
 
-export default function Button({ data, href, children, isLoading = false, ...props }: ButtonTypes) {
-  if (data) {
-    href = data.href;
-    children = data.value;
-  }
-
+export default function Button({ href, theme = 'secondary', children, text, ...props }: ButtonTypes) {
+  const _children = children || text;
   const isExternal = isExternalLink(href);
   const Element = href ? (isExternal ? 'a' : Link) : 'button';
+
   return (
     <Element
-      data-loading={isLoading}
-      disabled={isLoading}
       href={href || ''}
-      {...(href && {
-        href: href,
-        ...(isExternal && { target: '_blank', rel: 'noopener' }),
-      })}
+      {...(href &&
+        Element !== 'button' && { href: href, ...(isExternalLink(href) && { target: '_blank', rel: 'noopener' }) })}
+      data-theme={theme}
+      className={styles.button}
       {...props}
-      className={styles.btn}
-      data-primary={data?.role === 'primary'}
     >
-      <span>
-        {isLoading ? <span className={styles.loader}></span> : children}
-        {data?.role === 'primary' && <ArrowIcon />}
-      </span>
-
-      {data?.role === 'primary' && (
-        <>
-          <span className={styles.glow} />
-          <span className={styles.bullets}>
-            {
-              <>
-                <BulltetIcon className={`${styles.bulletIcon} ${styles.bulletIcon__1}`} />
-                <BulltetIcon className={`${styles.bulletIcon} ${styles.bulletIcon__2}`} />
-                <BulltetIcon className={`${styles.bulletIcon} ${styles.bulletIcon__3}`} />
-                <BulltetIcon className={`${styles.bulletIcon} ${styles.bulletIcon__4}`} />
-                <BulltetIcon className={`${styles.bulletIcon} ${styles.bulletIcon__5}`} />
-                <BulltetIcon className={`${styles.bulletIcon} ${styles.bulletIcon__6}`} />
-                <BulltetIcon className={`${styles.bulletIcon} ${styles.bulletIcon__7}`} />
-                <BulltetIcon className={`${styles.bulletIcon} ${styles.bulletIcon__8}`} />
-              </>
-            }
-          </span>
-        </>
-      )}
+      {_children}
+      {theme === 'primary' && <ArrowIcon />}
     </Element>
   );
 }
 
 const ArrowIcon = ({ ...props }) => (
-  <svg xmlns='http://www.w3.org/2000/svg' width='17' height='7' fill='none' {...props}>
-    <path strokeLinejoin='bevel' strokeWidth='1.001' d='M15.5 3.5H0m13-3 3 3-3 3' />
-  </svg>
-);
-
-const BulltetIcon = ({ ...props }) => (
-  <svg xmlns='http://www.w3.org/2000/svg' width='2' height='2' fill='none' {...props}>
-    <path d='M.51.268a.508.508 0 0 0 .682.681.438.438 0 0 0 .217-.217.508.508 0 0 0-.681-.681.438.438 0 0 0-.217.217Z' />
+  <svg xmlns='http://www.w3.org/2000/svg' width={17} height={7} fill='none' viewBox='0 0 17 7' {...props}>
+    <path id='Vector' stroke='#C3D5E2' strokeLinejoin='bevel' strokeWidth={1} d='M16 4H0m13-3 3 3-3 3' />
   </svg>
 );

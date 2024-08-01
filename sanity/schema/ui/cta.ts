@@ -7,7 +7,7 @@ export default defineField({
   icon: () => '📢',
   fields: [
     defineField({
-      name: 'role',
+      name: 'theme',
       type: 'string',
       title: 'Gatunek',
       options: {
@@ -21,7 +21,7 @@ export default defineField({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'value',
+      name: 'text',
       type: 'string',
       title: 'Tekst',
       validation: (Rule) => Rule.required(),
@@ -47,15 +47,15 @@ export default defineField({
   ],
   preview: {
     select: {
-      heading: 'value',
+      heading: 'text',
       paragraph: 'href',
-      role: 'role',
+      theme: 'theme',
       icon: 'icon',
     },
-    prepare: ({ heading, paragraph, icon, role }) => {
-      const roleTitle = role === 'primary' ? 'Główne' : 'Dodatkowe'
+    prepare: ({ heading, paragraph, icon, theme }) => {
+      const themeTitle = theme === 'primary' ? 'Główne' : 'Dodatkowe'
       return {
-        title: `(${roleTitle}) ${heading}`,
+        title: `(${themeTitle}) ${heading}`,
         subtitle: paragraph,
         icon,
       }

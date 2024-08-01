@@ -10,5 +10,6 @@ export type FormStateTypes = {
     paragraph: string;
   };
   isSuccess: FormStatusTypes['success'];
+  isLoading: boolean;
   setStatus: React.Dispatch<React.SetStateAction<FormStatusTypes>>;
 };

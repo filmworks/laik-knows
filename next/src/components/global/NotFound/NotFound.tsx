@@ -10,7 +10,7 @@ export default function NotFound({ heading, paragraph, cta, imgLg, imgSm }: NotF
       <header>
         <Markdown.h1>{heading}</Markdown.h1>
         <Markdown.p>{paragraph}</Markdown.p>
-        <Button data={cta} />
+        <Button {...cta} />
       </header>
       <div className={styles.images}>
         <div className={styles.sm}>

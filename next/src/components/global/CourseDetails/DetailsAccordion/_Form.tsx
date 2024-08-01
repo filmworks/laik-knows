@@ -50,7 +50,8 @@ export default function Form({ heading, paragraph, cta, isOpen, privacyLink, ema
     try {
       await new Promise(resolve => setTimeout(resolve, 1000));
       const isTrue = true;
-      // Tu będzie logika do wysyłania maila
+      // Logic for sending email
+
       if (isTrue) {
         setStatus({ sending: false, success: true });
         reset();
@@ -63,7 +64,7 @@ export default function Form({ heading, paragraph, cta, isOpen, privacyLink, ema
   };
 
   const emailValue = watch('email');
-  const tabIndex = isOpen ? 0 : -1;
+  const tabIndex = isOpen && !status.sending ? 0 : -1;
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className='contact-box'>
@@ -101,10 +102,8 @@ export default function Form({ heading, paragraph, cta, isOpen, privacyLink, ema
         })}
         errors={errors}
       />
-      <Button tabIndex={tabIndex} isLoading={status.sending}>
-        {cta}
-      </Button>
-      <FormState {...formStateData} isSuccess={status.success} setStatus={setStatus} />
+      <Button tabIndex={tabIndex}>{cta}</Button>
+      <FormState {...formStateData} isSuccess={status.success} setStatus={setStatus} isLoading={status.sending} />
     </form>
   );
 }

@@ -7,6 +7,7 @@ import Button from '@/components/ui/Button';
 import Checkbox from '@/components/ui/Checkbox';
 import FormState from '@/components/ui/FormState';
 import Input from '@/components/ui/Input';
+import Loader from '@/components/ui/Loader';
 import styles from './Faq.module.scss';
 
 type FormTypes = {
@@ -51,7 +52,7 @@ export default function Form({ heading, paragraph, cta, email, privacyLink }: Fo
     try {
       await new Promise(resolve => setTimeout(resolve, 1000));
       const isTrue = true;
-      // Tu będzie logika do wysyłania maila
+      // Logic for sending email
       if (isTrue) {
         setStatus({ sending: false, success: true });
         reset();
@@ -109,7 +110,8 @@ export default function Form({ heading, paragraph, cta, email, privacyLink }: Fo
         })}
         errors={errors}
       />
-      <Button isLoading={status.sending}>{cta}</Button>
+      <Button>{cta}</Button>
+      <Loader isLoading={status.sending} />
       <FormState {...formStateData} isSuccess={status.success} setStatus={setStatus} />
     </form>
   );

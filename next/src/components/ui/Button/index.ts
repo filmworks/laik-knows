@@ -5,8 +5,8 @@ export type { ButtonTypes } from './Button.types';
 
 export const CtaDataQuery = `
   list[]{
-    role,
-    value,
+    theme,
+    text,
     href,
   },
   additionalInfo,
