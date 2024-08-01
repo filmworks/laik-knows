@@ -1,5 +1,5 @@
 import { CourseDataTypes } from '@/global/types';
-import { CtaDataTypes } from '@/components/ui/Button/Button.types';
+import { CtaDataTypes } from '@/components/ui/CtaButtonRow/CtaButtonRow.types';
 import { ImgDataTypes } from '@/components/ui/image';
 import { VideoDataTypes } from '@/components/ui/video';
 
