@@ -27,15 +27,9 @@ export default defineField({
           fields: [
             {
               name: 'value',
-              type: 'number',
+              type: 'string',
               title: 'Wartość',
               validation: (Rule) => Rule.required(),
-            },
-            {
-              name: 'percent',
-              type: 'boolean',
-              title: 'Czy wartość ma być w procentach?',
-              initialValue: false,
             },
             {
               name: 'description',
@@ -49,11 +43,10 @@ export default defineField({
               heading: 'value',
               paragraph: 'description',
               icon: 'icon',
-              isPercent: 'percent',
             },
-            prepare: ({ icon, heading, paragraph, isPercent }) => ({
+            prepare: ({ icon, heading, paragraph }) => ({
               icon,
-              title: `${heading}${isPercent ? '%' : ''}`,
+              title: heading,
               subtitle: removeMarkdown(paragraph),
             }),
           },

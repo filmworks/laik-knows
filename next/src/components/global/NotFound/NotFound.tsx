@@ -14,10 +14,10 @@ export default function NotFound({ heading, paragraph, cta, imgLg, imgSm }: NotF
       </header>
       <div className={styles.images}>
         <div className={styles.sm}>
-          <Img data={imgSm} sizes='' />
+          <Img data={imgSm} sizes='(max-width: 549px) 156px, (max-width: 1379px) 28vw, 381px' />
         </div>
         <div className={styles.lg}>
-          <Img data={imgLg} sizes='' />
+          <Img data={imgLg} sizes='(max-width: 399px) 156px, (max-width: 1539px) 40vw, 587px' />
         </div>
       </div>
       <BlobIcon />
@@ -33,7 +33,7 @@ const BlobIcon = () => (
         fill='#0076B7'
       />
     </g>
-    <g style={{ mixBlendMode: 'color' }}>
+    <g>
       <g filter='url(#filter1_f_6264_2084)'>
         <path
           d='M962.58 1628.11L648.004 1811.79L485.653 1585.83L506.097 1320.37L805.266 1308.89L962.58 1628.11Z'

@@ -11,11 +11,10 @@ export default function ProvenResults({ heading, list, index }: ProvenResultsTyp
       <div className='max-width'>
         <Heading>{heading}</Heading>
         <ul className={styles.list}>
-          {list.map(({ value, percent, description }, i) => (
+          {list.map(({ value, description }, i) => (
             <li className={styles.item} key={i}>
               <div className={styles.percent}>
                 <Counter value={value} />
-                {percent && '%'}
               </div>
               <Markdown.p>{description}</Markdown.p>
             </li>
@@ -42,7 +41,7 @@ const BlobIcon = () => (
         fill='#0076B7'
       />
     </g>
-    <g style={{ mixBlendMode: 'color' }}>
+    <g>
       <g filter='url(#filter1_f_6252_2015)'>
         <path
           d='M822.901 1494.11L1137.48 1677.78L1299.83 1451.82L1279.38 1186.36L980.215 1174.89L822.901 1494.11Z'

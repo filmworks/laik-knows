@@ -58,8 +58,12 @@
   text-transform: uppercase;
   font-weight: 348;
   line-height: 120%;
-  min-width: clamp(80px, calc(110vw / 7.68), 110px);
+  min-width: clamp(116px, calc(136vw / 7.68), 136px);
   @media (max-width: 899px) {
     align-self: flex-start;
+  }
+
+  @media (max-width: 499px) {
+    min-width: 98px;
   }
 }

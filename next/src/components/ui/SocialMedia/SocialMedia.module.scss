@@ -32,7 +32,7 @@
     &:hover {
       span {
         &::after {
-          background: radial-gradient(54.93% 141.42% at 0% 100%, rgba(47, 129, 219, 0.12) 0%, rgba(0, 0, 0, 0.12) 100%),
+          background: radial-gradient(55% 141.42% at 0% 100%, rgba(47, 129, 219, 0.12) 0%, rgba(0, 0, 0, 0.12) 100%),
             var(--primary-800, #101010);
         }
       }

@@ -37,7 +37,14 @@ export default function List({ list }: ListTypes) {
           <Button
             onClick={() => {
               setVisibleReviews(REVIEWS_AT_ONCE);
-              listRef.current?.scrollIntoView({ behavior: 'smooth' });
+
+              const htmlElement = document.documentElement;
+
+              htmlElement.style.scrollBehavior = 'auto';
+
+              listRef.current?.scrollIntoView();
+
+              htmlElement.style.scrollBehavior = 'smooth';
             }}
           >
             Zobacz mniej

@@ -4,6 +4,8 @@
   flex-direction: column;
   flex-grow: 1;
   position: relative;
+  margin-top: -214px;
+  justify-content: center;
 
   > svg:last-child {
     position: absolute;
@@ -13,6 +15,10 @@
     transform: scale(0.6);
     width: clamp(670px, calc(1338vw / 7.68), 1784px);
     height: auto;
+  }
+
+  @media (max-width: 899px) {
+    margin-top: 0;
   }
 
   header {
@@ -67,7 +73,7 @@
     right: 0;
     bottom: 0;
     width: 80vw;
-    height: 100vh;
+    height: 150vh;
     z-index: -5;
     border-bottom: var(--sectionBorder);
     border-right: var(--sectionBorder);

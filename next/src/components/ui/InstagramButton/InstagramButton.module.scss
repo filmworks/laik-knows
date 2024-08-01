@@ -3,7 +3,7 @@
   font-size: clamp(calc(14rem / 16), calc(16vw / 7.68), calc(16rem / 16));
   padding: 8px 12px;
   border: var(--sectionBorder);
-  background: radial-gradient(38.84% 100% at 50% 100%, rgba(112, 123, 135, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
+  background: radial-gradient(39% 100% at 50% 100%, rgba(112, 123, 135, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
     var(--primary-900, #000);
   max-width: 133px;
   display: flex;
@@ -21,7 +21,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(38.84% 100% at 50% 100%, rgba(26, 159, 255, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%),
+    background: radial-gradient(39% 100% at 50% 100%, rgba(26, 159, 255, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%),
       var(--primary-900, #000);
     opacity: 0;
     z-index: 2;

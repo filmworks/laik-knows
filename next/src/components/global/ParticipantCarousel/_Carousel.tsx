@@ -54,19 +54,17 @@ export default function _Carousel({ list, children, LeftArrowIcon, RightArrowIco
           </button>
         </nav>
       </div>
-      <div className={styles.box}>
-        <div className={styles.slider} ref={emblaRef}>
-          <div className={styles.container}>
-            {list.map(({ name, image, video, instagram }, i) => (
-              <div key={i} className={styles.slide}>
-                <OpenVideoBox img={image} video={video} sizes='(max-width: 689px) 280px, 310px' />
-                <div className={styles.content}>
-                  <span>{name}</span>
-                  <InstagramButton {...instagram} />
-                </div>
+      <div className={styles.slider} ref={emblaRef}>
+        <div className={styles.container}>
+          {list.map(({ name, image, video, instagram }, i) => (
+            <div key={i} className={styles.slide}>
+              <OpenVideoBox img={image} video={video} sizes='(max-width: 689px) 280px, 310px' />
+              <div className={styles.content}>
+                <span>{name}</span>
+                <InstagramButton {...instagram} />
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </>

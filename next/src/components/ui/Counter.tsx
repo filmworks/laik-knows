@@ -4,7 +4,7 @@ import { useInView, useMotionValue, useSpring } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
 type CounterTypes = {
-  value: number;
+  value: string;
 };
 
 export default function Counter({ value }: CounterTypes) {
@@ -13,9 +13,12 @@ export default function Counter({ value }: CounterTypes) {
   const springValue = useSpring(motionValue, { damping: 70, stiffness: 120 });
   const isInView = useInView(ref, { once: true, margin: '0px' });
 
+  const numericValue = parseFloat(value.replace(/[^\d.-]/g, ''));
+  const nonNumericPart = value.replace(/[0-9.-]/g, '');
+
   useEffect(() => {
-    if (isInView) motionValue.set(value);
-  }, [motionValue, isInView, value]);
+    if (isInView) motionValue.set(numericValue);
+  }, [motionValue, isInView, numericValue]);
 
   useEffect(
     () =>
@@ -27,5 +30,10 @@ export default function Counter({ value }: CounterTypes) {
     [springValue]
   );
 
-  return <span ref={ref}>{Intl.NumberFormat('pl-PL').format(value)}</span>;
+  return (
+    <>
+      <span ref={ref}>{Intl.NumberFormat('pl-PL').format(numericValue)}</span>
+      {nonNumericPart}
+    </>
+  );
 }

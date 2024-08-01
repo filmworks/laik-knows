@@ -45,7 +45,7 @@ const BlobIcon = () => (
         fill='#0076B7'
       />
     </g>
-    <g style={{ mixBlendMode: 'color' }}>
+    <g>
       <g filter='url(#filter1_f_6252_2056)'>
         <path
           d='M393.058 760.78L632.073 799.156L678.489 620.175L602.144 460.562L413.983 525.211L393.058 760.78Z'

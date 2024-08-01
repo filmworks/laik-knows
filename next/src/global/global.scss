@@ -249,7 +249,7 @@ h2,
   position: relative;
   width: calc(100% - 2px);
   padding: clamp(16px, calc(28vw / 7.68), 28px) clamp(8px, calc(16vw / 7.68), 16px);
-  background: radial-gradient(48.84% 100% at 50% 100%, rgba(112, 123, 135, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%),
+  background: radial-gradient(49% 100% at 50% 100%, rgba(112, 123, 135, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%),
     var(--primary-900, #000);
   margin: 0 auto 1px;
 
@@ -304,6 +304,9 @@ h2,
 }
 
 .blob {
+  transform: translateZ(0);
+  will-change: transform;
+  pointer-events: none;
   @media (max-width: 1023px) {
     display: none;
   }

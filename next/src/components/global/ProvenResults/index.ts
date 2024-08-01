@@ -8,7 +8,6 @@ export const ProvenResults_Query = `
     heading,
     list[] {
         value,
-        percent,
         description,
     },
   },
