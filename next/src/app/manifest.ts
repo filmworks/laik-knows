@@ -1,5 +1,12 @@
 import { MetadataRoute } from 'next';
-import { BACKGROUND_COLOR, DEFAULT_DESCRIPTION, DEFAULT_TITLE, SHORT_TITLE, THEME_COLOR } from '@/global/constants';
+import {
+  BACKGROUND_COLOR,
+  DEFAULT_DESCRIPTION,
+  DEFAULT_TITLE,
+  DOMAIN,
+  SHORT_TITLE,
+  THEME_COLOR,
+} from '@/global/constants';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
@@ -10,17 +17,17 @@ export default function manifest(): MetadataRoute.Manifest {
     display: 'standalone',
     background_color: BACKGROUND_COLOR,
     theme_color: THEME_COLOR,
-    // icons: [
-    //   {
-    //     src: `${DOMAIN}/icons/icon-192x192.png`,
-    //     sizes: '192x192',
-    //     type: 'image/png',
-    //   },
-    //   {
-    //     src: `${DOMAIN}/icons/icon-512x512.png`,
-    //     sizes: '512x512',
-    //     type: 'image/png',
-    //   },
-    // ],
+    icons: [
+      {
+        src: `${DOMAIN}/icons/icon-192x192.png`,
+        sizes: '192x192',
+        type: 'image/png',
+      },
+      {
+        src: `${DOMAIN}/icons/icon-512x512.png`,
+        sizes: '512x512',
+        type: 'image/png',
+      },
+    ],
   };
 }
