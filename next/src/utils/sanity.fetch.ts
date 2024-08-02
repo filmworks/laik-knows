@@ -22,11 +22,12 @@ const client = createClient({
  */
 export default async function sanityFetch<QueryResponse>({
   query,
+  tags,
   params = {},
 }: {
   query: string;
   tags?: string[];
   params?: QueryParams;
 }): Promise<QueryResponse> {
-  return await client.fetch<QueryResponse>(query, params);
+  return await client.fetch<QueryResponse>(query, params, { next: { tags } });
 }
