@@ -19,6 +19,64 @@ export const global = defineType({
       validation: (Rule) => Rule.required().email(),
     }),
     defineField({
+      name: 'tel',
+      type: 'string',
+      title: 'Numer telefonu (opcjonalnie)',
+    }),
+    defineField({
+      name: 'socials',
+      type: 'object',
+      title: 'Social media (opcjonalnie)',
+      options: { collapsible: true, collapsed: true },
+      fields: [
+        defineField({
+          name: 'facebook',
+          type: 'url',
+          title: 'Facebook',
+          validation: (Rule) =>
+            Rule.uri({ scheme: ['https'] }).error(
+              'Podaj prawidłowy adres URL (rozpoczynający się od https://)',
+            ),
+        }),
+        defineField({
+          name: 'instagram',
+          type: 'url',
+          title: 'Instagram',
+          validation: (Rule) =>
+            Rule.uri({ scheme: ['https'] }).error(
+              'Podaj prawidłowy adres URL (rozpoczynający się od https://)',
+            ),
+        }),
+        defineField({
+          name: 'youtube',
+          type: 'url',
+          title: 'YouTube',
+          validation: (Rule) =>
+            Rule.uri({ scheme: ['https'] }).error(
+              'Podaj prawidłowy adres URL (rozpoczynający się od https://)',
+            ),
+        }),
+        defineField({
+          name: 'tiktok',
+          type: 'url',
+          title: 'TikTok',
+          validation: (Rule) =>
+            Rule.uri({ scheme: ['https'] }).error(
+              'Podaj prawidłowy adres URL (rozpoczynający się od https://)',
+            ),
+        }),
+        defineField({
+          name: 'linkedin',
+          type: 'url',
+          title: 'LinkedIn',
+          validation: (Rule) =>
+            Rule.uri({ scheme: ['https'] }).error(
+              'Podaj prawidłowy adres URL (rozpoczynający się od https://)',
+            ),
+        }),
+      ],
+    }),
+    defineField({
       name: 'seo',
       type: 'object',
       title: 'SEO',

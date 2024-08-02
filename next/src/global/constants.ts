@@ -17,6 +17,12 @@ export const DEFAULT_TITLE: string = 'Laik Knows';
 export const SHORT_TITLE: string = 'LaikKnows';
 
 /**
+ * URL for the main logo.
+ * @constant
+ */
+export const LOGO_URL: string = `${DOMAIN}/icon-512.png`;
+
+/**
  * Global description.
  * @constant
  */

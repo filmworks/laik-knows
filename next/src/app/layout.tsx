@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import SchemaOrganization from '@/global/Schema/Organization';
 import { LOCALE } from '@/global/constants';
 import { RedHatDisplay } from '@/global/fonts';
 import '@/global/global.scss';
@@ -21,6 +22,7 @@ export default function RootLayout({
         <Header />
         <main id='main'>{children}</main>
         <Footer />
+        <SchemaOrganization />
       </body>
     </html>
   );
