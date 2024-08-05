@@ -1,13 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { FieldValues, useForm } from 'react-hook-form';
 import { FormStatusTypes } from '@/global/types';
 import Button from '@/components/ui/Button';
 import Checkbox from '@/components/ui/Checkbox';
 import FormState from '@/components/ui/FormState';
 import Input from '@/components/ui/Input';
 import styles from './Faq.module.scss';
+import { REGEX } from '@/global/constants';
 
 type FormTypes = {
   heading: JSX.Element;
@@ -46,13 +47,16 @@ export default function Form({ heading, paragraph, cta, email, privacyLink }: Fo
     formState: { errors },
   } = useForm({ mode: 'onTouched' });
 
-  const onSubmit = async () => {
+  const onSubmit = async (data: FieldValues) => {
     setStatus({ sending: true, success: undefined });
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      const isTrue = true;
-      // Logic for sending email
-      if (isTrue) {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const responseData = await response.json();
+      if (response.ok && responseData.success) {
         setStatus({ sending: false, success: true });
         reset();
       } else {
@@ -78,7 +82,7 @@ export default function Form({ heading, paragraph, cta, email, privacyLink }: Fo
         register={register('email', {
           required: { value: true, message: 'Adres e-mail jest wymagany' },
           pattern: {
-            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+            value: REGEX.email,
             message: 'Nieprawidłowy format',
           },
         })}

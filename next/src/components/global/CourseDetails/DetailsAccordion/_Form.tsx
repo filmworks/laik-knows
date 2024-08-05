@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { REGEX } from '@/global/constants';
 import { FormStatusTypes } from '@/global/types';
 import Button from '@/components/ui/Button';
 import Checkbox from '@/components/ui/Checkbox';
@@ -80,7 +81,7 @@ export default function Form({ heading, paragraph, cta, isOpen, privacyLink, ema
         register={register('email', {
           required: { value: true, message: 'Adres e-mail jest wymagany' },
           pattern: {
-            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+            value: REGEX.email,
             message: 'Nieprawidłowy format',
           },
         })}
