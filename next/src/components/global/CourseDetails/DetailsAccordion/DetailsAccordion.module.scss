@@ -13,6 +13,11 @@
       border-bottom-color: var(--secondary-500);
     }
 
+    &:has(summary:focus-visible) {
+      outline: 1px solid var(--primary-300);
+      outline-offset: 5px;
+    }
+
     &[data-opened='true'] {
       & header > div {
         > svg:first-child {
@@ -36,6 +41,9 @@
   justify-content: space-between;
   gap: 8px;
   padding-bottom: 16px;
+  &:focus-visible {
+    outline: none;
+  }
 
   @media (max-width: 539px) {
     flex-direction: column;

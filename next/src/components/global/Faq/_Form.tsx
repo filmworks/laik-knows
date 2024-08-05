@@ -2,13 +2,13 @@
 
 import { useState } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
+import { REGEX } from '@/global/constants';
 import { FormStatusTypes } from '@/global/types';
 import Button from '@/components/ui/Button';
 import Checkbox from '@/components/ui/Checkbox';
 import FormState from '@/components/ui/FormState';
 import Input from '@/components/ui/Input';
 import styles from './Faq.module.scss';
-import { REGEX } from '@/global/constants';
 
 type FormTypes = {
   heading: JSX.Element;
@@ -47,6 +47,8 @@ export default function Form({ heading, paragraph, cta, email, privacyLink }: Fo
     formState: { errors },
   } = useForm({ mode: 'onTouched' });
 
+  const tabIndex = status.success === undefined && !status.sending ? 0 : -1;
+
   const onSubmit = async (data: FieldValues) => {
     setStatus({ sending: true, success: undefined });
     try {
@@ -76,6 +78,7 @@ export default function Form({ heading, paragraph, cta, email, privacyLink }: Fo
         {paragraph}
       </header>
       <Input
+        tabIndex={tabIndex}
         disabled={status.sending}
         type='email'
         label='E-mail'
@@ -90,6 +93,7 @@ export default function Form({ heading, paragraph, cta, email, privacyLink }: Fo
         errors={errors}
       />
       <Input
+        tabIndex={tabIndex}
         disabled={status.sending}
         textarea
         label='Wiadomość'
@@ -100,12 +104,13 @@ export default function Form({ heading, paragraph, cta, email, privacyLink }: Fo
         errors={errors}
       />
       <Checkbox
+        tabIndex={tabIndex}
         disabled={status.sending}
         className={styles.checkbox}
         label={
           <>
             Akceptuję{' '}
-            <a href={privacyLink} target='_blank' rel='noreferrer' className='link'>
+            <a href={privacyLink} tabIndex={tabIndex} target='_blank' rel='noreferrer' className='link'>
               politykę prywatności
             </a>
           </>
@@ -115,7 +120,7 @@ export default function Form({ heading, paragraph, cta, email, privacyLink }: Fo
         })}
         errors={errors}
       />
-      <Button>{cta}</Button>
+      <Button tabIndex={tabIndex}>{cta}</Button>
       <FormState {...formStateData} isSuccess={status.success} setStatus={setStatus} isLoading={status.sending} />
     </form>
   );

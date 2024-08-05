@@ -39,6 +39,11 @@
     &:has(summary:hover) {
       border-bottom-color: var(--secondary-500);
     }
+
+    &:has(summary:focus-visible) {
+      outline: 1px solid var(--primary-300);
+      outline-offset: 5px;
+    }
   }
 
   summary {
@@ -47,6 +52,9 @@
     justify-content: flex-start;
     gap: 12px;
     padding-bottom: 16px;
+    &:focus-visible {
+      outline: none;
+    }
 
     & > h3,
     h2 {

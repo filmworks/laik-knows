@@ -65,7 +65,7 @@ export default function Form({ heading, paragraph, cta, isOpen, privacyLink, ema
   };
 
   const emailValue = watch('email');
-  const tabIndex = isOpen && !status.sending ? 0 : -1;
+  const tabIndex = isOpen && !status.sending && status.success === undefined ? 0 : -1;
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className='contact-box'>

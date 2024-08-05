@@ -18,13 +18,22 @@ export default function Button({ href, theme = 'secondary', children, text, ...p
       {...props}
     >
       {_children}
-      {theme === 'primary' && <ArrowIcon />}
+      {theme === 'primary' && (
+        <>
+          <ArrowIcon />
+          <div className={styles.dots}>
+            {Array.from({ length: 8 }).map((_, i) => (
+              <div key={i} style={{ transitionDelay: `${i * 0.03}s` }} />
+            ))}
+          </div>
+        </>
+      )}
     </Element>
   );
 }
 
 const ArrowIcon = ({ ...props }) => (
-  <svg xmlns='http://www.w3.org/2000/svg' width={17} height={7} fill='none' viewBox='0 0 17 7' {...props}>
-    <path id='Vector' stroke='#C3D5E2' strokeLinejoin='bevel' strokeWidth={1} d='M16 4H0m13-3 3 3-3 3' />
+  <svg xmlns='http://www.w3.org/2000/svg' width={17} height={7} fill='none' stroke='#C3D5E2' {...props}>
+    <path strokeLinejoin='bevel' strokeWidth={1} d='M16 4H0m13-3 3 3-3 3' />
   </svg>
 );
