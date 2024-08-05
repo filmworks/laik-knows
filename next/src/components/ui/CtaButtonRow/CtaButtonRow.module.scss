@@ -12,7 +12,7 @@
     & > button {
       width: 100%;
 
-      & > span:first-child {
+      &[data-theme='secondary'] {
         justify-content: flex-start;
       }
     }

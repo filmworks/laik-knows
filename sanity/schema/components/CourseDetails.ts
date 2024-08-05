@@ -102,7 +102,7 @@ export default defineField({
     defineField({
       name: 'video',
       type: 'file',
-      title: 'Plik Wideo',
+      title: 'Plik Wideo (Opcjonalne)',
       description: 'Wideo pokazuje się po kliknięciu na zdjęcie',
       options: {
         accept: 'video/mp4',

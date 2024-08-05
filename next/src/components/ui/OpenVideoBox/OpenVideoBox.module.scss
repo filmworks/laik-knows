@@ -1,6 +1,7 @@
 .container {
   position: relative;
   overflow: hidden;
+  max-width: max-content;
 
   &:focus-within {
     outline: 1px solid var(--primary-300);
