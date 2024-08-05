@@ -42,7 +42,8 @@
     z-index: -20;
   }
 
-  img {
+  img,
+  video {
     position: absolute;
     top: 0;
     left: 0;
@@ -50,11 +51,17 @@
     height: 100%;
     z-index: -25;
     min-height: 183px;
-    object-position: top;
 
     @media (max-width: 1023px) {
       height: clamp(183px, calc(391vw / 7.68), 791px);
     }
+  }
+  img {
+    object-position: top;
+  }
+
+  video {
+    object-fit: cover;
   }
 }
 

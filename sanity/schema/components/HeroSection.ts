@@ -34,6 +34,17 @@ export default defineField({
       title: 'Zdjęcie',
       validation: (Rule) => Rule.required(),
     }),
+    defineField({
+      name: 'video',
+      type: 'file',
+      title: 'Plik Wideo (Opcjonalny)',
+      description: 'Kiedy wideo jest wprowadzone, pokazuję się ono zamiast zdjęcia w tle.',
+      options: {
+        accept: 'video/mp4',
+        collapsible: true,
+        collapsed: true,
+      },
+    }),
   ],
   preview: {
     select: {

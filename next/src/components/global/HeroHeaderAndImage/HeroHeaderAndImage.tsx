@@ -5,12 +5,20 @@ import Markdown from '@/components/ui/markdown';
 import styles from './HeroHeaderAndImage.module.scss';
 import type { HeroHeaderAndImageTypes } from './HeroHeaderAndImage.types';
 
-export default function HeroHeaderAndImage({ index, heading, paragraph, img, cta, course }: HeroHeaderAndImageTypes) {
+export default function HeroHeaderAndImage({
+  index,
+  heading,
+  paragraph,
+  img,
+  cta,
+  course,
+  video,
+}: HeroHeaderAndImageTypes) {
   const Heading = index === 0 ? Markdown.h1 : Markdown.h2;
 
   return (
     <section className={styles.section} data-first={index === 0}>
-      <Img data={img} sizes='100vw' />
+      {video ? <video autoPlay loop muted playsInline src={video.asset.url} /> : <Img data={img} sizes='100vw' />}
       <div className='max-width'>
         <Heading>{heading}</Heading>
         <Markdown className={styles.paragraph}>{paragraph}</Markdown>
