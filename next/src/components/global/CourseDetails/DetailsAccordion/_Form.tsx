@@ -1,5 +1,6 @@
+import { createSubscriber } from '../../../../actions';
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { FieldValues, useForm } from 'react-hook-form';
 import { REGEX } from '@/global/constants';
 import { FormStatusTypes } from '@/global/types';
 import Button from '@/components/ui/Button';
@@ -46,22 +47,11 @@ export default function Form({ heading, paragraph, cta, isOpen, privacyLink, ema
     watch,
   } = useForm({ mode: 'onTouched' });
 
-  const onSubmit = async () => {
+  const onSubmit = async (data: FieldValues) => {
     setStatus({ sending: true, success: undefined });
-    try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      const isTrue = true;
-      // Logic for sending email
-
-      if (isTrue) {
-        setStatus({ sending: false, success: true });
-        reset();
-      } else {
-        setStatus({ sending: false, success: false });
-      }
-    } catch {
-      setStatus({ sending: false, success: false });
-    }
+    const status = await createSubscriber({ email: data.email, legal: data.legal });
+    setStatus({ sending: false, success: status.success });
+    reset();
   };
 
   const emailValue = watch('email');

@@ -17,8 +17,8 @@
     }
     svg {
       transition:
-        transform 0.2s var(--easing),
-        stroke 0.2s var(--easing);
+        transform 0.3s var(--easing),
+        stroke 0.3s var(--easing);
     }
 
     .dots {
@@ -28,7 +28,7 @@
       right: 0;
       bottom: 0;
       opacity: 0.62;
-      transition: opacity 0.2s var(--easing);
+      transition: opacity 0.4s var(--easing);
       div {
         position: absolute;
         width: 1px;
@@ -39,37 +39,45 @@
         &:nth-of-type(1) {
           bottom: -3.5px;
           left: 43%;
+          opacity: 0.42;
         }
         &:nth-of-type(2) {
           bottom: 8px;
           left: 39%;
+          opacity: 0.42;
         }
         &:nth-of-type(3) {
           bottom: 7px;
           left: 49%;
+          opacity: 0.9;
         }
         &:nth-of-type(4) {
           bottom: 14px;
           left: 49.4%;
+          opacity: 0.9;
         }
         &:nth-of-type(5) {
           bottom: -5px;
           left: 53%;
+          opacity: 0.58;
         }
         &:nth-of-type(6) {
           bottom: -2.2px;
           left: 56.4%;
+          opacity: 0.58;
         }
         &:nth-of-type(7) {
           bottom: 8px;
           left: 60%;
+          opacity: 0.68;
         }
         &:nth-of-type(8) {
           bottom: 3px;
           left: 65%;
+          opacity: 0.42;
         }
         transform: translateY(5px);
-        transition: transform 0.2s var(--easing);
+        transition: transform 0.4s var(--easing);
       }
     }
 
