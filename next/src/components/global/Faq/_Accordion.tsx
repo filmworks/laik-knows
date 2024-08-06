@@ -8,7 +8,7 @@ import styles from './Faq.module.scss';
 import { AccordionTypes } from './Faq.types';
 
 export default function Accordion({ list }: AccordionTypes) {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
   const handleClick = (e: React.MouseEvent<HTMLElement>, i: number) => {
     e.preventDefault();
     setOpenIndex(i === openIndex ? null : i);

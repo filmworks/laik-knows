@@ -2,6 +2,7 @@
   padding: 80px 0;
   border-top: var(--sectionBorder);
   border-bottom: var(--sectionBorder);
+  text-align: center;
 
   &[data-enlarged-top='true'] {
     padding-top: clamp(112px, calc(160vw / 7.68), 200px);
@@ -14,9 +15,11 @@
   h1,
   h2 {
     margin-bottom: clamp(12px, calc(16vw / 7.68), 16px);
+    margin: 0 auto;
   }
 
   .paragraph {
     max-width: 587px;
+    margin: 0 auto;
   }
 }

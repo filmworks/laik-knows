@@ -7,7 +7,7 @@ import styles from './DetailsAccordion.module.scss';
 import Form from './_Form';
 
 export default function DetailsAccordion({ list, email }: DetailsAccordionTypes) {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
   const handleClick = (e: React.MouseEvent<HTMLElement>, i: number) => {
     e.preventDefault();
     setOpenIndex(i === openIndex ? null : i);

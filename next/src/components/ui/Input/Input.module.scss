@@ -5,9 +5,11 @@
   transition: background-color 0.3s;
   max-width: 381px;
 
-  &:focus-within {
+  &:focus-within:has(input:focus-visible),
+  &:focus-within:has(textarea:focus-visible) {
     background-color: var(--primary-800, #101010);
   }
+
   &:focus-within,
   &[data-filled='true'] {
     .label {
@@ -30,6 +32,7 @@
     transform: translate(8px, calc(100% + 8px));
     font-size: clamp(calc(14rem / 16), calc(16vw / 7.68), calc(16rem / 16));
     letter-spacing: calc(0.32rem / 16);
+    cursor: text;
     transition:
       transform 0.2s var(--easing),
       font-size 0.2s,

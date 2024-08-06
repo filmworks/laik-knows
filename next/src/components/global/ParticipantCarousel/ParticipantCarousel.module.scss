@@ -132,4 +132,10 @@
       }
     }
   }
+
+  @media (max-width: 499px) {
+    width: 100%;
+    justify-content: space-between;
+    gap: 32px;
+  }
 }
