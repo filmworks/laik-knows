@@ -14,7 +14,7 @@ export default function DetailsAccordion({ list, email }: DetailsAccordionTypes)
   };
   return (
     <div className={styles.list}>
-      {list.map(({ heading, video, paragraph, form }, i) => (
+      {list.map(({ heading, video, paragraph, form, showForm }, i) => (
         <details key={i} open data-opened={openIndex === i}>
           <summary className={styles.summary} onClick={e => handleClick(e, i)} tabIndex={openIndex === i ? -1 : 0}>
             <header className={styles.header}>
@@ -36,7 +36,7 @@ export default function DetailsAccordion({ list, email }: DetailsAccordionTypes)
             }}
           >
             {paragraph}
-            <Form {...form} email={email} isOpen={openIndex === i} />
+            {showForm && <Form {...form} email={email} isOpen={openIndex === i} />}
           </motion.div>
         </details>
       ))}

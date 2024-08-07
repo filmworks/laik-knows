@@ -47,11 +47,23 @@ export default defineField({
               validation: (Rule) => Rule.required(),
             },
             {
+              name: 'showForm',
+              type: 'boolean',
+              title: 'Formularz widoczny?',
+              initialValue: false,
+            },
+            {
               name: 'form',
               type: 'object',
               title: 'Formularz',
+              hidden: ({ parent }) => !parent?.showForm,
               options: { collapsible: true, collapsed: false },
-              validation: (Rule) => Rule.required(),
+              validation: (Rule) =>
+                Rule.custom((form, context) => {
+                  return (context as { parent: { showForm: boolean } }).parent.showForm && !form
+                    ? 'Wymagane'
+                    : true
+                }),
               fields: [
                 defineField({
                   name: 'heading',

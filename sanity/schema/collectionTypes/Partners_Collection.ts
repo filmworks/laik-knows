@@ -13,6 +13,9 @@ export default defineType({
       name: 'img',
       type: 'image',
       title: 'Logo',
+      options: {
+        accept: 'image/*',
+      },
       validation: (Rule) => Rule.required(),
     }),
     defineField({

@@ -14,6 +14,7 @@ export type CourseDetailsTypes = {
   list: {
     heading: string;
     paragraph: string;
+    showForm: boolean;
     video: VideoDataTypes;
     form: { heading: string; paragraph: string; cta: string };
   }[];
@@ -25,7 +26,7 @@ export type DetailsAccordionTypes = {
     heading: JSX.Element;
     paragraph: JSX.Element;
     video: VideoDataTypes;
-
+    showForm: boolean;
     form: { heading: JSX.Element; paragraph: JSX.Element; cta: string; privacyLink: string };
   }[];
 };

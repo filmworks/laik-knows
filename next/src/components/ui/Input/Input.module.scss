@@ -5,9 +5,10 @@
   transition: background-color 0.3s;
   max-width: 381px;
 
-  &:focus-within:has(input:focus-visible),
-  &:focus-within:has(textarea:focus-visible) {
-    background-color: var(--primary-800, #101010);
+  &:focus-within {
+    &[data-filled='false'] {
+      background-color: var(--primary-800, #101010);
+    }
   }
 
   &:focus-within,

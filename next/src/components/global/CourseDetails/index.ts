@@ -27,6 +27,7 @@ export const CourseDetails_Query = `
             video {
             ${VideoDataQuery}
             },
+            showForm,
             form {
             heading,
             paragraph,
