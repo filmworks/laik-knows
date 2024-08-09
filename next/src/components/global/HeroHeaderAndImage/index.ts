@@ -1,7 +1,6 @@
 import { CourseDataQuery } from '@/global/queries';
 import { CtaDataQuery } from '@/components/ui/Button';
 import { ImgDataQuery } from '@/components/ui/image';
-import { VideoDataQuery } from '@/components/ui/video';
 import HeroHeaderAndImage from './HeroHeaderAndImage';
 
 export default HeroHeaderAndImage;
@@ -17,7 +16,7 @@ export const HeroHeaderAndImage_Query = `
     img {
       ${ImgDataQuery}
     },
-    video {${VideoDataQuery}},
+    video,
     "course": ${CourseDataQuery}
   },
 `;

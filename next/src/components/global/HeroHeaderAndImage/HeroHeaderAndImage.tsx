@@ -18,7 +18,18 @@ export default function HeroHeaderAndImage({
 
   return (
     <section className={styles.section} data-first={index === 0}>
-      {video ? <video autoPlay loop muted playsInline src={video.asset.url} /> : <Img data={img} sizes='100vw' />}
+      {video ? (
+        <div className={styles.video}>
+          <iframe
+            title='Twórz profesjonalne kursy video'
+            src={`https://player.vimeo.com/video/${video}?h=8f0ffe497b&autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&dnt=1`}
+            allow='autoplay; fullscreen'
+          ></iframe>
+        </div>
+      ) : (
+        <Img data={img} sizes='100vw' />
+      )}
+
       <div className='max-width'>
         <Heading>{heading}</Heading>
         <Markdown className={styles.paragraph}>{paragraph}</Markdown>

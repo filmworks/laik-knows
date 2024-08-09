@@ -1,9 +1,10 @@
 import Img from '../image';
+import styles from './OpenVideoBox.module.scss';
 import type { OpenVideoBoxTypes } from './OpenVideoBox.types';
 import VideoBox from './_VideoBox';
 
 export default function OpenVideoBox({ video, img, sizes = '' }: OpenVideoBoxTypes) {
-  if (!video) return <Img data={img} sizes={sizes} />;
+  if (!video) return <Img data={img} sizes={sizes} className={styles.img} />;
   return <VideoBox video={video} img={img} sizes={sizes} videoIcon={VideoIcon} />;
 }
 

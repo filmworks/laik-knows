@@ -1,14 +1,13 @@
 'use client';
 
 import Img from '../image';
-import Video from '../video';
 import { useState } from 'react';
 import styles from './OpenVideoBox.module.scss';
 import { VideoBoxTypes } from './OpenVideoBox.types';
 
 export default function VideoBox({ video, img, sizes, videoIcon }: VideoBoxTypes) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   return (
     <div className={styles.container} data-loading={isLoading}>
@@ -25,25 +24,17 @@ export default function VideoBox({ video, img, sizes, videoIcon }: VideoBoxTypes
       </button>
       {isOpen && (
         <>
-          {isLoading && (
+          <div className={styles.video} onClick={() => setIsOpen(false)}>
+            <iframe
+              onLoad={() => setIsLoading(false)}
+              title='Film kursantki'
+              src={`https://player.vimeo.com/video/${video}?h=8f0ffe497b&autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&dnt=1`}
+              allow='autoplay; fullscreen'
+            ></iframe>
             <div className={styles.loader}>
               <div />
             </div>
-          )}
-          <Video
-            onClick={() => setIsOpen(false)}
-            className={styles.video}
-            loop
-            onLoadStart={() => setIsLoading(true)}
-            onLoadedData={() => setIsLoading(false)}
-            onError={() => {
-              setIsLoading(false);
-              setIsOpen(false);
-            }}
-            muted
-            autoPlay
-            src={video.asset.url}
-          />
+          </div>
         </>
       )}
     </div>

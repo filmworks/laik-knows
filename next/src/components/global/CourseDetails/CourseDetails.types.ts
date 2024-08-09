@@ -6,7 +6,7 @@ import { VideoDataTypes } from '@/components/ui/video';
 export type CourseDetailsTypes = {
   index: number;
   heading: string;
-  video: VideoDataTypes;
+  video?: string;
   img: ImgDataTypes;
   cta: CtaDataTypes;
   course: CourseDataTypes;

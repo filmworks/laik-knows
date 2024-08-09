@@ -34,9 +34,6 @@
   flex-direction: column;
   row-gap: clamp(24px, calc(32vw / 7.68), 48px);
   column-gap: clamp(24px, calc(24vw / 7.68), 32px);
-  img {
-    width: 381px;
-  }
 
   @media (max-width: 1023px) and (min-width: 540px) {
     flex-direction: row;
@@ -44,10 +41,8 @@
     justify-content: center;
   }
 
-  @media (max-width: 539px) {
-    img {
-      width: 231px;
-    }
+  > div {
+    max-width: 328px;
   }
 }
 

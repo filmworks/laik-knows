@@ -1,5 +1,4 @@
 import { ImgDataTypes } from '@/components/ui/image';
-import { VideoDataTypes } from '@/components/ui/video';
 
 export type ReviewsTypes = {
   heading: string;
@@ -16,7 +15,7 @@ export type SingleReviewType = {
     username: string;
   };
   image: ImgDataTypes;
-  video?: VideoDataTypes | null;
+  video?: string | null;
 };
 
 export type ListTypes = {

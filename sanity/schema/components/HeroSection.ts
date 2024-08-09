@@ -36,14 +36,9 @@ export default defineField({
     }),
     defineField({
       name: 'video',
-      type: 'file',
-      title: 'Plik Wideo (Opcjonalny)',
+      type: 'string',
+      title: 'ID Wideo (Opcjonalne)',
       description: 'Kiedy wideo jest wprowadzone, pokazuję się ono zamiast zdjęcia w tle.',
-      options: {
-        accept: 'video/mp4',
-        collapsible: true,
-        collapsed: true,
-      },
     }),
   ],
   preview: {

@@ -113,13 +113,9 @@ export default defineField({
     }),
     defineField({
       name: 'video',
-      type: 'file',
-      title: 'Plik Wideo (Opcjonalne)',
+      type: 'string',
+      title: 'ID Wideo (Opcjonalne)',
       description: 'Wideo pokazuje się po kliknięciu na zdjęcie',
-      options: {
-        accept: 'video/mp4',
-      },
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'cta',

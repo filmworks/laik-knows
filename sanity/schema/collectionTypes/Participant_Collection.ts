@@ -74,15 +74,10 @@ export default defineType({
     }),
     defineField({
       name: 'video',
-      type: 'file',
-      title: 'Plik Wideo (Opcjonalny)',
+      type: 'string',
+      title: 'ID Wideo (Opcjonalny)',
       description:
         'Wideo pokazuje się po kliknięciu na zdjęcie kursantki. Wideo nie jest wymagane.',
-      options: {
-        accept: 'video/mp4',
-        collapsible: true,
-        collapsed: true,
-      },
     }),
   ],
   preview: {

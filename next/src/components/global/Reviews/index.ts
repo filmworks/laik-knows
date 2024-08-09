@@ -1,5 +1,4 @@
 import { ImgDataQuery } from '@/components/ui/image';
-import { VideoDataQuery } from '@/components/ui/video';
 import Reviews from './Reviews';
 
 export default Reviews;
@@ -14,9 +13,7 @@ export const SingleReview_Query = `
     image {
       ${ImgDataQuery}
     },
-    video{
-      ${VideoDataQuery}
-    },
+    video,
   }
 `;
 
