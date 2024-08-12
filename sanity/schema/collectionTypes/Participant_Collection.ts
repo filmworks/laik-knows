@@ -75,9 +75,9 @@ export default defineType({
     defineField({
       name: 'video',
       type: 'string',
-      title: 'ID Wideo (Opcjonalny)',
+      title: 'ID Wideo (Opcjonalne)',
       description:
-        'Wideo pokazuje się po kliknięciu na zdjęcie kursantki. Wideo nie jest wymagane.',
+        'Wideo pokazuje się po kliknięciu na zdjęcie kursantki. (Wideo powinno mieć proporcje 9:16)',
     }),
   ],
   preview: {

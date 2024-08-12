@@ -115,7 +115,8 @@ export default defineField({
       name: 'video',
       type: 'string',
       title: 'ID Wideo (Opcjonalne)',
-      description: 'Wideo pokazuje się po kliknięciu na zdjęcie',
+      description:
+        'Wideo pokazuje się po kliknięciu na zdjęcie (Wideo powinno mieć proporcje 9:16)',
     }),
     defineField({
       name: 'cta',

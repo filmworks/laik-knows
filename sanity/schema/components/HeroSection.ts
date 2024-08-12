@@ -38,7 +38,8 @@ export default defineField({
       name: 'video',
       type: 'string',
       title: 'ID Wideo (Opcjonalne)',
-      description: 'Kiedy wideo jest wprowadzone, pokazuję się ono zamiast zdjęcia w tle.',
+      description:
+        'Kiedy wideo jest wprowadzone, pokazuję się ono zamiast zdjęcia w tle. (Wideo powinno mieć proporcje 16:9)',
     }),
   ],
   preview: {
