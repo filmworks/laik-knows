@@ -4,6 +4,7 @@ import SchemaOrganization from '@/global/Schema/Organization';
 import { LOCALE } from '@/global/constants';
 import { RedHatDisplay } from '@/global/fonts';
 import '@/global/global.scss';
+import CookieConsent from '@/components/global/CookieConsent';
 import Footer from '@/components/global/Footer';
 import Header from '@/components/global/Header';
 
@@ -23,9 +24,10 @@ export default function RootLayout({
         <Header />
         <main id='main'>{children}</main>
         <Footer />
+        <CookieConsent />
         <SchemaOrganization />
       </body>
-      <GoogleTagManager gtmId='GTM-58CFBWW3' />
+      {process.env.NODE_ENV === 'production' && <GoogleTagManager gtmId='GTM-KNPVL7L7' />}
     </html>
   );
 }

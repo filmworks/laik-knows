@@ -1,0 +1,98 @@
+.CookieConsent {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.38);
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  &:has(.Content[aria-hidden='true']) {
+    display: none;
+  }
+  .Content {
+    max-height: calc(100dvh - var(--pageMargin) * 2);
+    max-width: calc(800rem / 16);
+    width: calc(100% - var(--pageMargin) * 2);
+    padding: 20px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    border: 1px solid var(--primary-700, #262c33);
+    background: var(--primary-800, #101010);
+    position: relative;
+    header {
+      max-width: 574px;
+      h2 {
+        margin-bottom: clamp(20px, calc(28vw / 7.68), 28px);
+        font-size: clamp(calc(14rem / 16), calc(16vw / 7.68), calc(16rem / 16));
+        letter-spacing: 0.16px;
+        line-height: 148%;
+      }
+      .paragraph {
+        margin-bottom: 48px;
+      }
+    }
+  }
+  .settings {
+    overflow: auto;
+    overscroll-behavior: contain;
+    margin-bottom: 48px;
+    padding: 0 clamp(8px, calc(12vw / 7.68), 12px);
+    .header {
+      margin-bottom: clamp(16px, calc(24vw / 7.68), 32px);
+      text-align: center;
+      .paragraph {
+        margin-top: clamp(16px, calc(20vw / 7.68), 20px);
+        & > *:not(:last-child) {
+          margin-bottom: 8px;
+        }
+      }
+    }
+    .group {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      column-gap: 16px;
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+      .content {
+        h3 {
+          margin-bottom: 12px;
+          line-height: 148%;
+        }
+
+        p {
+          font-size: calc(12rem / 16);
+          line-height: 148%;
+        }
+      }
+    }
+  }
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px 12px;
+    flex-wrap: wrap;
+
+    .row {
+      display: flex;
+      gap: 12px;
+    }
+
+    @media (max-width: 679px) {
+      button {
+        width: 100%;
+      }
+      .row {
+        width: 100%;
+        flex-direction: column;
+
+        button {
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+}

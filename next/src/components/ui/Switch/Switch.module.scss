@@ -1,0 +1,55 @@
+.Switch {
+  width: 64px;
+  height: 34px;
+  border: 1px solid var(--primary-200, #c9d1d7);
+  background-color: var(--primary-300, #a7b4bc);
+  padding: 4px;
+  transition:
+    background-color 0.3s var(--easing),
+    border-color 0.3s var(--easing);
+  cursor: pointer;
+
+  &:has(input[disabled]) {
+    cursor: not-allowed;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  .box {
+    width: 24px;
+    height: 24px;
+    display: grid;
+    place-items: center;
+    background-color: var(--primary-600, #434e5b);
+    transition:
+      transform 0.3s var(--easing),
+      background-color 0.3s var(--easing);
+    .tick {
+      opacity: 0;
+      transition: opacity 0.3s var(--easing);
+    }
+  }
+  &:has(input:checked) {
+    border-color: var(--secondary-300, #69a5c6);
+    background-color: var(--secondary-500, #1e87c1);
+    .box {
+      transform: translateX(30px);
+      background-color: var(--primary-200);
+      .tick {
+        opacity: 1;
+      }
+    }
+  }
+
+  &:hover {
+    background-color: var(--primary-400, #a7b4bc);
+    border-color: var(--primary-400, #c9d1d7);
+  }
+  &:has(input:focus-visible) {
+    outline: 1px solid var(--primary-300);
+    outline-offset: 5px;
+  }
+}
