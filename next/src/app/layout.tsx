@@ -25,7 +25,7 @@ export default function RootLayout({
         <Footer />
         <SchemaOrganization />
       </body>
-      <GoogleTagManager gtmId='GTM-58CFBWW' />
+      <GoogleTagManager gtmId='GTM-58CFBWW3' />
     </html>
   );
 }
