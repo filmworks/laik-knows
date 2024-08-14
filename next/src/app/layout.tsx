@@ -1,3 +1,4 @@
+import { GoogleTagManager } from '@next/third-parties/google';
 import type { Metadata } from 'next';
 import SchemaOrganization from '@/global/Schema/Organization';
 import { LOCALE } from '@/global/constants';
@@ -24,6 +25,7 @@ export default function RootLayout({
         <Footer />
         <SchemaOrganization />
       </body>
+      <GoogleTagManager gtmId='GTM-58CFBWW' />
     </html>
   );
 }

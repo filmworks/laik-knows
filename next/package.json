@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@mailerlite/mailerlite-nodejs": "^1.2.2",
+    "@next/third-parties": "^14.2.5",
     "embla-carousel-react": "^8.1.7",
     "framer-motion": "^11.3.7",
     "next": "14.2.5",
