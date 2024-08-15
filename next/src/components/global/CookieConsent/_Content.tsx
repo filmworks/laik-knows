@@ -48,6 +48,24 @@ export default function Content() {
     } else {
       gtag('consent', 'default', JSON.parse(getCookie('cookie-consent')!));
     }
+
+    const timeoutId = setTimeout(() => {
+      gtag('event', 'view_item', {
+        value: 69,
+        currency: 'PLN',
+        items: [
+          {
+            item_id: 'b48ab44c-36ac-4c49-840b-9b4fc66d1273',
+            item_name: 'Kurs tworzenia Wideo (Laik Knows)',
+            item_brand: 'Laik Knows',
+            price: 69,
+            quantity: 1,
+          },
+        ],
+      });
+    }, 1000);
+
+    return () => clearTimeout(timeoutId);
   }, []);
 
   const acceptAll = () => {
@@ -72,7 +90,7 @@ export default function Content() {
 
   const acceptPart = () => {
     setConsent({
-      necessary: wrapper.current?.querySelector<HTMLInputElement>('input[id="necessary"]')?.checked || false,
+      necessary: true,
       marketing: wrapper.current?.querySelector<HTMLInputElement>('input[id="marketing"]')?.checked || false,
       analytics: wrapper.current?.querySelector<HTMLInputElement>('input[id="analytics"]')?.checked || false,
       preferences: wrapper.current?.querySelector<HTMLInputElement>('input[id="preferences"]')?.checked || false,
@@ -139,7 +157,7 @@ export default function Content() {
         <div className={styles.group}>
           <Switch
             inputProps={{
-              id: 'statistics',
+              id: 'analytics',
             }}
           />
 
