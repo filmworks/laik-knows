@@ -4,9 +4,18 @@ import styles from './Switch.module.scss';
 import type { SwitchTypes } from './Switch.types';
 
 const Switch = ({ labelProps, inputProps }: SwitchTypes) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const target = e.target as HTMLInputElement;
+      target.checked = !target.checked;
+      e.target.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  };
+
   return (
     <label {...labelProps} className={`${styles['Switch']} ${labelProps?.className || ''}`}>
-      <input type='checkbox' {...inputProps} />
+      <input type='checkbox' {...inputProps} onKeyDown={handleKeyDown} />
       <div className={styles.box}>
         <Tick className={styles.tick} />
       </div>

@@ -24,7 +24,7 @@ export async function POST(request: Request) {
 
   try {
     await resend.emails.send({
-      from: `${email} przez Formularz <onboarding@resend.dev>`,
+      from: `${email} przez Formularz <formularz@laik-knows.pl>`,
       to: 'oliwier@kryptonum.eu',
       reply_to: email,
       subject: `${email} przesyła wiadomość przez formularz kontaktowy`,

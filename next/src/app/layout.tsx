@@ -1,5 +1,4 @@
 import { GoogleTagManager } from '@next/third-parties/google';
-import type { Metadata } from 'next';
 import SchemaOrganization from '@/global/Schema/Organization';
 import { LOCALE } from '@/global/constants';
 import { RedHatDisplay } from '@/global/fonts';
@@ -22,7 +21,7 @@ export default function RootLayout({
         <CookieConsent />
         <SchemaOrganization />
       </body>
-      {process.env.NODE_ENV === 'production' && <GoogleTagManager gtmId='GTM-58CFBWW3' />}
+      <GoogleTagManager gtmId='GTM-58CFBWW3' />
     </html>
   );
 }

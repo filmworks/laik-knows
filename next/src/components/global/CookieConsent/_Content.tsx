@@ -1,144 +1,87 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { getCookie } from '@/utils/get-cookie';
 import { setCookie } from '@/utils/set-cookie';
 import Button from '@/components/ui/Button';
 import Switch from '@/components/ui/Switch';
 import styles from './CookieConsent.module.scss';
 
-/* eslint-disable prefer-rest-params */
-
-const gtag: Gtag.Gtag = function () {
-  window.dataLayer?.push(arguments);
+type Consent = {
+  necessary: boolean;
+  marketing: boolean;
+  analytics: boolean;
+  preferences: boolean;
 };
 
-const cookieObjectKeys = ['preferences', 'statistics', 'marketing'];
-
-type CookiesObject = {
-  preferences: 'granted' | 'denied';
-  statistics: 'granted' | 'denied';
-  marketing: 'granted' | 'denied';
-};
-
-const activeCookiesObject: CookiesObject = cookieObjectKeys.reduce((acc, name) => {
-  acc[name as keyof CookiesObject] = 'denied';
-  return acc;
-}, {} as CookiesObject);
+function setConsent(consent: Consent) {
+  const consentMode = {
+    functionality_storage: consent.necessary ? 'granted' : 'denied',
+    security_storage: consent.necessary ? 'granted' : 'denied',
+    ad_storage: consent.marketing ? 'granted' : 'denied',
+    ad_user_data: consent.marketing ? 'granted' : 'denied',
+    ad_personalization: consent.marketing ? 'granted' : 'denied',
+    analytics_storage: consent.analytics ? 'granted' : 'denied',
+    personalization_storage: consent.preferences ? 'granted' : 'denied',
+  } as const;
+  gtag('consent', 'update', consentMode);
+  setCookie('cookie-consent', JSON.stringify(consentMode), 365);
+}
 
 export default function Content() {
+  const wrapper = useRef<HTMLDivElement>(null);
   const [showSettings, setShowSettings] = useState(false);
   const [showBanner, setShowBanner] = useState(false);
-  const [activeCookies, setActiveCookies] = useState(activeCookiesObject);
-
-  const handleKeyDown = (name: string, e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      const target = e.target as HTMLInputElement;
-      target.checked = !target.checked;
-      e.target.dispatchEvent(new Event('change', { bubbles: true }));
-      changeConsent(name as keyof CookiesObject, e);
-    }
-  };
 
   useEffect(() => {
-    const cookieValue = getCookie('cookie-content');
-    if (cookieValue) {
-      const cookie = JSON.parse(cookieValue) as CookiesObject;
+    if (getCookie('cookie-consent') === null) {
       gtag('consent', 'default', {
-        ad_personalization: cookie.marketing,
-        ad_storage: cookie.marketing,
-        ad_user_data: cookie.marketing,
-        analytics_storage: cookie.statistics,
-        functionality_storage: cookie.preferences,
-        personalization_storage: cookie.preferences,
-        security_storage: 'granted',
-        wait_for_update: 2500,
-      });
-    } else {
-      gtag('consent', 'default', {
-        ad_personalization: 'denied',
+        functionality_storage: 'denied',
+        security_storage: 'denied',
         ad_storage: 'denied',
         ad_user_data: 'denied',
+        ad_personalization: 'denied',
         analytics_storage: 'denied',
-        functionality_storage: 'denied',
         personalization_storage: 'denied',
-        security_storage: 'granted',
-        wait_for_update: 2500,
       });
       setShowBanner(true);
+    } else {
+      gtag('consent', 'default', JSON.parse(getCookie('cookie-consent')!));
     }
-    gtag('set', 'ads_data_redaction', true);
   }, []);
 
   const acceptAll = () => {
-    setShowBanner(false);
-    const cookies: CookiesObject = cookieObjectKeys.reduce((acc, name) => {
-      acc[name as keyof CookiesObject] = 'granted';
-      return acc;
-    }, {} as CookiesObject);
-    setCookie('cookie-content', JSON.stringify(cookies), 90);
-    gtag('consent', 'update', {
-      ad_personalization: 'granted',
-      ad_storage: 'granted',
-      ad_user_data: 'granted',
-      analytics_storage: 'granted',
-      functionality_storage: 'granted',
-      personalization_storage: 'granted',
-      security_storage: 'granted',
-      wait_for_update: 2500,
+    setConsent({
+      necessary: true,
+      marketing: true,
+      analytics: true,
+      preferences: true,
     });
+    setShowBanner(false);
   };
 
   const rejectAll = () => {
-    setShowBanner(false);
-    const cookies: CookiesObject = cookieObjectKeys.reduce((acc, name) => {
-      acc[name as keyof CookiesObject] = 'denied';
-      return acc;
-    }, {} as CookiesObject);
-    setCookie('cookie-content', JSON.stringify(cookies), 90);
-    gtag('consent', 'update', {
-      ad_personalization: 'denied',
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      analytics_storage: 'denied',
-      functionality_storage: 'denied',
-      personalization_storage: 'denied',
-      security_storage: 'granted',
-      wait_for_update: 2500,
+    setConsent({
+      necessary: false,
+      marketing: false,
+      analytics: false,
+      preferences: false,
     });
-  };
-
-  const changeConsent = (
-    name: keyof CookiesObject,
-    event: React.MouseEvent<HTMLInputElement> | React.KeyboardEvent<HTMLInputElement>
-  ) => {
-    const target = event.target as Element;
-    if (target.matches('input'))
-      setActiveCookies(prevState => {
-        const newState: CookiesObject = { ...prevState };
-        newState[name] = prevState[name] === 'granted' ? 'denied' : 'granted';
-        return newState;
-      });
+    setShowBanner(false);
   };
 
   const acceptPart = () => {
-    setShowBanner(false);
-    setCookie('cookie-content', JSON.stringify(activeCookies), 90);
-    gtag('consent', 'update', {
-      ad_personalization: activeCookies.marketing,
-      ad_storage: activeCookies.marketing,
-      ad_user_data: activeCookies.marketing,
-      analytics_storage: activeCookies.statistics,
-      functionality_storage: activeCookies.preferences,
-      personalization_storage: activeCookies.preferences,
-      security_storage: 'granted',
-      wait_for_update: 2500,
+    setConsent({
+      necessary: wrapper.current?.querySelector<HTMLInputElement>('input[id="necessary"]')?.checked || false,
+      marketing: wrapper.current?.querySelector<HTMLInputElement>('input[id="marketing"]')?.checked || false,
+      analytics: wrapper.current?.querySelector<HTMLInputElement>('input[id="analytics"]')?.checked || false,
+      preferences: wrapper.current?.querySelector<HTMLInputElement>('input[id="preferences"]')?.checked || false,
     });
+    setShowBanner(false);
   };
 
   return (
-    <div className={styles['Content']} aria-hidden={!showBanner}>
+    <div className={styles['Content']} aria-hidden={!showBanner} ref={wrapper}>
       <header>
         <h2>{showSettings ? 'Ustawienia Cookies' : 'Korzystając ze strony zgadzasz się na użycie ciasteczek'}</h2>
         <p className={styles.paragraph}>
@@ -181,8 +124,7 @@ export default function Content() {
         <div className={styles.group}>
           <Switch
             inputProps={{
-              onClick: e => changeConsent('preferences', e),
-              onKeyDown: e => handleKeyDown('preferences', e),
+              id: 'preferences',
             }}
           />
 
@@ -197,8 +139,7 @@ export default function Content() {
         <div className={styles.group}>
           <Switch
             inputProps={{
-              onClick: e => changeConsent('statistics', e),
-              onKeyDown: e => handleKeyDown('statistics', e),
+              id: 'statistics',
             }}
           />
 
@@ -214,8 +155,7 @@ export default function Content() {
         <div className={styles.group}>
           <Switch
             inputProps={{
-              onClick: e => changeConsent('marketing', e),
-              onKeyDown: e => handleKeyDown('marketing', e),
+              id: 'marketing',
             }}
           />
           <div className={styles.content}>
