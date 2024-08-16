@@ -13,7 +13,7 @@ export async function createSubscriber({ email, legal }: CreateSubscriberParams)
 
   if (!isValid) return { success: false };
 
-  const params = { email, groups: ['128897752092378436'] };
+  const params = { email, groups: ['129747752861042405'] };
 
   try {
     await mailerlite.subscribers.createOrUpdate(params);
