@@ -50,13 +50,17 @@
     height: 100%;
     z-index: -25;
     min-height: 183px;
+    object-position: top;
 
     @media (max-width: 1023px) {
       height: clamp(183px, calc(391vw / 7.68), 791px);
     }
-  }
-  img {
-    object-position: top;
+
+    @media (min-width: 900px) {
+      &[data-video='true'] {
+        display: none;
+      }
+    }
   }
 }
 
@@ -89,10 +93,8 @@
     }
   }
 
-  @media (max-width: 400px) {
-    iframe {
-      min-width: calc(100% + 120px);
-    }
+  @media (max-width: 899px) {
+    display: none;
   }
 }
 

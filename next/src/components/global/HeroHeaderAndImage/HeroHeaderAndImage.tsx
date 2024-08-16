@@ -16,9 +16,11 @@ export default function HeroHeaderAndImage({
 }: HeroHeaderAndImageTypes) {
   const Heading = index === 0 ? Markdown.h1 : Markdown.h2;
 
+  const isVideo = Boolean(video);
+
   return (
     <section className={styles.section} data-first={index === 0}>
-      {video ? (
+      {isVideo && (
         <div className={styles.video}>
           <iframe
             title='Twórz profesjonalne kursy video'
@@ -26,10 +28,8 @@ export default function HeroHeaderAndImage({
             allow='autoplay; fullscreen'
           ></iframe>
         </div>
-      ) : (
-        <Img data={img} sizes='100vw' />
       )}
-
+      <Img data-video={isVideo} data={img} sizes='100vw' />
       <div className='max-width'>
         <Heading>{heading}</Heading>
         <Markdown className={styles.paragraph}>{paragraph}</Markdown>
