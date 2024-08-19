@@ -84,7 +84,7 @@
 
 .content {
   overflow: hidden;
-  > p,
+  > p:only-of-type,
   > div {
     margin-bottom: 28px;
     padding: 0 48px 0 36px;
