@@ -4,6 +4,7 @@ import Img from '@/components/ui/image';
 import Markdown from '@/components/ui/markdown';
 import styles from './HeroHeaderAndImage.module.scss';
 import type { HeroHeaderAndImageTypes } from './HeroHeaderAndImage.types';
+import Background from './_Background';
 
 export default function HeroHeaderAndImage({
   index,
@@ -16,21 +17,9 @@ export default function HeroHeaderAndImage({
 }: HeroHeaderAndImageTypes) {
   const Heading = index === 0 ? Markdown.h1 : Markdown.h2;
 
-  const isVideo = Boolean(video);
-
   return (
     <section className={styles.section} data-first={index === 0}>
-      {isVideo && (
-        <div className={styles.video}>
-          <iframe
-            loading='lazy'
-            title='Twórz profesjonalne kursy video'
-            src={`https://player.vimeo.com/video/${video}?h=8f0ffe497b&autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&dnt=1&background=1`}
-            allow='autoplay; fullscreen'
-          ></iframe>
-        </div>
-      )}
-      <Img data-video={isVideo} data={img} priority sizes='100vw' />
+      {video ? <Background video={video} img={img} /> : <Img data={img} priority sizes='100vw' />}
       <div className='max-width'>
         <Heading>{heading}</Heading>
         <Markdown className={styles.paragraph}>{paragraph}</Markdown>

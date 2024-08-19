@@ -11,3 +11,8 @@ export type HeroHeaderAndImageTypes = {
   cta: CtaDataTypes;
   course: CourseDataTypes;
 };
+
+export type BackgroundTypes = {
+  video: string;
+  img: ImgDataTypes;
+};
