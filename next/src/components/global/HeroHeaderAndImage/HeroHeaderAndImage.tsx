@@ -24,7 +24,7 @@ export default function HeroHeaderAndImage({
         <div className={styles.video}>
           <iframe
             title='Twórz profesjonalne kursy video'
-            src={`https://player.vimeo.com/video/${video}?h=8f0ffe497b&autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&dnt=1`}
+            src={`https://player.vimeo.com/video/${video}?h=8f0ffe497b&autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&dnt=1&background=1`}
             allow='autoplay; fullscreen'
           ></iframe>
         </div>
