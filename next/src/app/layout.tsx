@@ -1,6 +1,4 @@
 // import { GoogleTagManager } from '@next/third-parties/google';
-import Head from 'next/head';
-import Script from 'next/script';
 import SchemaOrganization from '@/global/Schema/Organization';
 import { LOCALE } from '@/global/constants';
 import { RedHatDisplay } from '@/global/fonts';
@@ -22,7 +20,6 @@ export default function RootLayout({
         <Footer />
         {/* <CookieConsent /> */}
         <SchemaOrganization />
-        <Script src='https://player.vimeo.com/api/player.js' strategy='beforeInteractive' />
       </body>
       {/* {process.env.NODE_ENV === 'production' && <GoogleTagManager gtmId='GTM-58CFBWW3' />} */}
     </html>
