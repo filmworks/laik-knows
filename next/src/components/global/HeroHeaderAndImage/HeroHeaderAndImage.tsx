@@ -1,6 +1,6 @@
 import CtaButtonRow from '@/components/ui/CtaButtonRow';
 import Pricing from '@/components/ui/Pricing';
-import Img from '@/components/ui/image';
+// import Img from '@/components/ui/image';
 import Markdown from '@/components/ui/markdown';
 import styles from './HeroHeaderAndImage.module.scss';
 import type { HeroHeaderAndImageTypes } from './HeroHeaderAndImage.types';
@@ -9,7 +9,7 @@ export default function HeroHeaderAndImage({
   index,
   heading,
   paragraph,
-  img,
+  // img,
   cta,
   course,
   video,
@@ -29,7 +29,6 @@ export default function HeroHeaderAndImage({
           ></iframe>
         </div>
       )}
-      <Img data-video={isVideo} data={img} sizes='100vw' />
       <div className='max-width'>
         <Heading>{heading}</Heading>
         <Markdown className={styles.paragraph}>{paragraph}</Markdown>
