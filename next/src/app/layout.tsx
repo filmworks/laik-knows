@@ -1,5 +1,6 @@
 // import { GoogleTagManager } from '@next/third-parties/google';
 import Head from 'next/head';
+import Script from 'next/script';
 import SchemaOrganization from '@/global/Schema/Organization';
 import { LOCALE } from '@/global/constants';
 import { RedHatDisplay } from '@/global/fonts';
@@ -15,15 +16,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={LOCALE}>
-      <Head>
-        <script async src='https://player.vimeo.com/api/player.js'></script>
-      </Head>
       <body className={RedHatDisplay.className}>
         <Header />
         <main id='main'>{children}</main>
         <Footer />
         {/* <CookieConsent /> */}
         <SchemaOrganization />
+        <Script src='https://player.vimeo.com/api/player.js' strategy='beforeInteractive' />
       </body>
       {/* {process.env.NODE_ENV === 'production' && <GoogleTagManager gtmId='GTM-58CFBWW3' />} */}
     </html>
