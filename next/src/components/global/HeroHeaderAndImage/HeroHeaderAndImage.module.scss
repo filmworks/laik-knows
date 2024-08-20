@@ -75,12 +75,11 @@
   pointer-events: none;
   overflow: hidden;
   z-index: -30;
-  // display: none;
 
   iframe {
     width: 100vw;
     height: 56.25vw;
-    min-height: 100vh;
+    min-height: 1020vh;
     min-width: 177.77vh;
     position: absolute;
     top: 50%;
@@ -100,8 +99,10 @@
     }
   }
 
-  @media (max-width: 899px) {
-    display: none;
+  @media (max-height: 970px) and (min-width: 1024px) {
+    iframe {
+      min-width: calc(140% + 280px);
+    }
   }
 }
 
