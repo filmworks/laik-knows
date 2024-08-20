@@ -1,6 +1,7 @@
 'use server';
 
 import { type QueryParams, createClient } from 'next-sanity';
+import { isPreviewDeployment, isProductionDeployment } from './is-preview-deployment';
 
 const projectId = process.env.SANITY_PROJECT_ID;
 const dataset = 'production';
@@ -11,6 +12,7 @@ const client = createClient({
   dataset,
   apiVersion,
   useCdn: false,
+  perspective: isPreviewDeployment ? 'previewDrafts' : 'published',
 });
 
 /**
@@ -29,5 +31,19 @@ export default async function sanityFetch<QueryResponse>({
   tags?: string[];
   params?: QueryParams;
 }): Promise<QueryResponse> {
-  return await client.fetch<QueryResponse>(query, params, { next: { tags } });
+  return await client.fetch<QueryResponse>(query, params, {
+    ...(!isProductionDeployment
+      ? {
+          cache: 'reload',
+        }
+      : {
+          ...(isPreviewDeployment || !tags
+            ? {
+                cache: 'no-cache',
+              }
+            : {
+                next: { tags },
+              }),
+        }),
+  });
 }

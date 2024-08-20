@@ -23,8 +23,7 @@ export default function RootLayout({
         <SchemaOrganization />
         <Script async src='https://player.vimeo.com/api/player.js' strategy='beforeInteractive' />
       </body>
-      {/* {process.env.NODE_ENV === 'production' && <GoogleTagManager gtmId='GTM-58CFBWW3' />} */}
-      <GoogleTagManager gtmId='GTM-M6FZ4BW6' />
+      {process.env.NODE_ENV === 'production' && <GoogleTagManager gtmId='GTM-M6FZ4BW6' />}
     </html>
   );
 }
