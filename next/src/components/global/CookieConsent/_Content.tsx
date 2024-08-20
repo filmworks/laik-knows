@@ -5,6 +5,7 @@ import { getCookie } from '@/utils/get-cookie';
 import { setCookie } from '@/utils/set-cookie';
 import Button from '@/components/ui/Button';
 import Switch from '@/components/ui/Switch';
+import getCourseData from '@/components/ui/get-course-data';
 import styles from './CookieConsent.module.scss';
 
 type Consent = {
@@ -49,20 +50,26 @@ export default function Content() {
       gtag('consent', 'default', JSON.parse(getCookie('cookie-consent')!));
     }
 
-    const timeoutId = setTimeout(() => {
-      gtag('event', 'view_item', {
-        value: 69,
-        currency: 'PLN',
-        items: [
-          {
-            item_id: 'b48ab44c-36ac-4c49-840b-9b4fc66d1273',
-            item_name: 'Kurs tworzenia Wideo (Laik Knows)',
-            item_brand: 'Laik Knows',
-            price: 69,
-            quantity: 1,
-          },
-        ],
-      });
+    const timeoutId = setTimeout(async () => {
+      try {
+        const { fullPrice, discountPrice } = await getCourseData();
+        const currentPrice = discountPrice || fullPrice;
+        gtag('event', 'view_item', {
+          value: currentPrice,
+          currency: 'PLN',
+          items: [
+            {
+              item_id: 'b48ab44c-36ac-4c49-840b-9b4fc66d1273',
+              item_name: 'Kurs tworzenia Wideo (Laik Knows)',
+              item_brand: 'Laik Knows',
+              price: currentPrice,
+              quantity: 1,
+            },
+          ],
+        });
+      } catch (error) {
+        console.log(error);
+      }
     }, 1000);
 
     return () => clearTimeout(timeoutId);
@@ -120,32 +127,28 @@ export default function Content() {
         style={{ display: showSettings ? undefined : 'none' }}
         data-visible={showSettings}
       >
-        <div className={styles.group}>
-          <Switch
-            inputProps={{
-              checked: true,
-              disabled: true,
-            }}
-          />
-
+        <Switch
+          labelProps={{ className: styles.group }}
+          inputProps={{
+            checked: true,
+            disabled: true,
+          }}
+        >
           <div className={styles.content}>
             <h3>Niezbędne</h3>
             <p>
-              {' '}
               Niezbędne pliki cookie przyczyniają się do użyteczności strony poprzez umożliwianie podstawowych funkcji,
               takich jak nawigacja na stronie i dostęp do bezpiecznych obszarów strony internetowej. Strona www nie może
               funkcjonować poprawnie bez tych ciasteczek.
             </p>
           </div>
-          <p className={styles.description}></p>
-        </div>
-        <div className={styles.group}>
-          <Switch
-            inputProps={{
-              id: 'preferences',
-            }}
-          />
-
+        </Switch>
+        <Switch
+          labelProps={{ className: styles.group }}
+          inputProps={{
+            id: 'preferences',
+          }}
+        >
           <div className={styles.content}>
             <h3>Preferencje</h3>
             <p>
@@ -153,14 +156,13 @@ export default function Content() {
               funkcjonowanie strony, np. preferowany język lub region, w którym znajduje się użytkownik.
             </p>
           </div>
-        </div>
-        <div className={styles.group}>
-          <Switch
-            inputProps={{
-              id: 'analytics',
-            }}
-          />
-
+        </Switch>
+        <Switch
+          labelProps={{ className: styles.group }}
+          inputProps={{
+            id: 'analytics',
+          }}
+        >
           <div className={styles.content}>
             <h3>Statystyka</h3>
             <p>
@@ -168,14 +170,13 @@ export default function Content() {
               użytkownicy zachowują się na stronie, gromadząc i zgłaszając anonimowe informacje.
             </p>
           </div>
-          <p className={styles.description}></p>
-        </div>
-        <div className={styles.group}>
-          <Switch
-            inputProps={{
-              id: 'marketing',
-            }}
-          />
+        </Switch>
+        <Switch
+          labelProps={{ className: styles.group }}
+          inputProps={{
+            id: 'marketing',
+          }}
+        >
           <div className={styles.content}>
             <h3>Marketing</h3>
             <p>
@@ -184,7 +185,7 @@ export default function Content() {
               bardziej cenne dla wydawców oraz reklamodawców strony trzeciej.
             </p>
           </div>
-        </div>
+        </Switch>
       </div>
       <div className={styles.controls}>
         <Button theme='primary' onClick={() => acceptAll()}>

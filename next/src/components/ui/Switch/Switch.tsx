@@ -3,7 +3,7 @@
 import styles from './Switch.module.scss';
 import type { SwitchTypes } from './Switch.types';
 
-const Switch = ({ labelProps, inputProps }: SwitchTypes) => {
+const Switch = ({ labelProps, inputProps, children }: SwitchTypes) => {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       e.preventDefault();
@@ -15,10 +15,13 @@ const Switch = ({ labelProps, inputProps }: SwitchTypes) => {
 
   return (
     <label {...labelProps} className={`${styles['Switch']} ${labelProps?.className || ''}`}>
-      <input type='checkbox' {...inputProps} onKeyDown={handleKeyDown} />
-      <div className={styles.box}>
-        <Tick className={styles.tick} />
+      <div className={styles.container}>
+        <input type='checkbox' {...inputProps} onKeyDown={handleKeyDown} />
+        <div className={styles.box}>
+          <Tick className={styles.tick} />
+        </div>
       </div>
+      {children}
     </label>
   );
 };

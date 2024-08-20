@@ -56,19 +56,21 @@
       &:not(:last-child) {
         margin-bottom: 16px;
       }
-      .content {
-        h3 {
-          margin-bottom: 12px;
-          line-height: 148%;
-        }
-
-        p {
-          font-size: calc(12rem / 16);
-          line-height: 148%;
-        }
-      }
     }
   }
+
+  .content {
+    h3 {
+      margin-bottom: 12px;
+      line-height: 148%;
+    }
+
+    p {
+      font-size: calc(12rem / 16);
+      line-height: 148%;
+    }
+  }
+
   .controls {
     display: flex;
     align-items: center;
