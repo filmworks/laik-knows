@@ -28,7 +28,7 @@ export const config = {
 
 const verifyTokenWithMailerLite = async (token: string): Promise<boolean> => {
   try {
-    const res = await fetch(`https://api.mailerlite.com/api/v2/subscribers/search?query=${token}`, {
+    const res = await fetch('https://api.mailerlite.com/api/v2/subscribers', {
       headers: {
         'X-MailerLite-ApiKey': process.env.MAILERLITE_API_KEY!,
         'Content-Type': 'application/json',
@@ -37,7 +37,10 @@ const verifyTokenWithMailerLite = async (token: string): Promise<boolean> => {
 
     const response = await res.json();
 
-    const subscriber = response.find((sub: { fields: { user_token: string } }) => sub.fields.user_token === token);
+    const subscriber = response.find(
+      (sub: { fields: [{ key: string; value: string }] }) =>
+        sub.fields.find(field => field.key === 'user_token')?.value === token
+    );
 
     return !!subscriber;
   } catch (error) {
