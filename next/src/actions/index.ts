@@ -1,7 +1,13 @@
 'use server';
 
+import jwt from 'jsonwebtoken';
 import { mailerlite } from '@/utils/mailerlite';
 import { REGEX } from '@/global/constants';
+
+const generateToken = (email: string) => {
+  const secret = process.env.JWT_SECRET!;
+  return jwt.sign({ email }, secret); //
+};
 
 type CreateSubscriberParams = {
   email: string;
@@ -13,7 +19,7 @@ export async function createSubscriber({ email, legal }: CreateSubscriberParams)
 
   if (!isValid) return { success: false };
 
-  const params = { email, groups: ['129747752861042405'] };
+  const params = { email, groups: ['129747752861042405'], user_token: generateToken(email) };
 
   try {
     await mailerlite.subscribers.createOrUpdate(params);

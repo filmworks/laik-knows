@@ -15,6 +15,7 @@ import Partners from '../schema/components/Partners'
 import ParticipantCarousel from '../schema/components/ParticipantCarousel'
 import Faq from '../schema/components/Faq'
 import CtaImage from '../schema/components/CtaImage'
+import HeadingWithEmbed from '../schema/components/HeadingWithEmbed'
 
 export default defineType({
   name: 'content',
@@ -37,5 +38,6 @@ export default defineType({
     ParticipantCarousel,
     Faq,
     CtaImage,
+    HeadingWithEmbed,
   ],
 })

@@ -10,6 +10,7 @@ import CtaImage, { CtaImageTypes, CtaImage_Query } from './global/CtaImage';
 import Faq, { FaqTypes, Faq_Query } from './global/Faq';
 import FeatureList, { FeatureListTypes, FeatureList_Query } from './global/FeatureList';
 import HeadingParagraph, { HeadingParagraphTypes, HeadingParagraph_Query } from './global/HeadingParagraph';
+import HeadingWithEmbed, { HeadingWithEmbedTypes, HeadingWithEmbed_Query } from './global/HeadingWithEmbed';
 import ParticipantCarousel, { ParticipantCarouselTypes, ParticipantCarousel_Query } from './global/ParticipantCarousel';
 import Partners, { PartnersTypes, Partners_Query } from './global/Partners';
 import ProvenResults, { ProvenResultsTypes, ProvenResults_Query } from './global/ProvenResults';
@@ -35,6 +36,7 @@ type componentsMapTypes = {
   ParticipantCarousel: ParticipantCarouselTypes;
   Faq: FaqTypes;
   CtaImage: CtaImageTypes;
+  HeadingWithEmbedTypes: HeadingWithEmbedTypes;
 };
 
 export type ComponentTypes = componentsMapTypes[keyof componentsMapTypes] & { _type: string };
@@ -60,6 +62,7 @@ export default function Components({ data }: { data: ComponentTypes[] }) {
       ParticipantCarousel: <ParticipantCarousel {...(item as ParticipantCarouselTypes)} />,
       Faq: <Faq {...(item as FaqTypes)} />,
       CtaImage: <CtaImage {...(item as CtaImageTypes)} />,
+      HeadingWithEmbed: <HeadingWithEmbed {...(item as HeadingWithEmbedTypes)} />,
     };
     const DynamicComponent = componentsMapTypes[componentType];
     if (!DynamicComponent) return null;
@@ -86,5 +89,6 @@ export const Components_Query = /* groq */ `
       ${ParticipantCarousel_Query}
       ${Faq_Query}
       ${CtaImage_Query}
+      ${HeadingWithEmbed_Query}
     },
   `;

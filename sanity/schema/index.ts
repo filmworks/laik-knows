@@ -10,9 +10,11 @@ import Partners_Collection from './collectionTypes/Partners_Collection'
 import Faq_Collection from './collectionTypes/Faq_Collection'
 import contactForm from './ui/contactForm'
 import NotFound_Page from './singleTypes/NotFound_Page'
+import Lesson_Page from './singleTypes/Lesson_Page'
 
 export const schemaTypes = [
   Index_Page,
+  Lesson_Page,
   NotFound_Page,
   Content,
   seo,

@@ -1,14 +1,13 @@
 import { defineField } from 'sanity'
 import { removeMarkdown } from '../../utils/remove-markdown'
 
-const title = 'Sekcja FAQ'
-const icon = () => '❓'
+const title = 'Nagłówek z osadzonym filmem'
 
 export default defineField({
-  name: 'Faq',
+  name: 'HeadingWithEmbed',
   type: 'document',
   title,
-  icon,
+  icon: () => '📹',
   fields: [
     defineField({
       name: 'heading',
@@ -23,31 +22,19 @@ export default defineField({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'list',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [{ type: 'Faq_Collection' }],
-        },
-      ],
-      validation: (Rule) => Rule.required(),
-      title: 'Lista Faq',
-    }),
-    defineField({
-      name: 'contactForm',
-      type: 'contactForm',
-      title: 'Formularz kontaktowy',
+      name: 'video',
+      type: 'string',
+      title: 'ID Wideo',
       validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {
     select: {
       heading: 'heading',
-      media: 'image,',
+      icon: 'icon',
     },
-    prepare: ({ heading, media }) => ({
-      title: title,
+    prepare: ({ heading, icon }) => ({
+      title,
       subtitle: removeMarkdown(heading),
       icon,
     }),
