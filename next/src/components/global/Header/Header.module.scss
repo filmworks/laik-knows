@@ -53,9 +53,9 @@
     display: block;
     width: max-content;
     pointer-events: auto;
+    width: clamp(69px, calc(80vw / 7.68), 80px);
   }
 
   svg {
-    width: clamp(69px, calc(80vw / 7.68), 80px);
   }
 }

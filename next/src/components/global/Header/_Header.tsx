@@ -1,14 +1,12 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import logo from '@/public/icons/logo.webp';
 import styles from './Header.module.scss';
 
-type HeaderTypes = {
-  logo: JSX.Element;
-};
-
-export default function _Header({ logo }: HeaderTypes) {
+export default function _Header() {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
@@ -26,7 +24,7 @@ export default function _Header({ logo }: HeaderTypes) {
     <header className={styles.header} data-active={isActive}>
       <div className='max-width'>
         <Link href='/' aria-label='Przejdź na górę strony'>
-          {logo}
+          <Image src={logo} alt='Logo Laik Knows' sizes='80px' />
         </Link>
       </div>
     </header>
