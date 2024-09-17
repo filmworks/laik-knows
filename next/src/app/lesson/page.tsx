@@ -41,6 +41,7 @@ const verifyTokenWithMailerLite = async (token: string): Promise<boolean> => {
         'X-MailerLite-ApiKey': process.env.MAILERLITE_API_KEY!,
         'Content-Type': 'application/json',
       },
+      cache: 'no-cache',
     });
 
     const response = await res.json();
