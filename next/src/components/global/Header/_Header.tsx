@@ -24,7 +24,7 @@ export default function _Header() {
     <header className={styles.header} data-active={isActive}>
       <div className='max-width'>
         <Link href='/' aria-label='Przejdź na górę strony'>
-          <Image src={logo} alt='Logo Laik Knows' sizes='80px' />
+          <Image src={logo} alt='Logo Laik Knows' sizes='120px' />
         </Link>
       </div>
     </header>
