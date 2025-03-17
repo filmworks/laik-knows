@@ -53,6 +53,6 @@
     display: block;
     width: max-content;
     pointer-events: auto;
-    width: clamp(80px, calc(80vw / 7.68), 120px);
+    width: clamp(150px, calc(150vw / 7.68), 200px);
   }
 }
