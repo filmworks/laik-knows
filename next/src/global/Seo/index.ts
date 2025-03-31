@@ -22,11 +22,6 @@ export default async function Seo({ title, description, openGraphImage, path, ..
     alternates: {
       canonical: seo.url,
     },
-    robots: {
-      index: false,
-      follow: true,
-    },
-    // Temporary robots for no index
     openGraph: {
       title: seo.title,
       description: seo.description,

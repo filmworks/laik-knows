@@ -7,6 +7,8 @@ export default function SaleFinishTime({ heading, course, index }: SaleFinishTim
   const Heading = index === 0 ? Markdown.h1 : Markdown.h2;
   const duration = new Date(course.saleFinishDate).getTime() - new Date().getTime();
 
+  if (duration <= 0) return null;
+
   return (
     <section className={styles.section}>
       <div className='max-width'>

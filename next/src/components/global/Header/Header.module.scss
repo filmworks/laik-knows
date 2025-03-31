@@ -46,13 +46,13 @@
   }
 
   div {
-    padding-top: clamp(28px, calc(36vw / 7.68), 48px);
+    padding-top: 0px;
   }
 
   a {
     display: block;
     width: max-content;
     pointer-events: auto;
-    width: clamp(69px, calc(80vw / 7.68), 80px);
+    width: clamp(120px, calc(150vw / 7.68), 180px);
   }
 }

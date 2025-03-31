@@ -18,7 +18,9 @@ export default function VideoBox({ video, img, sizes, videoIcon }: VideoBoxTypes
   };
 
   const handleClose = () => {
-    playerRef.current?.unload(); // zatrzymuje i usuwa playera
+dev
+    playerRef.current?.unload(); // zatrzymuje i czyści video
+ main
     setIsOpen(false);
   };
 
@@ -52,6 +54,7 @@ export default function VideoBox({ video, img, sizes, videoIcon }: VideoBoxTypes
             allowFullScreen
           ></iframe>
 
+ dev
           <button onClick={handleClose} className={styles.closeButton} aria-label='Zamknij wideo'>
             ❌
           </button>
