@@ -39,6 +39,10 @@ const query = async (customQuery: string, tag: string): Promise<QueryTypes> => {
     `,
     tags: [tag],
   });
-  !seo && notFound();
+
+  if (!seo) {
+    notFound(); // 👈 poprawna składnia
+  }
+
   return { ...seo };
 };
