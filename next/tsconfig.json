@@ -24,8 +24,15 @@
       "@/assets/*": ["./src/assets/*"],
       "@/public/*": ["./public/*"],
       "@/app/*": ["./src/app/*"]
-    }
+    },
+    "typeRoots": ["./node_modules/@types", "./src/types"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "plopfile.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "plopfile.js"
+  ],
   "exclude": ["node_modules"]
 }
