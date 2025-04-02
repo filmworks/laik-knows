@@ -2,7 +2,6 @@
 
 import Img from '../image';
 import { useEffect, useRef, useState } from 'react';
-import Player from '@vimeo/player';
 import styles from './OpenVideoBox.module.scss';
 import { VideoBoxTypes } from './OpenVideoBox.types';
 
@@ -10,7 +9,7 @@ export default function VideoBox({ video, img, sizes, videoIcon }: VideoBoxTypes
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
-  const playerRef = useRef<Player | null>(null);
+  const playerRef = useRef<any>(null);
 
   const handleOpen = () => {
     setIsOpen(true);
@@ -18,13 +17,21 @@ export default function VideoBox({ video, img, sizes, videoIcon }: VideoBoxTypes
   };
 
   const handleClose = () => {
-    playerRef.current?.unload(); // zatrzymuje i czyści video
-    setIsOpen(false);
+    if (playerRef.current) {
+      playerRef.current.pause().then(() => {
+        playerRef.current.setCurrentTime(0);
+        setIsOpen(false);
+      });
+    } else {
+      setIsOpen(false);
+    }
   };
 
   useEffect(() => {
     if (isOpen && iframeRef.current) {
-      playerRef.current = new Player(iframeRef.current);
+      import('@vimeo/player').then(({ default: Player }) => {
+        playerRef.current = new Player(iframeRef.current!);
+      });
     }
   }, [isOpen]);
 
@@ -42,7 +49,7 @@ export default function VideoBox({ video, img, sizes, videoIcon }: VideoBoxTypes
       )}
 
       {isOpen && (
-        <div className={styles.video}>
+        <div className={styles.video} onClick={handleClose}>
           <iframe
             ref={iframeRef}
             onLoad={() => setIsLoading(false)}
@@ -51,10 +58,6 @@ export default function VideoBox({ video, img, sizes, videoIcon }: VideoBoxTypes
             allow='autoplay; fullscreen'
             allowFullScreen
           ></iframe>
-
-          <button onClick={handleClose} className={styles.closeButton}>
-            ❌ Zamknij
-          </button>
 
           <div className={styles.loader}>
             <div />

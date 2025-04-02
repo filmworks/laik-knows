@@ -10,7 +10,7 @@
   position: relative;
   &[data-theme='primary'] {
     justify-content: space-between;
-    background: radial-gradient(39% 100% at 50% 100%, rgba(112, 123, 135, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
+    background: radial-gradient(39% 100% at 50% 100%, rgba(236, 250, 87, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
       var(--primary-900, #000);
     &::before {
       filter: blur(2px);
@@ -82,7 +82,7 @@
     }
 
     &:hover {
-      background: radial-gradient(39% 100% at 50% 100%, rgba(47, 129, 219, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
+      background: radial-gradient(39% 100% at 50% 100%, rgba(224, 230, 54, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
         var(--primary-900, #000);
       &::after {
         opacity: 1;
@@ -113,7 +113,7 @@
     right: -1px;
     bottom: -1px;
     border: 1px solid;
-    border-image: radial-gradient(circle at bottom center, #c3e6ff, var(--secondary-500, #f2ff42)) 1;
+    border-image: radial-gradient(circle at bottom center, #d3ed6b, var(--secondary-500, #f2ff42)) 1;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s;
