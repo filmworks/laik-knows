@@ -18,11 +18,11 @@
     "embla-carousel-react": "^8.1.7",
     "framer-motion": "^11.3.7",
     "jsonwebtoken": "^9.0.2",
-    "next": "14.2.5",
+    "next": "^14.2.5",
     "next-mdx-remote": "^5.0.0",
     "next-sanity": "^9.4.2",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-hook-form": "^7.52.1",
     "resend": "^3.5.0",
     "sass": "^1.77.8",
@@ -40,9 +40,4 @@
     "prettier": "^3.3.3",
     "typescript": "^5"
   }
-  "dependencies": {
-  "next": "^14.2.5",
-  "react": "^18.2.0",
-  "react-dom": "^18.2.0"
-}
 }
