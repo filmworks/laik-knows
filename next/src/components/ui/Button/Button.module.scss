@@ -88,7 +88,7 @@
         opacity: 1;
       }
       svg {
-        stroke: var(--secondary-300, #69a5c6);
+        stroke: var(--secondary-300, #f2ff42);
         transform: translateX(3px);
       }
       .dots {
@@ -102,7 +102,7 @@
   }
   &[data-theme='secondary'] {
     justify-content: center;
-    border-color: var(--primary-600, #434e5b);
+    border-color: var(--primary-600, #f2ff42);
   }
 
   &::before {
@@ -113,7 +113,7 @@
     right: -1px;
     bottom: -1px;
     border: 1px solid;
-    border-image: radial-gradient(circle at bottom center, #c3e6ff, var(--secondary-500, #1e87c1)) 1;
+    border-image: radial-gradient(circle at bottom center, #c3e6ff, var(--secondary-500, #f2ff42)) 1;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s;
