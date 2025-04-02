@@ -4,13 +4,13 @@ import Img from '../image';
 import { useEffect, useRef, useState } from 'react';
 import styles from './OpenVideoBox.module.scss';
 import { VideoBoxTypes } from './OpenVideoBox.types';
-import type Player from '@vimeo/player'; // 👈 poprawne typowanie
+import Player from '@vimeo/player'; // ✅ poprawiony import
 
 export default function VideoBox({ video, img, sizes, videoIcon }: VideoBoxTypes) {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
-  const playerRef = useRef<Player | null>(null); // 👈 unikamy `any`
+  const playerRef = useRef<InstanceType<typeof Player> | null>(null); // ✅ poprawne typowanie
 
   const handleOpen = () => {
     setIsOpen(true);
@@ -30,9 +30,7 @@ export default function VideoBox({ video, img, sizes, videoIcon }: VideoBoxTypes
 
   useEffect(() => {
     if (isOpen && iframeRef.current) {
-      import('@vimeo/player').then(({ default: Player }) => {
-        playerRef.current = new Player(iframeRef.current!);
-      });
+      playerRef.current = new Player(iframeRef.current!);
     }
   }, [isOpen]);
 
