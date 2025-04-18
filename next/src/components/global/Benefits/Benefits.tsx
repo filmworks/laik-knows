@@ -160,3 +160,4 @@ const BlobIcon = () => (
     </defs>
   </svg>
 );
+<h3 className={styles.customHeading}>Twój tekst</h3>
